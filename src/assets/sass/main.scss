@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
+
+@charset 'utf-8';
+
+$primary-font: 'Montserrat', sans-serif;
+$secondary-font: 'Source Code Pro', monospace;
+$brand-color: #ed3624;
+$brand-grey: #232323;
+$brand-grey-darker: #131313;
+$brand-white: #fff;
+$site-width: 1200px;
+
+@import './mixins';
