@@ -10,7 +10,15 @@
         :ref="'speaker-cards'"
         @click="[toggleSpeaker(index), scrollToSpeaker()]"
         >
-        <img class="speaker-card__image" :src="speaker.image" :alt="'picture of ' + speaker.name">
+        <srcset-img :path="speaker.image"
+                    class="speaker-card__image"
+                    :widths="[200, 300, 600, 900]"
+                    sizes="(max-width: 1200px) 25vw,
+                           (max-width: 900px) 33.33vw,
+                           (max-width: 600px) 50vw,
+                           300px"
+                    :alt="'picture of ' + speaker.name" />
+
         <div class="speaker-card__caption">
           {{ speaker.name }}
         </div>
@@ -28,6 +36,7 @@
 
 <script>
 import ExpandedPreview from '../components/ExpandedPreview.vue'
+import SrcsetImg from '../components/SrcsetImg.vue'
 
 export default {
 
@@ -119,7 +128,8 @@ export default {
   },
 
   components: {
-    ExpandedPreview
+    ExpandedPreview,
+    SrcsetImg
   }
 }
 </script>
