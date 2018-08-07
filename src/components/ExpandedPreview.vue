@@ -13,7 +13,10 @@
           </template>
         </div>
         <div class="expanded-preview__content">
-          <h1 class="person__title">{{ speaker.name }}</h1>
+          <div class="expanded-preview__header">
+            <h1 class="person__title">{{ speaker.name }}</h1>
+            <a :href="speaker.url" class="expanded-preview__profile-link"> see profile...</a>
+          </div>
           <div class="xp-content">
 
             <markdown-renderer :markdown="speaker.description_markdown" />
