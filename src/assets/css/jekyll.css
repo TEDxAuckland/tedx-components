@@ -382,10 +382,11 @@ a {
   font-size: 12rem;
   font-weight: bold;
   line-height: 1;
-  margin: 0; }
+  margin: 0;
+  max-width: 90vw; }
   @media only screen and (max-width: 37.5em) {
     .section-heading {
-      font-size: 10rem; } }
+      font-size: 5rem; } }
   .section-heading--speakers {
     -webkit-transform: translate(-0.74em, 0.235em);
             transform: translate(-0.74em, 0.235em); }
@@ -1009,7 +1010,8 @@ nav h1 {
           filter: grayscale(100%);
   margin: 0;
   -webkit-transition: all 0.2s;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  cursor: pointer; }
   @media only screen and (max-width: 56.25em) {
     .speaker-card {
       width: 33.33%; } }
@@ -1132,6 +1134,11 @@ nav h1 {
     @media only screen and (max-width: 37.5em) {
       .expanded-preview__content {
         padding: 0 4rem; } }
+    .expanded-preview__content--full-width {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 70%;
+              flex: 0 1 70%;
+      margin: 0 auto; }
   .expanded-preview__social {
     display: -webkit-box;
     display: -ms-flexbox;
