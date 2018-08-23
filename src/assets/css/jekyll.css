@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+@import url("https://use.typekit.net/mse1gkz.css");
 /*
 0 - 600px:      Phone
 600 - 900px:    Tablet portrait
@@ -606,6 +607,94 @@ textarea {
   .about-social__facebook .fb-page {
     width: 500px; }
 
+.event-hero-2018 {
+  background-color: #fff;
+  color: #000;
+  font-family: "Filson Soft", "Montserrat", sans-serif; }
+  .event-hero-2018__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 160rem;
+    margin: 0 auto; }
+  .event-hero-2018__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    max-width: 74rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 7rem 3rem;
+    font-size: 3rem;
+    font-family: "Filson Soft", "Montserrat", sans-serif; }
+    @media only screen and (max-width: 50em) {
+      .event-hero-2018__content {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 100%;
+                flex: 0 1 100%;
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2; } }
+    @media only screen and (max-width: 25em) {
+      .event-hero-2018__content {
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 4rem 3rem; } }
+    .event-hero-2018__content span {
+      color: #ed3624;
+      font-weight: 600; }
+  .event-hero-2018__details {
+    margin: 3rem; }
+    @media only screen and (max-width: 62.5em) {
+      .event-hero-2018__details {
+        margin: 1rem 0; } }
+    @media only screen and (max-width: 50em) {
+      .event-hero-2018__details {
+        margin: 3rem 0; } }
+  .event-hero-2018__tagline {
+    color: #ed3624;
+    font-size: 3.6rem;
+    font-weight: 600; }
+  .event-hero-2018__logo, .event-hero-2018__shed-10 {
+    width: 100%; }
+    @media only screen and (max-width: 25em) {
+      .event-hero-2018__logo, .event-hero-2018__shed-10 {
+        margin-top: 1rem; } }
+  .event-hero-2018__img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 40%;
+            flex: 0 1 40%;
+    margin: 4rem 1rem 4rem auto; }
+    @media only screen and (max-width: 50em) {
+      .event-hero-2018__img {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 70%;
+                flex: 0 1 70%;
+        margin: 4rem auto; } }
+
+.animated-image {
+  width: 100%; }
+
+.off-piste__image {
+  width: 100%;
+  border-radius: 100%; }
+
 .thin-hero {
   background-size: cover;
   min-height: 25rem;
@@ -1139,6 +1228,11 @@ nav h1 {
           -ms-flex: 0 1 70%;
               flex: 0 1 70%;
       margin: 0 auto; }
+      @media only screen and (max-width: 46.875em) {
+        .expanded-preview__content--full-width {
+          -webkit-box-flex: 1;
+              -ms-flex: 1 0 100%;
+                  flex: 1 0 100%; } }
   .expanded-preview__social {
     display: -webkit-box;
     display: -ms-flexbox;

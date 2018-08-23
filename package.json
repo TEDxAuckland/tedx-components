@@ -15,6 +15,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "lodash": "^4.17.10",
     "marked": "^0.4.0",
     "vue": "^2.5.16"
   },
