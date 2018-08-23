@@ -1,21 +1,17 @@
 <template>
   <div id="app">
 
-    <div style="height: 50rem;">
-      sdfsd
-    </div>
+    <div style="height: 50rem;"></div>
 
     <AnimatedImage :images="imagePaths" />
 
-    <div style="height: 100rem;">
-      sdfsd
-    </div>
+    <div style="height: 100rem;"></div>
 
   </div>
 </template>
 
 <script>
-import AnimatedImage from './components/AnimatedImage.vue'
+import AnimatedImage from '@/components/AnimatedImage.vue'
 
 var imagePaths = [{
   "src": "/uploads/off-piste-anim-01.jpg",
