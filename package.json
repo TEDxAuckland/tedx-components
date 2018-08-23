@@ -3,21 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "import:people-json": "cp ../tedx-auckland-site/dist/site/people.json src/assets/json/people.json",
     "import:css": "cp ../tedx-auckland-site/dist/site/assets/css/main.css src/assets/css/jekyll.css",
     "import:assets": "npm-run-all import:people-json import:css",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "build:lib": "vue-cli-service build --target lib ./src/sections/index.js",
     "export:components": "cp dist/ted-x-components.umd.min.js ../tedx-auckland-site/src/assets/js/",
     "//": " && cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
-    "build-and-export": "npm-run-all build:lib export:components",
-    "lint": "vue-cli-service lint"
+    "build-and-export": "npm-run-all build:lib export:components"
   },
   "dependencies": {
     "lodash": "^4.17.10",
     "marked": "^0.4.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
