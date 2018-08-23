@@ -136,9 +136,4 @@ export default {
 
 <style lang="scss">
   @import '../assets/css/jekyll.css';
-
-  .speaker-card {
-    padding-top: 24.5%;
-  }
-
 </style>
