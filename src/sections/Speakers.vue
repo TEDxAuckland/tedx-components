@@ -5,13 +5,14 @@
 
       <div
         class="speaker-card"
-        :class="[{ 'speaker-card--active': activeIndex === index }, 'sp-' + speaker.id]"
+        :class="[{ 'speaker-card--active': activeIndex === index, 'speaker-card--bg-white': bgWhite }, 'sp-' + speaker.id]"
         :key="'sp-' + speaker.id"
         :ref="'speaker-cards'"
         @click="[toggleSpeaker(index), scrollToSpeaker()]"
         >
         <srcset-img :path="speaker.image"
                     class="speaker-card__image"
+                    :class="{'speaker-card__image--bg-white': bgWhite }"
                     :widths="[200, 300, 600, 900]"
                     sizes="(max-width: 1200px) 25vw,
                            (max-width: 900px) 33.33vw,
@@ -19,7 +20,10 @@
                            300px"
                     :alt="'picture of ' + speaker.name" />
 
-        <div class="speaker-card__caption">
+        <div
+          v-if="!hideNames"
+          class="speaker-card__caption"
+          >
           {{ speaker.name }}
         </div>
       </div>
@@ -27,6 +31,7 @@
       <expanded-preview
         v-if="index === expandingPreviewIndex && activeSpeaker"
         :key="'xp-' + speaker.id"
+        :bg-white="bgWhite"
         :speaker="activeSpeaker"
       />
     </template>
@@ -40,7 +45,12 @@ import SrcsetImg from '../components/SrcsetImg.vue'
 
 export default {
 
-  props: ['speakerNames', 'speakerJson'],
+  props: {
+    speakerNames: Array,
+    speakerJson: Object,
+    bgWhite: Boolean,
+    hideNames: Boolean
+  },
 
   data() {
     return {

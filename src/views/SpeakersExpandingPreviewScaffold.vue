@@ -1,11 +1,11 @@
 <template>
   <div id="app">
 
-    <section id="speakers" class="section-bg-swirl">
+    <section id="speakers" class="section-bg-white">
       <div class="container">
         <h3 class="section-heading section-heading--speakers">speakers</h3>
 
-        <Speakers :speaker-names="speakerNames" :speaker-json="speakerJson" />
+        <Speakers :speaker-names="speakerNames" :speaker-json="speakerJson" bg-white hide-names />
 
       </div>
     </section>
@@ -37,4 +37,7 @@ export default {
 </script>
 
 <style>
+  body: {
+    background-color: #fff !important;
+  }
 </style>

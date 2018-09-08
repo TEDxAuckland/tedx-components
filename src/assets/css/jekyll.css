@@ -1094,7 +1094,7 @@ nav h1 {
   position: relative;
   width: 25%;
   line-height: 0;
-  border: 1px solid #000;
+  border: 1px solid #131313;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   margin: 0;
@@ -1107,6 +1107,8 @@ nav h1 {
   @media only screen and (max-width: 37.5em) {
     .speaker-card {
       width: 50%; } }
+  .speaker-card--bg-white {
+    border: none; }
   .speaker-card__link {
     color: inherit; }
   .speaker-card:hover, .speaker-card--active {
@@ -1161,6 +1163,17 @@ nav h1 {
     left: 50%;
     background-color: #131313;
     border-top: 5px solid #ed3624; }
+    .expanded-preview__wrapper--bg-white {
+      background-color: #fff;
+      border-bottom: 1px solid #131313; }
+      .expanded-preview__wrapper--bg-white .social-block__icon svg,
+      .expanded-preview__wrapper--bg-white .social-block__link a {
+        fill: #131313;
+        color: #131313; }
+        .expanded-preview__wrapper--bg-white .social-block__icon svg:hover,
+        .expanded-preview__wrapper--bg-white .social-block__link a:hover {
+          fill: #ed3624;
+          color: #ed3624; }
   .expanded-preview__header {
     display: -webkit-box;
     display: -ms-flexbox;
