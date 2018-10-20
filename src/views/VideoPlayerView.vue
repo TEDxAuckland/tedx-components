@@ -6,15 +6,12 @@
     <div class="talk-card">
 					<div id="video-player" class="video">
 						<VideoPlayer :video-id="videoId" />
-					</div>
-			<a href="https://www.youtube.com/watch?v=YBqm7hTHCpg" class="talk-card__link">
+          </div>
+			<!-- <a href="https://www.youtube.com/watch?v=YBqm7hTHCpg" class="talk-card__link"> -->
 				<div class="talk-card__play-button">&nbsp;</div>
 				<img class="talk-card__image" src="https://i.ytimg.com/vi/YBqm7hTHCpg/mqdefault.jpg" alt=" video"/>
-			</a>
+			<!-- </a> -->
 		</div>
-
-    <VideoPlayer :videoId="videoId" />
-
   </div>
 </template>
 
@@ -35,6 +32,7 @@
     },
   }
   // https://www.youtube.com/watch?v=YBqm7hTHCpg
+  // https://www.youtube.com/embed/YBqm7hTHCpg?rel=0&amp;showinfo=0&amp;autoplay=1
 </script>
 
 <style>
