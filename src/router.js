@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import SpeakersExpandingPreviewScaffold from './views/SpeakersExpandingPreviewScaffold.vue'
 import AnimatedImageScaffold from './views/AnimatedImageScaffold.vue'
+import VideoPlayerView from './views/VideoPlayerView.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/animated-image',
       name: 'animatedImageScaffold',
       component: AnimatedImageScaffold
+    },
+    {
+      path: '/video-player-view',
+      name: 'videoPlayerView',
+      component: VideoPlayerView
     },
     {
       path: '/about',

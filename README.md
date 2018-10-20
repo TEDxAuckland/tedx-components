@@ -30,7 +30,7 @@ yarn run serve
 ```
 yarn run build:lib
 ```
-### Compile and export libray to tedx-auckkland-site
+### Compile and export libray to tedx-auckland-site
 ```
 yarn run build-and-export
 ```
