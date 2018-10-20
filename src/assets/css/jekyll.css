@@ -404,6 +404,14 @@ a {
       .section-heading--speakers {
         -webkit-transform: translateX(0.26em);
                 transform: translateX(0.26em); } }
+  .section-heading--blogs {
+    display: inline-block;
+    -webkit-transform: translateX(2.3em);
+            transform: translateX(2.3em); }
+    @media only screen and (max-width: 87.5em) {
+      .section-heading--blogs {
+        -webkit-transform: translateX(0.26em);
+                transform: translateX(0.26em); } }
   .section-heading--talks {
     -webkit-transform: translateX(-0.7em);
             transform: translateX(-0.7em); }
@@ -1810,6 +1818,9 @@ nav h1 {
   .event-info__bottom {
     color: #797979; }
 
+.people {
+  color: #000; }
+
 .homepage-hero {
   background-color: #fff; }
   @media only screen and (max-width: 37.5em) {
@@ -1939,6 +1950,22 @@ nav h1 {
   -webkit-transform: translateY(-25.2rem);
           transform: translateY(-25.2rem); }
   .news-card-container--archive {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+
+.blog-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .blog-card-container--archive {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
 
