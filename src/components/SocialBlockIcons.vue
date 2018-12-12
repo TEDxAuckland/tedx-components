@@ -4,14 +4,14 @@
 
     <ul class="social-block__icon-row">
 
-      <li v-if="person.twitter" class="social-block__icon">
-        <a :href="person.twitter" target="_blank">
+      <li v-if="person.twitter_url" class="social-block__icon">
+        <a :href="person.twitter_url" target="_blank">
           <social-icon :icon="'Twitter'" />
         </a>
       </li>
 
-      <li v-if="person.facebook" class="social-block__icon">
-        <a :href="person.facebook" target="_blank">
+      <li v-if="person.facebook_url" class="social-block__icon">
+        <a :href="person.facebook_url" target="_blank">
           <social-icon :icon="'Facebook'" />
         </a>
       </li>
@@ -28,8 +28,8 @@
         </a>
       </li>
 
-      <li v-if="person.instagram" class="social-block__icon">
-        <a :href="person.instagram" target="_blank">
+      <li v-if="person.instagram_url" class="social-block__icon">
+        <a :href="person.instagram_url" target="_blank">
           <social-icon :icon="'Instagram'" />
         </a>
       </li>
