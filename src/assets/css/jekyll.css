@@ -566,14 +566,21 @@ textarea {
   color: #ed3624; }
 .extended-mailchimp .label-btn {
   list-style-type: none;
-  padding-bottom: 15px; }
+  padding-bottom: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 21%;
+          flex: 1 0 21%; }
   .extended-mailchimp .label-btn label {
-    color: red;
+    color: #fff;
+    background-color: #ed3624;
     text-align: center;
     padding-right: 10px;
     display: block;
     cursor: pointer;
-    list-style-type: none; }
+    list-style-type: none;
+    border-radius: 25px;
+    padding: .7rem;
+    margin: .5rem; }
   .extended-mailchimp .label-btn input {
     margin: 4px;
     background-color: #EFEFEF;
@@ -585,13 +592,17 @@ textarea {
   .extended-mailchimp .label-btn :hover {
     color: red; }
   .extended-mailchimp .label-btn :checked + label {
-    color: black;
+    color: red;
+    background-color: #fff;
     font-weight: bold;
-    font-size: 1em; }
+    font-size: 1em;
+    border: 1px solid red; }
 .extended-mailchimp .input-button-group {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 .extended-mailchimp .input-form-field {
   display: block;
   padding: 15px;
@@ -647,6 +658,18 @@ textarea {
         -ms-flex-align: center;
             align-items: center;
     font-size: 2rem; }
+
+.youtube-video-embed {
+  position: relative;
+  padding-bottom: 50%;
+  padding-top: 2.5rem;
+  height: 0; }
+  .youtube-video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 .about-container {
   display: -webkit-box;
@@ -955,6 +978,14 @@ textarea {
 .nav-bar {
   background-color: #fff;
   padding: 20px 0; }
+  .nav-bar__hamburger-icon {
+    display: none;
+    font-size: 2.7em;
+    line-height: 0; }
+    @media only screen and (max-width: 37.5em) {
+      .nav-bar__hamburger-icon {
+        float: right;
+        display: block; } }
   .nav-bar__container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1037,6 +1068,11 @@ textarea {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 100%; }
+  @media only screen and (max-width: 37.5em) {
+    .nav-links {
+      display: none; }
+      .nav-links.show-mobile-nav {
+        display: inline; } }
 
 .nav-link {
   display: -webkit-box;
@@ -1047,12 +1083,21 @@ textarea {
           align-items: center;
   -webkit-transition: all 0.2s;
   transition: all 0.2s; }
+  @media only screen and (max-width: 37.5em) {
+    .nav-link {
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      padding: 1em; } }
   .nav-link__text {
     display: block;
     text-transform: uppercase;
     line-height: 1.8rem;
     font-weight: bold;
     color: #000; }
+    @media only screen and (max-width: 37.5em) {
+      .nav-link__text {
+        display: inline-block;
+        font-size: 2em; } }
     .nav-link__text--sub {
       color: #999999;
       font-size: 1.4rem; }
@@ -1480,17 +1525,19 @@ nav h1 {
   color: #000;
   font-family: "Source Code Pro", monospace;
   border: 1px solid #000;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 33.33%;
-          flex: 1 1 33.33%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33%;
+          flex: 0 1 33%;
   z-index: 100;
+  background-color: #131313;
+  margin: 0 .1rem .5rem .1rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s; }
   @media only screen and (max-width: 56.25em) {
     .talk-card {
-      -webkit-box-flex: 1;
-          -ms-flex: 1 1 46%;
-              flex: 1 1 46%;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 46%;
+              flex: 0 1 46%;
       margin: 0 2%; } }
   @media only screen and (max-width: 37.5em) {
     .talk-card {
@@ -1501,11 +1548,12 @@ nav h1 {
   .talk-card__link {
     color: inherit; }
   .talk-card__play-button {
+    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     width: 5.4rem;
     height: 5.4rem;
     position: absolute;
-    top: 16.7rem;
+    top: 20.5rem;
     left: 0.9rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1527,7 +1575,7 @@ nav h1 {
       -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
               clip-path: polygon(0 0, 100% 50%, 0 100%); }
   .talk-card__image {
-    height: 22.5rem;
+    height: 26.7rem;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
@@ -1557,7 +1605,8 @@ nav h1 {
     font-weight: bold;
     line-height: 1.2em;
     height: 2.4em;
-    padding-right: 1.5em; }
+    padding-right: 1.5em;
+    color: #fff; }
 
 .overlay-video {
   display: none;
@@ -2125,6 +2174,8 @@ nav h1 {
 
 .person-content {
   font-weight: 500; }
+  .person-content p {
+    margin-bottom: 2rem; }
   @media only screen and (max-width: 37.5em) {
     .person-content {
       background-color: white;
@@ -2184,6 +2235,111 @@ nav h1 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 3.6rem; }
+
+.talk-header {
+  padding: 3rem 0;
+  border-top: 1px dashed #000;
+  color: #000;
+  background-size: cover; }
+  .talk-header__container {
+    max-width: 1800px;
+    padding-left: 3rem;
+    margin: 2rem auto 3rem auto; }
+    @media only screen and (max-width: 37.5em) {
+      .talk-header__container {
+        margin: 1rem auto; } }
+  .talk-header__heading, .talk-header__title {
+    font-weight: bold;
+    line-height: 1;
+    margin: 0; }
+  .talk-header__heading {
+    font-size: 8rem;
+    margin-bottom: 1rem; }
+    @media only screen and (max-width: 37.5em) {
+      .talk-header__heading {
+        font-size: 3rem; } }
+  .talk-header__title {
+    font-size: 12rem; }
+    @media only screen and (max-width: 87.5em) {
+      .talk-header__title {
+        font-size: 10rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .talk-header__title {
+        font-size: 5rem; } }
+
+.talk-video-section {
+  background-color: #131313;
+  padding-bottom: 0; }
+
+.talk__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3rem 0; }
+
+.talk-info {
+  background-color: #232323;
+  padding: 0;
+  min-height: unset; }
+  .talk-info__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .talk-info__item {
+    font-weight: 800;
+    margin: 1.5rem 0rem 1.5rem 0.5rem;
+    padding: .2rem 0 .2rem 2rem;
+    text-transform: uppercase;
+    -webkit-transition: all 200ms;
+    transition: all 200ms; }
+    .talk-info__item::before {
+      content: ">";
+      margin-right: 0.3rem; }
+    .talk-info__item a {
+      color: #fff; }
+    .talk-info__item:hover {
+      -webkit-transform-origin: bottom left;
+              transform-origin: bottom left;
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+      color: #ed3624; }
+      .talk-info__item:hover a {
+        color: #ed3624; }
+  .talk-info__item:first-child {
+    margin-left: 0; }
+
+.talk-description {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 70%;
+          flex: 0 1 70%;
+  padding-right: 6rem; }
+  .talk-description__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+  .talk-description__paragraph p {
+    margin-bottom: 2rem; }
+
+.presenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%; }
+  .presenter__title {
+    margin: 1rem 0; }
+  .presenter__image {
+    width: 100%; }
+
+.talk-page__image {
+  width: 100%; }
 
 .hero__talks {
   background-position: top; }
