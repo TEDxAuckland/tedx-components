@@ -13,6 +13,11 @@
         :key="'vc-' + video.id"
       />
 
+      <expanded-preview
+        v-if="index === expandingPreviewIndex && activeCard"
+        :key="'xp-' + video.id"
+        :speaker="activeCard"
+      />
     </template>
 
   </div>
@@ -20,27 +25,33 @@
 
 <script>
 import VideoCard from './VideoCard'
+import SrcsetImg from '../components/SrcsetImg'
 
 export default {
 
   props: {
-    videoNames: Array,
+    playlistId: String,
+    playlistJson: Object,
     videosCollection: Array,
     videosJson: Object,
     people: Array
   },
 
-  data() {
-    return {
-      collectionVideos: this.videosCollection.filter(video => this.videoNames.includes(video.id)),
-      activeIndex: "",
-      containerWidth: "",
-      cardWidth: ""
+  computed: {
+    playlist() {
+      return this.playlistJson[this.playlistId]
+    },
+    videoIds() {
+      return Object.values(this.playlist).map( item => item.video_id)
+    },
+    collectionVideos() {
+      return this.videosCollection.filter(video => this.videoIds.includes(video.youtubeVideoId))
     }
   },
 
   components: {
-    VideoCard
+    VideoCard,
+    SrcsetImg
   }
 }
 </script>
