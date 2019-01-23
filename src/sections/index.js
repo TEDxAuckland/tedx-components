@@ -1,10 +1,12 @@
-import Vue from 'vue';
-import Speakers from './Speakers.vue';
-import AnimatedImage from '../components/AnimatedImage.vue';
+import Vue from 'vue'
+import Speakers from './Speakers'
+import AnimatedImage from '../components/AnimatedImage'
+import VideosList from './VideosList'
 
 const Components = {
   Speakers,
   AnimatedImage,
+  VideosList,
 };
 
 Object.keys(Components).forEach(name => {

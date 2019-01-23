@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import SpeakersExpandingPreviewScaffold from './views/SpeakersExpandingPreviewScaffold.vue'
-import AnimatedImageScaffold from './views/AnimatedImageScaffold.vue'
+import SpeakersExpandingPreviewScaffold from './views/SpeakersExpandingPreviewScaffold'
+import VideosListScaffold from './views/VideosListScaffold'
+import AnimatedImageScaffold from './views/AnimatedImageScaffold'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/speakers-expanding-preview',
       name: 'speakerExpandingPreview',
       component: SpeakersExpandingPreviewScaffold
+    },
+    {
+      path: '/videos-list',
+      name: 'videosList',
+      component: VideosListScaffold
     },
     {
       path: '/animated-image',
