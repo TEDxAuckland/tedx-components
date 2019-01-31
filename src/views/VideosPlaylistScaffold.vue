@@ -7,6 +7,10 @@
 
         <VideosPlaylist
           :playlistId="playlistId"
+          :playlistJson="playlistJson"
+          :videosCollection="videosCollection"
+          :videosJson="videosJson"
+          :people="peopleJson"
         />
 
       </div>
@@ -18,6 +22,11 @@
 <script>
 import VideosPlaylist from '@/sections/VideosPlaylist'
 
+import videosCollection from '@/assets/json/videos.json'
+import videosJson from '@/assets/json/youtube_video_data.json'
+import playlistJson from '@/assets/json/youtube_playlist_data.json'
+import peopleJson from '@/assets/json/people.json'
+
 var playlistId = "PLcm2pIIAwlDutXJI4AWeUPpEmBZCIF2ry"
 
 export default {
@@ -25,6 +34,10 @@ export default {
   data() {
     return {
       playlistId,
+      videosCollection,
+      videosJson,
+      playlistJson,
+      peopleJson
     }
   },
   components: {
