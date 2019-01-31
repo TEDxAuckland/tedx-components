@@ -9,7 +9,7 @@
       <div
         v-if="video.images !== null"
         class="talk-card__image-container">
-        <div class="talk-card__play-button">&nbsp;</div>
+        <div :data-url="videoURL" class="talk-card__play-button">&nbsp;</div>
           <srcset-img
                       :path="video.images[0].image"
                       class="talk-card__image"
@@ -25,7 +25,7 @@
       <div
         v-else
         class="talk-card__image-container">
-        <div class="talk-card__play-button">&nbsp;</div>
+        <div :data-url="videoURL" class="talk-card__play-button">&nbsp;</div>
         <img class="talk-card__image"
              :src="youtubeVideo.thumbnail_url.medium"
              :srcset="`${youtubeVideo.thumbnail_url.medium} 320w,
@@ -72,6 +72,9 @@ export default {
     person() {
       return this.people.find( person => person.youtube_video_id == this.video.youtubeVideoId )
     },
+    videoURL() {
+      return `https://www.youtube.com/embed/${this.youtubeVideo.id}?rel=0&amp;showinfo=0&amp;autoplay=1`
+    }
   },
 
   components: {
