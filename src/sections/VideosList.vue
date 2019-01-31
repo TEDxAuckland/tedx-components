@@ -1,14 +1,13 @@
 <template>
   <div class="talk-container" ref="container">
 
-    <template v-for="(video, index) in collectionVideos">
+    <template v-for="video in collectionVideos">
 
       <VideoCard
         class="talk-card"
         :video="video"
         :youtube-data="videosJson"
         :people="people"
-        :active="activeIndex === index"
         :ref="'cards'"
         :key="'vc-' + video.id"
       />
@@ -20,22 +19,41 @@
 
 <script>
 import VideoCard from '@/components/VideoCard'
+import axios from 'axios'
 
 export default {
 
   props: {
     videoNames: Array,
-    videosCollection: Array,
-    videosJson: Object,
-    people: Array
+  },
+
+  created() {
+    let self = this
+    axios.get('/youtube_video_data.json')
+      .then(function(res) {
+        self.videosJson = res.data
+      })
+    axios.get('/people.json')
+      .then(function(res) {
+        self.people = res.data
+      })
+    axios.get('/videos.json')
+      .then(function(res) {
+        self.videosCollection = res.data
+      })
   },
 
   data() {
     return {
-      collectionVideos: this.videosCollection.filter(video => this.videoNames.includes(video.id)),
-      activeIndex: "",
-      containerWidth: "",
-      cardWidth: ""
+      videosJson: {},
+      people: [],
+      videosCollection: []
+    }
+  },
+
+  computed: {
+    collectionVideos() {
+      return this.videosCollection.filter(video => this.videoNames.includes(video.id))
     }
   },
 

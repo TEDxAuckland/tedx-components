@@ -7,9 +7,6 @@
 
         <VideosList
           :videoNames="videoNames"
-          :videosCollection="videosCollection"
-          :videosJson="videosJson"
-          :people="peopleJson"
         />
 
       </div>
@@ -21,15 +18,10 @@
 <script>
 import VideosList from '@/sections/VideosList'
 
-import videosCollection from '@/assets/json/videos.json'
-import videosJson from '@/assets/json/youtube_video_data.json'
-import playlistJson from '@/assets/json/youtube_playlist_data.json'
-import peopleJson from '@/assets/json/people.json'
-
 var videoNames = [
   'from-suicidal-to-hopeful,-how-i-learnt-to-fight',
   'ihumātao',
-  'the-narrative-origins-of-spaceflight', 
+  'the-narrative-origins-of-spaceflight',
   'food-for-thought--tedxauckland-2018',
   'the-luckiest-boy-in-the-world',
   'the-hip-op-eration-crew',
@@ -43,10 +35,6 @@ export default {
   data() {
     return {
       videoNames,
-      videosCollection,
-      videosJson,
-      playlistJson,
-      peopleJson
     }
   },
   components: {

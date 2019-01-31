@@ -26,7 +26,8 @@
         v-else
         class="talk-card__image-container">
         <div :data-url="videoURL" class="talk-card__play-button">&nbsp;</div>
-        <img class="talk-card__image"
+        <img v-if="youtubeVideo"
+             class="talk-card__image"
              :src="youtubeVideo.thumbnail_url.medium"
              :srcset="`${youtubeVideo.thumbnail_url.medium} 320w,
                        ${youtubeVideo.thumbnail_url.high} 480w,
@@ -73,7 +74,11 @@ export default {
       return this.people.find( person => person.youtube_video_id == this.video.youtubeVideoId )
     },
     videoURL() {
-      return `https://www.youtube.com/embed/${this.youtubeVideo.id}?rel=0&amp;showinfo=0&amp;autoplay=1`
+      if (this.youtubeVideo) {
+        return `https://www.youtube.com/embed/${this.youtubeVideo.id}?rel=0&amp;showinfo=0&amp;autoplay=1`
+      } else {
+        return ''
+      }
     }
   },
 
