@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import VideoCard from './VideoCard'
+import VideoCard from '@/components/VideoCard'
 
 export default {
 

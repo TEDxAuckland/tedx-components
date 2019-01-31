@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import VideoCard from './VideoCard'
+import VideoCard from '@/components/VideoCard'
 import SrcsetImg from '../components/SrcsetImg'
 
 export default {

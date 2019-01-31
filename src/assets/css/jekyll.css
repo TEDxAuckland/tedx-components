@@ -1551,17 +1551,18 @@ nav h1 {
       -webkit-box-flex: 1;
           -ms-flex: 1 1 100%;
               flex: 1 1 100%;
-      margin: 2rem 10%; } }
+      margin: 1rem 1rem 0 1rem; } }
   .talk-card__link {
     color: inherit; }
   .talk-card__play-button {
     cursor: pointer;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.5);
     width: 5.4rem;
     height: 5.4rem;
     position: absolute;
-    top: 20.5rem;
-    left: 0.9rem;
+    bottom: 1rem;
+    left: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1581,14 +1582,20 @@ nav h1 {
       margin-right: .8rem;
       -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
               clip-path: polygon(0 0, 100% 50%, 0 100%); }
+  .talk-card__image-container {
+    height: 0;
+    overflow: hidden;
+    padding-top: 66.7%;
+    position: relative;
+    margin-bottom: 1rem; }
   .talk-card__image {
-    height: 26.7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
-    @media only screen and (max-width: 56.25em) {
-      .talk-card__image {
-        height: 34.7rem; } }
   .talk-card:hover {
     -webkit-transform: translateY(-0.4rem);
             transform: translateY(-0.4rem); }
@@ -1599,7 +1606,6 @@ nav h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 2.5em;
   margin-top: 0.2em;
   margin-bottom: 1.7rem;
   -webkit-transition: all 0.4s;
@@ -1615,7 +1621,6 @@ nav h1 {
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 1.4em;
-    height: 2.4em;
     padding-right: 1.5em;
     color: #fff; }
 
@@ -2395,27 +2400,20 @@ nav h1 {
   color: #000;
   background-size: cover; }
   .talk-header__container {
-    max-width: 1800px;
+    max-width: 1600px;
     padding-left: 3rem;
     margin: 2rem auto 3rem auto; }
     @media only screen and (max-width: 37.5em) {
       .talk-header__container {
         margin: 1rem auto; } }
-  .talk-header__heading, .talk-header__title {
+  .talk-header__title {
     font-weight: bold;
     line-height: 1;
-    margin: 0; }
-  .talk-header__heading {
-    font-size: 8rem;
-    margin-bottom: 1rem; }
-    @media only screen and (max-width: 37.5em) {
-      .talk-header__heading {
-        font-size: 3rem; } }
-  .talk-header__title {
-    font-size: 12rem; }
+    margin: 0;
+    font-size: 10rem; }
     @media only screen and (max-width: 87.5em) {
       .talk-header__title {
-        font-size: 10rem; } }
+        font-size: 8rem; } }
     @media only screen and (max-width: 37.5em) {
       .talk-header__title {
         font-size: 5rem; } }

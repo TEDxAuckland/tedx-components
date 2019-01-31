@@ -678,6 +678,13 @@
     "highlight": "false",
     "youtubeVideoId": "uwyDU9_Wpi8","images": null,"relatedPosts": null},
   {
+    "id": "the-four-day-week",
+    "url": "/talks/the-four-day-week/",
+    "title": "The Four-Day Week",
+    "performance": "false",
+    "highlight": "false",
+    "youtubeVideoId": "xjgqCgoxElw","images": [{"image":"/uploads/andrew-barnes-talk-2.jpg"}],"relatedPosts": null},
+  {
     "id": "the-future-of-museums-in-a-big-data-world",
     "url": "/talks/the-future-of-museums-in-a-big-data-world/",
     "title": "The future of museums in a big data world",
@@ -818,6 +825,13 @@
     "highlight": "false",
     "youtubeVideoId": "yiAWXlAXBzQ","images": [{"image":"/uploads/chris-pemberton_talk_2.jpg"},{"image":"/uploads/chris-pemberton_talk_1.jpg"}],"relatedPosts": null},
   {
+    "id": "unreality-why-are-we-chasing-an-unachievable-idea-of-perfection",
+    "url": "/talks/unreality-why-are-we-chasing-an-unachievable-idea-of-perfection/",
+    "title": "Unreality: Why are we chasing an unachievable idea of perfection",
+    "performance": "false",
+    "highlight": "false",
+    "youtubeVideoId": "ujQAvQteeZY","images": [{"image":"/uploads/jess-quinn-talk-1.jpg"}],"relatedPosts": null},
+  {
     "id": "using-spare-hands-to-make-a-difference",
     "url": "/talks/using-spare-hands-to-make-a-difference/",
     "title": "Using spare hands to make a difference",
@@ -876,7 +890,7 @@
   {
     "id": "whānau",
     "url": "/talks/wh%C4%81nau/",
-    "title": "Whānau",
+    "title": "Whānau: building a bridge from performer to audience",
     "performance": "false",
     "highlight": "false",
     "youtubeVideoId": "cQO3kPM3YRE","images": null,"relatedPosts": null},
