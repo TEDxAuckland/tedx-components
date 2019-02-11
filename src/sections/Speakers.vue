@@ -47,7 +47,7 @@ export default {
 
   props: {
     speakerNames: Array,
-    speakerJson: Object,
+    speakerJson: Array,
     bgWhite: Boolean,
     hideNames: Boolean
   },
