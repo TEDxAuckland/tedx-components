@@ -5,7 +5,7 @@
       <div class="container">
         <h3 class="section-heading section-heading--speakers">videos</h3>
 
-        <VideosList :videoNames="videoNames" />
+        <Videos :videoNames="videoNames" />
 
       </div>
     </section>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import VideosList from '@/sections/VideosList'
+import Videos from '@/sections/Videos'
 
 var videoNames = [
   'from-suicidal-to-hopeful,-how-i-learnt-to-fight',
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    VideosList,
+    Videos,
   }
 }
 

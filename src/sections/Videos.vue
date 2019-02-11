@@ -3,20 +3,23 @@
 
     <template v-for="(video, index) in collectionVideos">
 
-      <VideoCard
+      <VideoCardExp
         class="talk-card"
         :video="video"
         :youtube-data="videosJson"
         :people="people"
         :active="activeIndex === index"
-        :ref="'cards'"
         :key="'vc-' + video.id"
+        @card-clicked="[toggleCard(index), scrollToCard()]"
+        @card-mounted="setCardWidth"
       />
 
-      <expanded-preview
+      <ExpandedPreviewVideo
         v-if="index === expandingPreviewIndex && activeCard"
         :key="'xp-' + video.id"
-        :speaker="activeCard"
+        :video="activeCard"
+        :youtube-data="videosJson"
+        :people="people"
       />
     </template>
 
@@ -24,22 +27,39 @@
 </template>
 
 <script>
-import VideoCard from './VideoCard'
-import ExpandedPreview from '../components/ExpandedPreview'
-import SrcsetImg from '../components/SrcsetImg'
+import VideoCardExp from '@/components/VideoCardExp'
+import ExpandedPreviewVideo from '@/components/ExpandedPreviewVideo'
+import SrcsetImg from '@/components/SrcsetImg'
+import axios from 'axios'
 
 export default {
 
   props: {
     videoNames: Array,
-    videosCollection: Array,
-    videosJson: Object,
-    people: Array
+  },
+
+  created() {
+    let self = this
+    axios.get('/youtube_video_data.json')
+      .then(function(res) {
+        self.videosJson = res.data
+      })
+    axios.get('/people.json')
+      .then(function(res) {
+        self.people = res.data
+      })
+    axios.get('/videos.json')
+      .then(function(res) {
+        self.videosCollection = res.data
+      })
   },
 
   data() {
     return {
-      collectionVideos: this.videosCollection.filter(video => this.videoNames.includes(video.id)),
+      videosJson: {},
+      people: [],
+      videosCollection: [],
+
       activeIndex: "",
       containerWidth: "",
       cardWidth: ""
@@ -47,7 +67,7 @@ export default {
   },
 
   mounted() {
-    this.handleResize()
+    this.containerWidth = this.$el.offsetWidth
     window.addEventListener('resize', this.handleResize)
   },
 
@@ -56,6 +76,10 @@ export default {
   },
 
   computed: {
+    collectionVideos() {
+      return this.videosCollection.filter(video => this.videoNames.includes(video.id))
+    },
+
     columns() {
       return Math.round(this.containerWidth / this.cardWidth)
     },
@@ -87,18 +111,10 @@ export default {
       this.setCardWidth()
     },
     setContainerWidth() {
-      if (this.$refs["container"]) {
-        this.containerWidth = this.$refs["container"].offsetWidth
-      } else {
-        this.containerWidth = 0
-      }
+      this.containerWidth = this.$el.offsetWidth
     },
     setCardWidth() {
-      if (this.$refs["cards"]) {
-        this.cardWidth = this.$refs["cards"][0].offsetWidth
-      } else {
-        this.cardWidth = 0
-      }
+      this.cardWidth = this.$children[0].$el.offsetWidth
     },
     toggleCard(index) {
       if (this.activeIndex === index) {
@@ -110,7 +126,7 @@ export default {
     scrollToCard() {
       this.$nextTick(() => {
         if (this.activeIndex) {
-          let elementClass =  `.sp-${this.activeCard.id}`
+          let elementClass =  `.vd-${this.activeCard.id}`
           let speaker = this.$el.querySelector(elementClass)
           let scrollY = speaker.offsetTop - 50
           window.scrollTo({
@@ -123,8 +139,8 @@ export default {
   },
 
   components: {
-    VideoCard,
-    ExpandedPreview,
+    VideoCardExp,
+    ExpandedPreviewVideo,
     SrcsetImg
   }
 }

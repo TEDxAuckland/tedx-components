@@ -1,57 +1,50 @@
 <template>
-  <div class="talk-container" ref="container">
-
-    <template v-for="(video, index) in collectionVideos">
-
-      <VideoCard
-        class="talk-card"
-        :video="video"
-        :youtube-data="videosJson"
-        :people="people"
-        :active="activeIndex === index"
-        :ref="'cards'"
-        :key="'vc-' + video.id"
-      />
-
-      <expanded-preview
-        v-if="index === expandingPreviewIndex && activeCard"
-        :key="'xp-' + video.id"
-        :speaker="activeCard"
-      />
-    </template>
-
-  </div>
+  <Videos :videoNames="videoNames" />
 </template>
 
 <script>
-import VideoCard from '@/components/VideoCard'
-import SrcsetImg from '../components/SrcsetImg'
+import Videos from '@/sections/Videos'
+import axios from 'axios'
 
 export default {
 
   props: {
     playlistId: String,
-    playlistJson: Object,
-    videosCollection: Array,
-    videosJson: Object,
-    people: Array
+  },
+
+  data() {
+    return {
+      videosCollection: [],
+      playlist: []
+    }
+  },
+
+  created() {
+    let self = this
+    axios.get('/youtube_playlist_data.json')
+      .then(function(res) {
+        self.playlist = res.data[self.playlistId]
+      })
+    axios.get('/videos.json')
+      .then(function(res) {
+        self.videosCollection = res.data
+      })
   },
 
   computed: {
-    playlist() {
-      return this.playlistJson[this.playlistId]
-    },
     videoIds() {
       return Object.values(this.playlist).map( item => item.video_id)
     },
     collectionVideos() {
       return this.videosCollection.filter(video => this.videoIds.includes(video.youtubeVideoId))
+    },
+    videoNames() {
+      return this.collectionVideos.map( video => video.id )
     }
   },
 
   components: {
-    VideoCard,
-    SrcsetImg
+    Videos
   }
 }
 </script>
