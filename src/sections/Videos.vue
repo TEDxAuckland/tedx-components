@@ -89,7 +89,13 @@ export default {
 
   computed: {
     collectionVideos() {
-      return this.videosCollectionData.filter(video => this.videoNames.includes(video.id))
+      return this.videosCollectionData.filter( video => {
+        let videoData = this.videoNames.includes(video.id)
+        if (videoData) {
+          video["position"] = this.videoNames.indexOf(video.id)
+        }
+        return videoData
+      }).sort( (a, b) => a.position - b.position )
     },
 
     columns() {

@@ -31,7 +31,9 @@ export default {
       return Object.values(this.playlist).map( item => item.video_id)
     },
     collectionVideos() {
-      return this.videosCollection.filter(video => this.videoIds.includes(video.youtubeVideoId))
+      return this.videosCollection.filter( video =>
+        this.videoIds.includes(video.youtubeVideoId)
+      ).sort( (a, b) => a.position - b.position )
     },
     videoNames() {
       return this.collectionVideos.map( video => video.id )
