@@ -1,5 +1,4 @@
 <template>
-
   <div
     :class="[{ 'video-card--active': active }, 'vd-' + video.id]"
     @click="$emit('card-clicked')"
@@ -44,6 +43,11 @@
       <div class="caption">
         <h4 class="caption__title">{{ video.title }}: <template v-if="person">{{ person.name }}</template></h4>
       </div>
+    </div>
+    <div
+      v-if="active"
+      class="talk-card__active-arrow">
+      &nbsp;
     </div>
   </div>
 

@@ -5,8 +5,6 @@
 
         <div v-if="video.youtubeVideoId" class="talks-expanded-preview__video-column">
 
-          <!-- <h1 class="talks-expanded-preview__video-title" >{{ video.title }}</h1> -->
-
           <template v-if="video.youtubeVideoId">
             <div class="talks-expanded-preview__iframe-wrapper">
               <iframe
@@ -17,8 +15,6 @@
               </iframe>
             </div>
           </template>
-
-          <!-- <h2>{{ person.name }}</h2> -->
         </div>
 
         <div
