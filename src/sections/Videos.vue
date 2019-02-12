@@ -6,8 +6,8 @@
       <VideoCardExp
         class="talk-card"
         :video="video"
-        :youtube-data="videosJson"
-        :people="people"
+        :youtube-data="videosJsonData"
+        :people="peopleData"
         :active="activeIndex === index"
         :key="'vc-' + video.id"
         @card-clicked="[toggleCard(index), scrollToCard()]"
@@ -18,8 +18,8 @@
         v-if="index === expandingPreviewIndex && activeCard"
         :key="'xp-' + video.id"
         :video="activeCard"
-        :youtube-data="videosJson"
-        :people="people"
+        :youtube-data="videosJsonData"
+        :people="peopleData"
       />
     </template>
 
@@ -36,29 +36,41 @@ export default {
 
   props: {
     videoNames: Array,
+    videosJson: Object,
+    videosCollection: Array,
+    people: Array,
   },
 
   created() {
     let self = this
-    axios.get('/youtube_video_data.json')
+
+    if (!this.videosJson) {
+      axios.get('/youtube_video_data.json')
       .then(function(res) {
-        self.videosJson = res.data
+        self.videosJsonData = res.data
       })
-    axios.get('/people.json')
+    }
+
+    if (!this.videosCollection) {
+      axios.get('/videos.json')
       .then(function(res) {
-        self.people = res.data
+        self.videosCollectionData = res.data
       })
-    axios.get('/videos.json')
+    }
+
+    if (!this.people) {
+      axios.get('/people.json')
       .then(function(res) {
-        self.videosCollection = res.data
+        self.peopleData = res.data
       })
+    }
   },
 
   data() {
     return {
-      videosJson: {},
-      people: [],
-      videosCollection: [],
+      videosJsonData: this.videosJson ? this.videosJson : {},
+      videosCollectionData: this.videosCollection ? this.videosCollection : [],
+      peopleData: this.people ? this.people :[],
 
       activeIndex: "",
       containerWidth: "",
@@ -77,7 +89,7 @@ export default {
 
   computed: {
     collectionVideos() {
-      return this.videosCollection.filter(video => this.videoNames.includes(video.id))
+      return this.videosCollectionData.filter(video => this.videoNames.includes(video.id))
     },
 
     columns() {

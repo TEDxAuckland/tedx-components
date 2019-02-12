@@ -8,8 +8,8 @@
         <VideosPlaylist
           :playlistId="playlistId"
           :playlistJson="playlistJson"
-          :videosCollection="videosCollection"
           :videosJson="videosJson"
+          :videosCollection="videosCollection"
           :people="peopleJson"
         />
 

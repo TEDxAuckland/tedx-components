@@ -1,34 +1,29 @@
 <template>
-  <Videos :videoNames="videoNames" />
+  <Videos
+    :videoNames="videoNames"
+    :videosJson="videosJson"
+    :videosCollection="videosCollection"
+    :people="people"
+  />
 </template>
 
 <script>
 import Videos from '@/sections/Videos'
-import axios from 'axios'
 
 export default {
 
   props: {
     playlistId: String,
+    playlistJson: Object,
+    videosJson: Object,
+    videosCollection: Array,
+    people: Array
   },
 
   data() {
     return {
-      videosCollection: [],
-      playlist: []
+      playlist: this.playlistJson[this.playlistId]
     }
-  },
-
-  created() {
-    let self = this
-    axios.get('/youtube_playlist_data.json')
-      .then(function(res) {
-        self.playlist = res.data[self.playlistId]
-      })
-    axios.get('/videos.json')
-      .then(function(res) {
-        self.videosCollection = res.data
-      })
   },
 
   computed: {
