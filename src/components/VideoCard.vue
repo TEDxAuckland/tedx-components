@@ -13,7 +13,7 @@
           <srcset-img
                       :path="video.images[0].image"
                       class="talk-card__image"
-                      :widths="[200, 300, 600, 900]"
+                      :widths="[200, 300, 600, 900, 1200]"
                       sizes="(max-width: 1200px) 33.33vw,
                              (max-width: 900px) 50vw,
                              (max-width: 600px) 100vw,
