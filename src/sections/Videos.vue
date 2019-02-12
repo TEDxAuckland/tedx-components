@@ -3,7 +3,7 @@
 
     <template v-for="(video, index) in collectionVideos">
 
-      <VideoCardExp
+      <VideoCard
         class="talk-card"
         :video="video"
         :youtube-data="videosJsonData"
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import VideoCardExp from '@/components/VideoCardExp'
+import VideoCard from '@/components/VideoCard'
 import ExpandedPreviewVideo from '@/components/ExpandedPreviewVideo'
 import SrcsetImg from '@/components/SrcsetImg'
 import axios from 'axios'
@@ -151,7 +151,7 @@ export default {
   },
 
   components: {
-    VideoCardExp,
+    VideoCard,
     ExpandedPreviewVideo,
     SrcsetImg
   }

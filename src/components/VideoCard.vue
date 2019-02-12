@@ -2,14 +2,14 @@
 
   <div
     :class="[{ 'video-card--active': active }, 'vd-' + video.id]"
-    @click="[toggleCard(index), scrollToCard()]"
+    @click="$emit('card-clicked')"
     >
     <div class="talk-card__link">
 
       <div
         v-if="video.images !== null"
         class="talk-card__image-container">
-        <div :data-url="videoURL" class="talk-card__play-button">&nbsp;</div>
+        <div class="talk-card__play-button">&nbsp;</div>
           <srcset-img
                       :path="video.images[0].image"
                       class="talk-card__image"
@@ -25,7 +25,7 @@
       <div
         v-else
         class="talk-card__image-container">
-        <div :data-url="videoURL" class="talk-card__play-button">&nbsp;</div>
+        <div class="talk-card__play-button">&nbsp;</div>
         <img v-if="youtubeVideo"
              class="talk-card__image"
              :src="youtubeVideo.thumbnail_url.medium"
@@ -41,9 +41,9 @@
       </div>
 
 
-      <a :href="video.url" class="caption">
+      <div class="caption">
         <h4 class="caption__title">{{ video.title }}: <template v-if="person">{{ person.name }}</template></h4>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -58,12 +58,16 @@ export default {
     active: Boolean,
     video: Object,
     youtubeData: Object,
-    people: Array
+    people: Array,
   },
 
   data() {
     return {
     }
+  },
+
+  mounted() {
+    this.$emit("card-mounted")
   },
 
   computed: {
