@@ -18,10 +18,10 @@ export default {
   computed: {
 
     paths() {
-      return this.widths.map( w => {
-        let path = this.path.split(".")
-        path.splice(-1, 0, `-${w}.`)
-        return path.join("").replace("/uploads/", "/assets/resized/")
+      return this.widths.map( widths => {
+        let head = this.path.split(".")
+        let tail = head.pop()
+        return `${ head.join(".") }-${ widths }.${ tail }`.replace("/uploads/", "/assets/resized/")
       })
     },
 

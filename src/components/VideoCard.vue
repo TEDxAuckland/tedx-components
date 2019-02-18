@@ -28,10 +28,7 @@
         <img v-if="youtubeVideo"
              class="talk-card__image"
              :src="youtubeVideo.thumbnail_url.medium"
-             :srcset="`${youtubeVideo.thumbnail_url.medium} 320w,
-                       ${youtubeVideo.thumbnail_url.high} 480w,
-                       ${youtubeVideo.thumbnail_url.standard} 640w,
-                       ${youtubeVideo.thumbnail_url.maxres} 1280w`"
+             :srcset="youtubeVideoSrcset"
              sizes="(max-width: 1200px) 33.33vw,
                     (max-width: 900px) 50vw,
                     (max-width: 600px) 100vw,
@@ -77,6 +74,11 @@ export default {
   computed: {
     youtubeVideo() {
       return this.youtubeData[this.video.youtubeVideoId]
+    },
+    youtubeVideoSrcset() {
+      let widths = ["120w", "320w", "480w", "640w", "1280w"]
+      let urls = Object.values(this.youtubeVideo.thumbnail_url).filter( n => n)
+      return urls.map( (url, index) => `${url} ${widths[index]}` ).join(", ")
     },
     person() {
       return this.people.find( person => person.youtube_video_id == this.video.youtubeVideoId )

@@ -22,6 +22,8 @@ var videoNames = [
   'the-narrative-origins-of-spaceflight',
   'food-for-thought--tedxauckland-2018',
   'the-luckiest-boy-in-the-world',
+  'know-your-country',
+  'zombie-attack',
   'the-hip-op-eration-crew',
   'tedxauckland-2016-foodstory',
   'find-a-cause-worth-dying-for',
