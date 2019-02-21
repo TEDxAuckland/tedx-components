@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900");
 @import url("https://use.typekit.net/mse1gkz.css");
 /*
 0 - 600px:      Phone
@@ -339,14 +339,22 @@ body {
   margin: 0;
   padding: 0;
   background: #fff;
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
+  color: #131313;
+  font-family: "Poppins", sans-serif;
   line-height: 1.75;
   scroll-behavior: smooth; }
 
 a {
   color: #ed3624;
   text-decoration: inherit; }
+
+a:active, a:focus {
+  outline: 0;
+  border: none; }
+
+p {
+  text-align: justify;
+  margin-bottom: 1rem; }
 
 .container {
   font-size: 1.6rem;
@@ -360,7 +368,8 @@ a {
   max-width: 800px; }
 
 .section-bg-grey {
-  background-color: #131313; }
+  background-color: #131313;
+  color: #fff; }
 
 .section-bg-grey-lighter {
   background-color: #f9f9f9;
@@ -384,75 +393,15 @@ a {
   margin: 0 auto;
   max-width: 500px; }
 
-.section-bg-swirl {
-  background: url("/assets/images/bg-swirl.png");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 4rem; }
-  @media only screen and (max-width: 75em) {
-    .section-bg-swirl {
-      margin-top: 0; } }
-
 .section-heading {
-  font-size: 12rem;
-  font-weight: bold;
+  font-size: 8rem;
+  font-weight: 400;
   line-height: 1;
   margin: 0;
   max-width: 90vw; }
   @media only screen and (max-width: 37.5em) {
     .section-heading {
       font-size: 5rem; } }
-  .section-heading--speakers {
-    -webkit-transform: translateX(-0.5em);
-            transform: translateX(-0.5em); }
-    @media only screen and (max-width: 87.5em) {
-      .section-heading--speakers {
-        -webkit-transform: translateX(0.26em);
-                transform: translateX(0.26em); } }
-  .section-heading--blogs {
-    display: inline-block;
-    -webkit-transform: translateX(2.3em);
-            transform: translateX(2.3em); }
-    @media only screen and (max-width: 87.5em) {
-      .section-heading--blogs {
-        -webkit-transform: translateX(0.26em);
-                transform: translateX(0.26em); } }
-  .section-heading--talks {
-    -webkit-transform: translateX(-0.5em);
-            transform: translateX(-0.5em); }
-    @media only screen and (max-width: 87.5em) {
-      .section-heading--talks {
-        -webkit-transform: translateX(0.3em);
-                transform: translateX(0.3em); } }
-  .section-heading--partners {
-    -webkit-transform: translateX(-0.5em);
-            transform: translateX(-0.5em);
-    margin-bottom: 1.8rem; }
-    @media only screen and (max-width: 87.5em) {
-      .section-heading--partners {
-        -webkit-transform: translateX(0.3em);
-                transform: translateX(0.3em); } }
-  .section-heading--vendors {
-    -webkit-transform: translateX(-0.5em);
-            transform: translateX(-0.5em); }
-    @media only screen and (max-width: 87.5em) {
-      .section-heading--vendors {
-        -webkit-transform: translateX(0.3em);
-                transform: translateX(0.3em); } }
-  .section-heading--flickr {
-    -webkit-transform: translateX(-0.5em);
-            transform: translateX(-0.5em); }
-    @media only screen and (max-width: 87.5em) {
-      .section-heading--flickr {
-        -webkit-transform: translateX(0.3em);
-                transform: translateX(0.3em); } }
-  .section-heading--post {
-    font-size: 7.2rem;
-    margin: 1rem 1rem 3rem 1rem; }
-    @media only screen and (max-width: 37.5em) {
-      .section-heading--post {
-        font-size: 5.2rem; } }
   .section-heading--dark {
     color: #131313; }
 
@@ -465,20 +414,6 @@ section {
   section h3 {
     font-size: 5rem;
     margin: 0 0 10px 0; }
-  section .overhang-heading {
-    position: relative;
-    line-height: 1;
-    margin-top: 0; }
-    section .overhang-heading.overhang-heading-effect-only {
-      margin-top: 160px; }
-    section .overhang-heading .overhang-heading-background {
-      height: 80%;
-      display: block;
-      position: absolute;
-      bottom: 100%;
-      overflow: hidden; }
-    section .overhang-heading .overhang-heading-foreground:after {
-      content: "\00a0"; }
 
 h4 {
   font-size: 1.6rem;
@@ -486,13 +421,6 @@ h4 {
 
 .has-red-stripe {
   border-bottom: 4px solid #ed3624; }
-
-.date-badge {
-  background: #ed3624;
-  display: inline-block;
-  padding: 10px 20px;
-  font-weight: bold;
-  margin: 0; }
 
 strong {
   color: #ed3624;
@@ -740,7 +668,7 @@ textarea {
   position: relative;
   background-color: inherit;
   color: #000;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   height: auto;
   margin-bottom: 1.8rem;
   padding: 1.8rem;
@@ -1162,7 +1090,7 @@ nav h1 {
   position: relative;
   background-color: inherit;
   color: #000;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   height: auto;
   margin-bottom: 1.8rem;
   padding: 1.8rem;
@@ -1406,7 +1334,7 @@ nav h1 {
             transform: translate(-50%);
     left: 50%;
     background-color: #131313;
-    border-top: 5px solid #ed3624;
+    border-top: 3px solid #ed3624;
     color: #fff; }
     .expanded-preview__wrapper--bg-white {
       background-color: #fff;
@@ -1623,15 +1551,11 @@ nav h1 {
 .talk-card {
   cursor: pointer;
   position: relative;
-  background-color: #fff;
-  color: #000;
-  font-family: "Montserrat", sans-serif;
-  border: 1px solid #000;
+  font-family: "Poppins", sans-serif;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33%;
           flex: 0 1 33%;
   z-index: 100;
-  background-color: #131313;
   margin: 0 .1rem .5rem .1rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s; }
@@ -1697,7 +1621,7 @@ nav h1 {
     -webkit-transform: translateX(-5rem);
             transform: translateX(-5rem);
     left: 50%;
-    bottom: -4rem;
+    bottom: -5.7rem;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
             clip-path: polygon(0% 0%, 100% 0%, 50% 100%); }
   .talk-card:hover {
@@ -1712,21 +1636,20 @@ nav h1 {
   display: flex;
   margin-top: 0.2em;
   margin-bottom: 1.7rem;
+  padding-left: 0.7rem;
   -webkit-transition: all 0.4s;
   transition: all 0.4s; }
   .caption::before {
-    content: "";
     display: block;
     border-left: 3px solid #ed3624;
     height: 2em;
     margin: -0.2em 0.5em 0.1em 0.5em; }
   .caption__title {
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 700;
     line-height: 1.4em;
-    padding-right: 1.5em;
-    color: #fff; }
+    padding-right: 1.5em; }
 
 .event-bar {
   background-color: #fff; }
@@ -2156,26 +2079,13 @@ nav h1 {
   .news-card-container--archive {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
-
-.blog-card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch; }
-  .blog-card-container--archive {
+  .news-card-container--homepage {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
 
 .news-card {
   position: relative;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #000;
   background-color: #fff;
   width: 31.33%;
@@ -2332,6 +2242,14 @@ nav h1 {
       .post-hero__text {
         padding: 0 4rem;
         margin: 3rem 0 2rem 0; } }
+  .post-hero__title {
+    font-size: 7.2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 1rem 1rem 3rem 1rem; }
+    @media only screen and (max-width: 37.5em) {
+      .post-hero__title {
+        font-size: 5.2rem; } }
   .post-hero__image {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
@@ -2592,7 +2510,7 @@ nav h1 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin: 4rem; }
+  margin: 4rem 0; }
   @media only screen and (max-width: 37.5em) {
     .talks-filter {
       -ms-flex-wrap: wrap;
@@ -2602,7 +2520,8 @@ nav h1 {
     font-size: 7.2rem;
     line-height: 1;
     padding-right: 5.4rem;
-    margin-bottom: 3.5rem; }
+    margin-bottom: 3.5rem;
+    font-weight: 400; }
     @media only screen and (max-width: 37.5em) {
       .talks-filter__title {
         margin: 0;

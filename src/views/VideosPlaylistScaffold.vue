@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <section class="section-bg-white">
+    <section>
       <div class="container">
         <h3 class="section-heading section-heading--speakers">videos</h3>
 

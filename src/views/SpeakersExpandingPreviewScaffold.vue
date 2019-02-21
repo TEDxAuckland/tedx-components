@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <section id="speakers" class="section-bg-white">
+    <section id="speakers">
       <div class="container">
         <h3 class="section-heading section-heading--speakers">speakers</h3>
 

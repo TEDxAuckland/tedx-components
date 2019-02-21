@@ -38,7 +38,7 @@
 
 
       <div class="caption">
-        <h4 class="caption__title">{{ video.title }}: <template v-if="person">{{ person.name }}</template></h4>
+        <h4 class="caption__title">{{ video.title }} <template v-if="person"> | {{ person.name }}</template></h4>
       </div>
     </div>
     <div
