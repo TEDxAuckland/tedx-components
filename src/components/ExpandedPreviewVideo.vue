@@ -24,6 +24,7 @@
           <div class="talks-expanded-preview__header">
             <h1 class="person__title">{{ video.title }}</h1>
             <a :href="video.url" class="talks-expanded-preview__profile-link"> more info...</a>
+            <a :href="`https://www.youtube.com/watch?v=${video.youtubeVideoId}`" target="_blank" class="talks-expanded-preview__profile-link"> Watch on YouTube</a>
           </div>
           <div class="content">
 
