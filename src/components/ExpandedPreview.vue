@@ -20,7 +20,7 @@
             <h1 class="person__title">{{ speaker.name }}</h1>
             <a :href="speaker.url" class="expanded-preview__profile-link"> see profile...</a>
           </div>
-          <div class="xp-content">
+          <div class="content">
 
             <markdown-renderer :markdown="speaker.description_markdown" />
           </div>

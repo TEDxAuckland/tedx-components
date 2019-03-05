@@ -1,5 +1,5 @@
 <template>
-  <div class="xp-content" v-html="parsedMarkdown"></div>
+  <div class="content" v-html="parsedMarkdown"></div>
 </template>
 
 <script>

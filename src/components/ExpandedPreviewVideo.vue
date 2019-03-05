@@ -25,7 +25,7 @@
             <h1 class="person__title">{{ video.title }}</h1>
             <a :href="video.url" class="talks-expanded-preview__profile-link"> more info...</a>
           </div>
-          <div class="xp-content">
+          <div class="content">
 
             <markdown-renderer :markdown="video.content" />
           </div>
