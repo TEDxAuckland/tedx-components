@@ -34,6 +34,11 @@
         </a>
       </li>
 
+      <li v-if="person.linkedin_url" class="social-block__icon">
+        <a :href="person.linkedin_url" target="_blank">
+          <social-icon :icon="'LinkedIn'" />
+        </a>
+      </li>
     </ul>
   </ul>
 
