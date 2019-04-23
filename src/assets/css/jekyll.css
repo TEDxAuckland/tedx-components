@@ -429,7 +429,6 @@ a:active, a:focus {
   border: none; }
 
 p {
-  text-align: justify;
   margin-bottom: 1rem; }
 
 .container {
@@ -1833,28 +1832,44 @@ nav h1 {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden; }
+  .event-hero__may {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .event-hero__img {
     width: 100%; }
+
+.may-banner {
+  width: 70%;
+  margin: 20rem -5rem 10rem auto; }
+  .may-banner__tedx {
+    width: 40rem; }
+  .may-banner__text {
+    margin: 3rem 0;
+    font-weight: 600; }
+  .may-banner__vodafone {
+    width: 9rem; }
 
 .event-info__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  @media only screen and (max-width: 75em) {
-    .event-info__container {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center; } }
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 .event-info__content {
   padding: 0 3.6rem 3.6rem 3.6rem;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #000;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%; }
+  -webkit-box-flex: .65;
+      -ms-flex: .65 1 50%;
+          flex: .65 1 50%; }
   @media only screen and (max-width: 75em) {
     .event-info__content {
       -webkit-box-flex: 1;
@@ -1863,28 +1878,159 @@ nav h1 {
   @media only screen and (max-width: 37.5em) {
     .event-info__content {
       padding: 1rem 2.6rem; } }
-  .event-info__content h1, .event-info__content h2, .event-info__content h3, .event-info__content h4, .event-info__content h5 {
-    line-height: 1.2;
-    margin: 1em 0; }
-  .event-info__content h1 {
-    font-size: 3.5rem; }
-  .event-info__content h2 {
-    font-size: 2.5rem; }
-  .event-info__content h3 {
-    font-size: 2rem; }
-  .event-info__content h4 {
-    font-size: 1.6rem; }
-  .event-info__content h5 {
-    font-size: 1.6rem; }
-  .event-info__content img {
-    width: 100%;
-    height: auto;
-    margin: 3rem 0;
-    padding: 0 3rem; }
+.event-info__button {
+  float: right; }
+.event-info__iticket {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
+  margin-left: 2rem; }
+  @media only screen and (max-width: 75em) {
+    .event-info__iticket {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 80%;
+              flex: 0 1 80%;
+      margin: 2rem 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .event-info__iticket {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 100%;
+              flex: 0 1 100%; } }
+  .event-info__iticket-title {
+    margin: 0;
+    background: white;
+    color: black;
+    text-align: center;
+    line-height: 2.5; }
+    @media only screen and (max-width: 75em) {
+      .event-info__iticket-title {
+        text-align: left;
+        padding-left: 2rem; } }
+
+.schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  padding-top: 4rem; }
+  @media only screen and (max-width: 37.5em) {
+    .schedule {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+  .schedule__announcer {
+    padding-bottom: 1%; }
+  .schedule__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 35%;
+            flex: 0 1 35%; }
     @media only screen and (max-width: 37.5em) {
-      .event-info__content img {
-        margin: 2rem 0;
-        padding: 0; } }
+      .schedule__column {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 80%;
+                flex: 0 0 80%; } }
+  .schedule h4 {
+    font-size: 2.2rem;
+    -webkit-text-decoration-color: #ed3624;
+            text-decoration-color: #ed3624; }
+  .schedule__row {
+    font-size: 2rem;
+    list-style: none;
+    -webkit-transition: all 200ms;
+    transition: all 200ms; }
+    .schedule__row:hover .schedule__link::after {
+      width: 100%; }
+  .schedule__map-image {
+    width: 100%; }
+  .schedule__link {
+    display: inline-block; }
+    .schedule__link::after {
+      content: '';
+      width: 0px;
+      height: 2px;
+      display: block;
+      background: #ed3624;
+      -webkit-transition: 300ms;
+      transition: 300ms; }
+
+.flickr_gallery {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; }
+
+.see-more-images {
+  padding-top: 3%;
+  color: #ea212d; }
+
+.flickr-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.event-hero {
+  padding: 0;
+  background: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden; }
+  .event-hero__may {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .event-hero__img {
+    width: 100%; }
+
+.may-banner {
+  width: 70%;
+  margin: 20rem -5rem 10rem auto; }
+  .may-banner__tedx {
+    width: 40rem; }
+  .may-banner__text {
+    margin: 3rem 0;
+    font-weight: 600; }
+  .may-banner__vodafone {
+    width: 9rem; }
+
+.event-info__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+.event-info__content {
+  padding: 0 3.6rem 3.6rem 3.6rem;
+  -webkit-box-flex: .65;
+      -ms-flex: .65 1 50%;
+          flex: .65 1 50%; }
+  @media only screen and (max-width: 75em) {
+    .event-info__content {
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 100%;
+              flex: 1 0 100%; } }
+  @media only screen and (max-width: 37.5em) {
+    .event-info__content {
+      padding: 1rem 2.6rem; } }
+.event-info__button {
+  float: right; }
 .event-info__iticket {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 40%;
