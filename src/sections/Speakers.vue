@@ -10,7 +10,7 @@
         :ref="'speaker-cards'"
         @click="[toggleSpeaker(index), scrollToSpeaker()]"
         >
-        <srcset-img :path="speaker.image"
+        <srcset-img :path="speaker.image ? speaker.image : defaultImageUrl "
                     class="speaker-card__image"
                     :class="{'speaker-card__image--bg-white': bgWhite }"
                     :widths="[200, 300, 600, 900]"
@@ -49,7 +49,8 @@ export default {
     speakerNames: Array,
     speakerJson: Array,
     bgWhite: Boolean,
-    hideNames: Boolean
+    hideNames: Boolean,
+    defaultImageUrl: String
   },
 
   data() {

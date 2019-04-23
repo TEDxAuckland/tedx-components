@@ -5,7 +5,12 @@
       <div class="container">
         <h3 class="section-heading section-heading--speakers">speakers</h3>
 
-        <Speakers :speaker-names="speakerNames" :speaker-json="speakerJson" bg-white hide-names />
+        <Speakers
+          :speaker-names="speakerNames"
+          :speaker-json="speakerJson"
+          :default-image-url="'/uploads/default-speaker-photo.jpg'"
+          bg-white
+          hide-names />
 
       </div>
     </section>
