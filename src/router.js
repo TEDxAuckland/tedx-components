@@ -4,6 +4,7 @@ import SpeakersExpandingPreviewScaffold from './views/SpeakersExpandingPreviewSc
 import VideosPlaylistScaffold from './views/VideosPlaylistScaffold'
 import VideosExpandingPreviewScaffold from './views/VideosExpandingPreviewScaffold'
 import AnimatedImageScaffold from './views/AnimatedImageScaffold'
+import CarouselScaffold from './views/CarouselScaffold'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/animated-image',
       name: 'animatedImageScaffold',
       component: AnimatedImageScaffold
+    },
+    {
+      path: '/carousel',
+      name: 'carouselScaffold',
+      component: CarouselScaffold
     },
   ]
 })

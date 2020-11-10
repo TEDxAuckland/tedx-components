@@ -15,11 +15,13 @@
     "import:assets": "npm-run-all import:people-json import:people-public-json import:videos-json import:youtube-json import:playlist-json import:css",
     "build:lib": "vue-cli-service build --target lib ./src/sections/index.js",
     "export:components": "cp dist/ted-x-components.umd.min.js ../tedx-auckland-site/src/assets/js/",
+    "export:hoopercss": "cp node_modules/hooper/dist/hooper.css ../tedx-auckland-site/src/assets/css/",
     "//": " && cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
     "build-and-export": "npm-run-all build:lib export:components"
   },
   "dependencies": {
     "axios": "^0.18.1",
+    "hooper": "^0.3.4",
     "lodash": "^4.17.19",
     "marked": "^1.1.1",
     "vue": "^2.6.11",
