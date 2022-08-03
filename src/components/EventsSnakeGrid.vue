@@ -1,5 +1,16 @@
 <template>
+
   <div class="events-snake-grid">
+      <canvas
+        ref="canvas" 
+        v-width="cellSize * columns + gap * (columns - 1)"
+        v-height="cellSize * template.areas.length + gap * (template.areas.length - 1)"
+        :style="{
+          'position': 'absolute',
+          'z-index': -1,
+        }"
+      ></canvas>
+
     <div :style="{ 
       'grid-template-areas': template.areas.join(' '),
       'display': 'grid',
