@@ -1,13 +1,11 @@
 <template>
-  <div class="carousel">
-    snake grid goes here
-    <!-- <pre class="content" v-html="template.areas.join(' ')"></pre> -->
+  <div class="events-snake-grid">
     <div :style="{ 
       'grid-template-areas': template.areas.join(' '),
       'display': 'grid',
-      'grid-auto-columns': 100 + 'px',
-      'grid-auto-rows': 100 + 'px',
-      'gap': 20 + 'px'
+      'grid-auto-columns': cellSize + 'px',
+      'grid-auto-rows': cellSize + 'px',
+      'gap': gap + 'px'
     }">
     
       <div v-for="item in items" :key="item.id" :style="{
@@ -16,29 +14,16 @@
       }">
         {{ item.id }}
       </div>
-
     </div>
-
   </div>
 </template>
 
 <script>
-// import {
-//   Hooper,
-//   Slide,
-//   Navigation as HooperNavigation,
-//   Pagination as HooperPagination
-// } from 'hooper'
-// import 'hooper/dist/hooper.css'
-import {getGridTemplate} from './eventsSnakeGrid'
+import { getGridTemplate } from './eventsSnakeGrid'
 
 export default {
   name: "carousel",
   components: {
-    // Hooper,
-    // Slide,
-    // HooperNavigation,
-    // HooperPagination
   },
   props: {
     items: {
@@ -47,11 +32,14 @@ export default {
   },
   data() {
     return {
+      cellSize: 100,
+      columns: 4,
+      gap: 10
     }
   },
   computed: {
     template() {
-      return getGridTemplate(4, this.items)
+      return getGridTemplate(this.columns, this.items)
     }
   },
   methods: {},
