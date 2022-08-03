@@ -2,7 +2,7 @@
   <div id="app">
 
   <section>
-    <EventsSnakeGrid />
+    <EventsSnakeGrid :items="items" />
   </section>
 
   </div>
@@ -10,6 +10,24 @@
 
 <script>
 import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
+
+const defaultItems = [
+  { id: 1, title: "1", isBig: true },
+  { id: 2, title: "2", isBig: false },
+  { id: 3, title: "3", isBig: false },
+  { id: 4, title: "4", isBig: false },
+  { id: 5, title: "5", isBig: false },
+  { id: 6, title: "6", isBig: true },
+  { id: 7, title: "7", isBig: false },
+  { id: 8, title: "8", isBig: false },
+  { id: 9, title: "9", isBig: false },
+  { id: 10, title: "10", isBig: false },
+  { id: 11, title: "11", isBig: false },
+  { id: 12, title: "12", isBig: false },
+  { id: 13, title: "13", isBig: true },
+  { id: 14, title: "14", isBig: false },
+  { id: 15, title: "15", isBig: false },
+];
 
 export default {
   name: 'app',
@@ -20,6 +38,7 @@ export default {
 
   data() {
     return {
+      items: defaultItems,
       baseUrl: process.env.BASE_URL
     }
   },
