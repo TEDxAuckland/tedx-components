@@ -2,7 +2,10 @@
   <div id="app">
 
   <section>
-    <EventsSnakeGrid :items="items" />
+    <button @click="isShown = !isShown">Toggle</button>
+    <div v-if="isShown">
+      <EventsSnakeGrid :items="items" />
+    </div>
   </section>
 
   </div>
@@ -39,7 +42,8 @@ export default {
   data() {
     return {
       items: defaultItems,
-      baseUrl: process.env.BASE_URL
+      baseUrl: process.env.BASE_URL,
+      isShown: true,
     }
   },
 
