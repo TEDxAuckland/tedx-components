@@ -1,15 +1,13 @@
 <template>
-
   <div class="events-snake-grid">
-      <canvas
-        ref="canvas" 
-        :width="cellSize * columns + gap * (columns - 1)"
-        :height="cellSize * template.areas.length + gap * (template.areas.length - 1)"
-        :style="{
-          'position': 'absolute',
-        }"
-      ></canvas>
-
+    <canvas
+      ref="canvas" 
+      :width="cellSize * columns + gap * (columns - 1)"
+      :height="cellSize * template.areas.length + gap * (template.areas.length - 1)"
+      :style="{
+        'position': 'absolute',
+      }"
+    ></canvas>
     <div :style="{ 
       'display': 'grid',
       'position': 'relative',
@@ -18,7 +16,6 @@
       'grid-auto-rows': cellSize + 'px',
       'gap': gap + 'px',
     }">
-    
       <div v-for="item in items" :key="item.id" :style="{
         'grid-area': `item-${item.id}`,
         'background-color': 'grey'
@@ -38,8 +35,7 @@ export default {
   },
   mounted() {
     const canvas = this.$refs.canvas
-    const {cellSize, columns, gap} = this
-    const lineColor = '#000'
+    const {cellSize, columns, gap, lineColor} = this
     const history = this.template.history
     drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
     console.log('mounted canvas')
@@ -58,7 +54,8 @@ export default {
     return {
       cellSize: 100,
       columns: 4,
-      gap: 10
+      gap: 10,
+      lineColor: '#000',
     }
   },
   computed: {
