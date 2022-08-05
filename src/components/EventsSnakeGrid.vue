@@ -11,11 +11,12 @@
       ></canvas>
 
     <div :style="{ 
-      'grid-template-areas': template.areas.join(' '),
       'display': 'grid',
+      'position': 'relative',
+      'grid-template-areas': template.areas.join(' '),
       'grid-auto-columns': cellSize + 'px',
       'grid-auto-rows': cellSize + 'px',
-      'gap': gap + 'px'
+      'gap': gap + 'px',
     }">
     
       <div v-for="item in items" :key="item.id" :style="{
