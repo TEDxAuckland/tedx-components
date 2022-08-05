@@ -1,5 +1,5 @@
 <template>
-  <div class="events-snake-grid">
+  <div class="events-snake-grid__container">
     <canvas
       ref="canvas" 
       :width="cellSize * columns + gap * (columns - 1)"
@@ -8,18 +8,25 @@
         'position': 'absolute',
       }"
     ></canvas>
-    <div :style="{ 
-      'display': 'grid',
-      'position': 'relative',
-      'grid-template-areas': template.areas.join(' '),
-      'grid-auto-columns': cellSize + 'px',
-      'grid-auto-rows': cellSize + 'px',
-      'gap': gap + 'px',
-    }">
-      <div v-for="item in items" :key="item.id" :style="{
-        'grid-area': `item-${item.id}`,
-        'background-color': 'grey'
-      }">
+    <div
+      class="events-snake-grid__grid" 
+      :style="{ 
+        'display': 'grid',
+        'position': 'relative',
+        'grid-template-areas': template.areas.join(' '),
+        'grid-auto-columns': cellSize + 'px',
+        'grid-auto-rows': cellSize + 'px',
+        'gap': gap + 'px',
+      }"
+    >
+      <div 
+        :class="item.isBig ? 'events-snake-grid__item events-snake-grid__item--big' : 'events-snake-grid__item'" 
+        v-for="item in items" 
+        :key="item.id" 
+        :style="{
+          'grid-area': `item-${item.id}`
+        }"
+      >
         {{ item.id }}
       </div>
     </div>
@@ -68,4 +75,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.events-snake-grid__grid {
+  color: black;
+}
+.events-snake-grid__item {
+  background-color: lightGrey;
+}
+.events-snake-grid__item--big {
+  background-color: grey;
+}
 </style>
