@@ -55,14 +55,26 @@ export default {
   props: {
     items: {
       type: Array,
-    }
+    },
+    cellSize: {
+      type: Number,
+      default: 100,
+    },
+    columns: {
+      type: Number,
+      default: 4,
+    },
+    gap: {
+      type: Number,
+      default: 10,
+    },
+    lineColor: {
+      type: String,
+      default: '#000',
+    },
   },
   data() {
     return {
-      cellSize: 100,
-      columns: 4,
-      gap: 10,
-      lineColor: '#000',
     }
   },
   computed: {
