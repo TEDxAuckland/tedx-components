@@ -43,10 +43,10 @@ export default {
     drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
     console.log('mounted canvas')
   },
-  beforeUnmount() {
+  beforeDestroy() {
     const canvas = this.$refs.canvas
     clearCanvasSnake({ canvas });
-    console.log('bye')
+    console.log('cleared canvas')
   },
   props: {
     items: {
