@@ -3,11 +3,10 @@
   <div class="events-snake-grid">
       <canvas
         ref="canvas" 
-        v-width="cellSize * columns + gap * (columns - 1)"
-        v-height="cellSize * template.areas.length + gap * (template.areas.length - 1)"
+        :width="cellSize * columns + gap * (columns - 1)"
+        :height="cellSize * template.areas.length + gap * (template.areas.length - 1)"
         :style="{
           'position': 'absolute',
-          'z-index': -1,
         }"
       ></canvas>
 
@@ -30,11 +29,24 @@
 </template>
 
 <script>
-import { getGridTemplate } from './eventsSnakeGrid'
+import { getGridTemplate, clearCanvasSnake, drawCanvasSnake } from './eventsSnakeGrid'
 
 export default {
   name: "carousel",
   components: {
+  },
+  mounted() {
+    const canvas = this.$refs.canvas
+    const {cellSize, columns, gap} = this
+    const lineColor = '#000'
+    const history = this.template.history
+    drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
+    console.log('mounted canvas')
+  },
+  beforeUnmount() {
+    const canvas = this.$refs.canvas
+    clearCanvasSnake({ canvas });
+    console.log('bye')
   },
   props: {
     items: {
