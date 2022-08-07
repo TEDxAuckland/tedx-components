@@ -1,5 +1,5 @@
 <template>
-  <div class="event-item__container event-item__container--big">
+  <div class="event-card__container event-card__container--big">
     <h1>BIG EVENT ID: <span v-html="item.id"></span></h1>
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 // TODO: rename to event card big
 export default {
-  name: 'event-item-big',
+  name: 'event-card-big',
 
   components: {
   },
