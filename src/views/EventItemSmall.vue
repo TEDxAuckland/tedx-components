@@ -5,8 +5,9 @@
 </template>
 
 <script>
+// TODO: rename to event card small
 export default {
-  name: 'event-item-big',
+  name: 'event-item-small',
 
   components: {
   },
