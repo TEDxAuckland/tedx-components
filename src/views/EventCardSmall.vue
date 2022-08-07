@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// TODO: rename to event card small
 export default {
   name: 'event-card-small',
 
