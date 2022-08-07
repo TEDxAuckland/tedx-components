@@ -27,7 +27,7 @@
           'grid-area': `item-${item.id}`
         }"
       >
-        {{ item.id }}
+        <slot :item="item"></slot>
       </div>
     </div>
   </div>

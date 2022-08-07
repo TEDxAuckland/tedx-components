@@ -4,7 +4,13 @@
   <section>
     <button @click="isShown = !isShown">Toggle</button>
     <div v-if="isShown">
-      <EventsSnakeGrid :items="items" lineColor="#ed3624" />
+      <EventsSnakeGrid
+        :items="items"
+        lineColor="#ed3624"
+        v-slot="{ item }"
+      >
+        <div v-html="item" style="color: green"></div>
+      </EventsSnakeGrid>
     </div>
   </section>
 
