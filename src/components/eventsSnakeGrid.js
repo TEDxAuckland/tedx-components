@@ -1,3 +1,4 @@
+const CIRCUIT_BREAKER_ITERATIONS = 5;
 
 function invertDirection(dir) {
   return dir === "right" ? "left" : "right";
@@ -18,8 +19,14 @@ function findEmptyCell(
   const columns = grid[0].length;
   let { column, row, direction, history } = snakeProgress;
 
+  let iterations = 0;
   // calculating next step
   do {
+    iterations++;
+    if (iterations > CIRCUIT_BREAKER_ITERATIONS) {
+      throw new Error("Could not find empty cell");
+    }
+
     let nextColumn = column;
     let nextRow = row;
     let nextDirection = direction;
@@ -84,7 +91,6 @@ function findEmptyCell(
     commitStep();
     break; // found empty cell - stop
   } while (true);
-  // TODO: add circuit breaker
 
   return {
     column,
@@ -99,25 +105,32 @@ function fillBigItem(
   snakeProgress,
   item
 ) {
-  const directionSign = snakeProgress.direction === "right" ? 1 : -1;
+  function directionSign() {
+    return snakeProgress.direction === "right" ? 1 : -1;
+  }
 
   // if the adjacent cell is not empty, keep looking
+  let iterations = 0;
   while (
-    grid[snakeProgress.row][snakeProgress.column + directionSign] !== null
+    grid[snakeProgress.row][snakeProgress.column + directionSign()] !== null
   ) {
-    // TODO: add circuit breaker
+    iterations++;
+    if (iterations > CIRCUIT_BREAKER_ITERATIONS) {
+      throw new Error("Could not find empty cell");
+    }
+
     snakeProgress = findEmptyCell(grid, snakeProgress);
   }
 
   // fill the 4 cells
   grid[snakeProgress.row][snakeProgress.column] = item.id;
-  grid[snakeProgress.row][snakeProgress.column + directionSign] = item.id;
+  grid[snakeProgress.row][snakeProgress.column + directionSign()] = item.id;
   grid[snakeProgress.row + 1][snakeProgress.column] = item.id;
-  grid[snakeProgress.row + 1][snakeProgress.column + directionSign] = item.id;
+  grid[snakeProgress.row + 1][snakeProgress.column + directionSign()] = item.id;
 
   return {
     ...snakeProgress,
-    column: snakeProgress.column + directionSign,
+    column: snakeProgress.column + directionSign(),
     history: [...snakeProgress.history, snakeProgress.direction],
   };
 }
