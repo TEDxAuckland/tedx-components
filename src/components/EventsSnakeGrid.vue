@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { getAreas, generateGridHybrid, clearCanvasSnake, drawCanvasSnake } from './eventsSnakeGrid'
+import { getAreas, generateGridHybrid, clearCanvasSnake, drawCanvasSnake } from './snakeGrid'
 
 export default {
   name: "carousel",

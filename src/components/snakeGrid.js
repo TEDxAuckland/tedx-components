@@ -41,6 +41,7 @@ function findEmptyCell(
     }
 
     // snake goes forward
+    // separate out into a method
     if (nextDirection === "right") {
       nextColumn++;
       nextSnake.push("right");
@@ -82,6 +83,7 @@ function findEmptyCell(
 
       commitStep();
       if (grid[row][column] !== null) {
+        // TODO: not sure if this ever hits
         continue;
       } else {
         break; // found empty cell - stop
