@@ -5,6 +5,8 @@ import Carousel from '../components/Carousel'
 import Videos from './Videos'
 import VideosPlaylist from './VideosPlaylist'
 import EventsSnakeGrid from '../components/EventsSnakeGrid'
+import EventCardBig from '../components/EventCardBig'
+import EventCardSmall from '../components/EventCardSmall'
 
 const Components = {
   Speakers,
@@ -13,6 +15,8 @@ const Components = {
   Videos,
   VideosPlaylist,
   EventsSnakeGrid,
+  EventCardBig,
+  EventCardSmall
 };
 
 Object.keys(Components).forEach(name => {
