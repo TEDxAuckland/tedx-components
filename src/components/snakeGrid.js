@@ -41,7 +41,7 @@ function findEmptyCell(
     }
 
     // snake goes forward
-    // separate out into a method
+    // TODO: separate out into a method
     if (nextDirection === "right") {
       nextColumn++;
       nextSnake.push("right");
