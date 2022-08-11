@@ -45,12 +45,10 @@ export default {
     const {cellSize, columns, gap, lineColor} = this
     const history = this.template.history
     drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
-    // console.log('mounted canvas')
   },
   beforeDestroy() {
     const canvas = this.$refs.canvas
     clearCanvasSnake({ canvas });
-    // console.log('cleared canvas')
   },
   props: {
     items: {
