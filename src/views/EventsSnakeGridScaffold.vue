@@ -9,8 +9,7 @@
         lineColor="#ed3624"
         v-slot="{ item }"
       >
-        <EventCardBig :item="item" v-if="item.isBig" />
-        <EventCardSmall :item="item" v-if="!item.isBig" />
+        <EventCard :item="item" />
       </EventsSnakeGrid>
     </div>
   </section>
@@ -20,8 +19,7 @@
 
 <script>
 import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
-import EventCardBig from './EventCardBig.vue';
-import EventCardSmall from './EventCardSmall.vue';
+import EventCard from '../components/EventCard'
 
 const defaultItems = [
   { id: 1, title: "1", isBig: true },
@@ -46,8 +44,7 @@ export default {
 
   components: {
     EventsSnakeGrid,
-    EventCardBig,
-    EventCardSmall
+    EventCard
 },
 
   data() {
