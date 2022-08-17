@@ -46,14 +46,14 @@ export default {
 
 .event-card-small-text h1 {
   margin: 0;
-  font-size: 2vw;
+  font-size: 2vh;
 }
 
 .event-card-small-text h2 {
-  font-size: 1vw;
+  font-size: 1vh;
 }
 
 .event-card-small-text p {
-  font-size: 0.8vw;
+  font-size: 0.8vh;
 }
 </style>

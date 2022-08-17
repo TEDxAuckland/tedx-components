@@ -65,14 +65,14 @@ export default {
 
 .event-card-big-text h1 {
   margin: 0;
-  font-size: 3vw;
+  font-size: 3vh;
 }
 
 .event-card-big-text h2 {
-  font-size: 1.5vw;
+  font-size: 1.5vh;
 }
 
 .event-card-big-text p {
-  font-size: 1vw;
+  font-size: 1vh;
 }
 </style>
