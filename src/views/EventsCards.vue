@@ -3,7 +3,11 @@
 
   <section>
     <h1>Small card</h1>
-    <SmallCard/>
+    <SmallCard />
+    <br/>
+    <br/>
+    <h1>Big card</h1>
+    <BigCard />
   </section>
 
   </div>
@@ -11,23 +15,21 @@
 
 <script>
 import SmallCard from '@/views/EventCardSmall.vue'
-
-// var imagePaths = [{
-//     "src": "/uploads/default-speaker-photo.jpg",
-// }]
+import BigCard from '@/views/EventCardBig.vue'
 
 export default {
-    name: 'app',
+  name: 'app',
 
-    components: {
-        SmallCard,
-    },
+  components: {
+    SmallCard,
+    BigCard,
+  },
 
-    data() {
-        return {
-            // imagePaths,
-        }
-    }
+  data() {
+    return {
+      // imagePaths,
+      }
+  }
 }
 
 </script>

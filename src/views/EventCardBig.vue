@@ -1,6 +1,14 @@
 <template>
   <div class="event-card__container event-card__container--big">
-    <h1>BIG EVENT ID: <span v-html="item.id"></span></h1>
+    <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" style="width:100%" id="event-image">
+    <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
+    <div class="event-card-big-text">
+      <h1>June 2021</h1>
+      <h2>[theme]</h2>
+      <br/>
+      <p>Baby description of what the event was. Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, sed do... </p>
+    </div>
   </div>
 </template>
 
@@ -9,6 +17,7 @@ export default {
   name: 'event-card-big',
 
   components: {
+
   },
 
   props: {
@@ -24,10 +33,37 @@ export default {
   },
 
   computed: {
+
   }
 }
 
 </script>
 
 <style scoped>
+
+.event-card__container--big {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  max-width: 350px;
+  min-height: auto;
+  /* margin: auto; */
+  text-align: center;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+#event-image {
+  vertical-align: middle;
+}
+
+.event-card-big-text {
+  padding: 6px 16px;
+  text-align: left;
+  background-color: grey;
+  color: white;
+}
+
+.event-card-big-text h1 {
+  margin: 0;
+}
+
 </style>
