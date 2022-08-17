@@ -40,10 +40,20 @@ export default {
   text-align: left;
   bottom: 10px;
   left: 15px;
+  right: 15px;
   color: white;
 }
 
 .event-card-small-text h1 {
   margin: 0;
+  font-size: 2vw;
+}
+
+.event-card-small-text h2 {
+  font-size: 1vw;
+}
+
+.event-card-small-text p {
+  font-size: 0.8vw;
 }
 </style>

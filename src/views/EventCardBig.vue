@@ -1,6 +1,6 @@
 <template>
   <div class="event-card__container event-card__container--big">
-    <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" style="width:100%" id="event-image">
+    <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
     <div class="event-card-big-text">
       <h1>June 2021</h1>
@@ -53,6 +53,7 @@ export default {
 
 #event-image {
   vertical-align: middle;
+  width: 100%;
 }
 
 .event-card-big-text {
@@ -64,6 +65,14 @@ export default {
 
 .event-card-big-text h1 {
   margin: 0;
+  font-size: 3vw;
 }
 
+.event-card-big-text h2 {
+  font-size: 1.5vw;
+}
+
+.event-card-big-text p {
+  font-size: 1vw;
+}
 </style>
