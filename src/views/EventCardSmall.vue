@@ -1,11 +1,12 @@
 <template>
-  <div class="event-container">
-    <div class="card-header">
+  <div class="event-card__container event-card__container--small">
+    <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
+    <div class="event-card-small-text">
       <h1>May 2021</h1>
       <h2>[theme]</h2>
       <br/>
-      <h2>Baby description of what the event was. Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, sed do... </h2>
+      <p>Baby description of what the event was. Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, sed do... </p>
     </div>
   </div>
 
@@ -19,37 +20,30 @@ export default {
 
 <style>
 
-.event-container {
+.event-card__container--small {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   max-width: 320px;
-  margin: 30px auto; /* to put in middle of page */
-  max-height: 320px;
-  padding: 30px;
+  max-height: 320px; 
   position: relative;
-
-  border: 1px solid steelblue;
+  /* margin: auto; */
+  border: 0.5px solid grey;
   border-radius: 5px;
-
-  background-image: url("../../public/uploads/default-speaker-photo.jpg");
-  background-size: 320px 320px;
 }
 
-.card-header {
-  flex-direction: column;
-  /* align-items: center; */
-  padding-top: 50px;
+#event-image {
+  width: 100%;
   position: relative;
 }
 
-h1 {
-  padding-bottom: 0%;
+.event-card-small-text {
+  position: absolute;
+  text-align: left;
+  bottom: 10px;
+  left: 15px;
   color: white;
 }
 
-h2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 10px;
-  color: white;
+.event-card-small-text h1 {
+  margin: 0;
 }
 </style>
