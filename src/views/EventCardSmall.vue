@@ -1,5 +1,5 @@
 <template>
-  <div class="event-card__container event-card__container--small">
+  <div class="event-card__container event-card__container--small anim--lift-up card--outline">
     <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
     <div class="event-card-small-text">
       <h1>May 2021</h1>
@@ -26,8 +26,6 @@ export default {
   max-height: 320px; 
   position: relative;
   /* margin: auto; */
-  border: 0.5px solid grey;
-  border-radius: 5px;
 }
 
 #event-image {
@@ -49,11 +47,11 @@ export default {
   font-size: 2vh;
 }
 
-.event-card-small-text h2 {
+/* .event-card-small-text h2 {
   font-size: 1vh;
 }
 
 .event-card-small-text p {
   font-size: 0.8vh;
-}
+} */
 </style>

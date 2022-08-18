@@ -1,5 +1,5 @@
 <template>
-  <div class="event-card__container event-card__container--big">
+  <div class="event-card__container event-card__container--big anim--lift-up card--outline">
     <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
     <div class="event-card-big-text">
@@ -45,10 +45,8 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   max-width: 350px;
   min-height: auto;
-  /* margin: auto; */
   text-align: center;
-  border: 0.5px solid grey;
-  border-radius: 5px;
+  /* margin: auto; */
 }
 
 #event-image {
@@ -68,11 +66,11 @@ export default {
   font-size: 3vh;
 }
 
-.event-card-big-text h2 {
+/* .event-card-big-text h2 {
   font-size: 1.5vh;
-}
+} */
 
-.event-card-big-text p {
+/* .event-card-big-text p {
   font-size: 1vh;
-}
+} */
 </style>
