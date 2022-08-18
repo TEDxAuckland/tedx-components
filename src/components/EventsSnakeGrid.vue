@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import { getGridTemplate, clearCanvasSnake, drawCanvasSnake } from './eventsSnakeGrid'
+import { getAreas, generateGridHybrid, clearCanvasSnake, drawCanvasSnake } from './snakeGrid'
 
 export default {
-  name: "carousel",
+  name: "events-snake-grid",
   components: {
   },
   mounted() {
@@ -45,12 +45,10 @@ export default {
     const {cellSize, columns, gap, lineColor} = this
     const history = this.template.history
     drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
-    console.log('mounted canvas')
   },
   beforeDestroy() {
     const canvas = this.$refs.canvas
     clearCanvasSnake({ canvas });
-    console.log('cleared canvas')
   },
   props: {
     items: {
@@ -79,7 +77,9 @@ export default {
   },
   computed: {
     template() {
-      return getGridTemplate(this.columns, this.items)
+      const { history, grid } = generateGridHybrid(this.columns, this.items)
+      const areas = getAreas(grid)
+      return { history, areas }
     }
   },
   methods: {},
