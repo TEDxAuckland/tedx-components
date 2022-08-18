@@ -3,11 +3,10 @@
     <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
     <div class="event-card-big-text">
-      <h1>June 2021</h1>
-      <h2>[theme]</h2>
+      <h1 v-html="item.title"></h1>
+      <h2 v-html="item.short_title"></h2>
       <br/>
-      <p>Baby description of what the event was. Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, sed do... </p>
+      <p v-html="`${item.content.slice(0, 100)}...`"></p>
     </div>
   </div>
 </template>
