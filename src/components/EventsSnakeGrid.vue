@@ -24,7 +24,7 @@
         v-for="item in items" 
         :key="item.id" 
         :style="{
-          'grid-area': `item-${item.id}`
+          'grid-area': `item-${item.id.replace(/\//g, '-')}`
         }"
       >
         <slot :item="item"></slot>

@@ -258,7 +258,7 @@ export function getAreas(grid) {
         if (cell === null) {
           return ".";
         }
-        return `item-${cell}`;
+        return `item-${cell.replace(/\//g, "-")}`;
       })
       .join(" ");
     return `'${line}'`;
