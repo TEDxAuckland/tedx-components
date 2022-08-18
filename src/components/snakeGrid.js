@@ -154,18 +154,18 @@ export function generateGridRecursive(columns, items) {
           snakeProgress = fillBigItem(grid, snakeProgress, item);
           snakeProgress = findEmptyCell(grid, snakeProgress);
         } else {
-          console.error(
-            "This code path should not be hit - we avoid stopping on edges (right-to-left case)"
-          );
+          // console.error(
+          //   "This code path should not be hit - we avoid stopping on edges (right-to-left case)"
+          // );
         }
       } else {
         if (snakeProgress.column - 1 >= 0) {
           snakeProgress = fillBigItem(grid, snakeProgress, item);
           snakeProgress = findEmptyCell(grid, snakeProgress);
         } else {
-          console.error(
-            "This code path should not be hit - we avoid stopping on edges (left-to-right case)"
-          );
+          // console.error(
+          //   "This code path should not be hit - we avoid stopping on edges (left-to-right case)"
+          // );
         }
       }
     } else {
