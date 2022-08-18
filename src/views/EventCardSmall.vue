@@ -1,6 +1,6 @@
 <template>
   <div class="event-card__container event-card__container--small anim--lift-up card--outline">
-    <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
+    <img v-bind:src="'http://127.0.0.1:4000'+item.image" alt="Avatar" id="event-image">
     <div class="event-card-small-text">
       <h1 v-html="item.title"></h1>
       <h2 v-html="item.short_title"></h2>

@@ -1,6 +1,6 @@
 <template>
   <div class="event-card__container event-card__container--big anim--lift-up card--outline">
-    <img src="../../public/uploads/default-speaker-photo.jpg" alt="Avatar" id="event-image">
+    <img v-bind:src="'http://127.0.0.1:4000'+item.image" alt="Avatar" id="event-image">
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
     <div class="event-card-big-text">
       <h1 v-html="item.title"></h1>
