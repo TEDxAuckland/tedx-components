@@ -148,7 +148,7 @@ export function generateGridRecursive(columns, items) {
   };
 
   for (const item of items) {
-    if (item.isBig) {
+    if (item.is_highlighted) {
       if (snakeProgress.direction === "right") {
         if (snakeProgress.column + 1 < columns) {
           snakeProgress = fillBigItem(grid, snakeProgress, item);
@@ -212,7 +212,7 @@ export function generateGridSimple(columns, items) {
   }
 
   for (const item of items) {
-    if (item.isBig) {
+    if (item.is_highlighted) {
       if (direction === "right") {
         if (column + 1 <= columns - 1) {
           // will be enough space to fill the big item

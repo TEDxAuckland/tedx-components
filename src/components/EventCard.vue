@@ -1,7 +1,7 @@
 <template>
   <div>
-    <EventCardBig :item="item" v-if="item.isBig" />
-    <EventCardSmall :item="item" v-if="!item.isBig" />
+    <EventCardBig :item="item" v-if="item.is_highlighted" />
+    <EventCardSmall :item="item" v-if="!item.is_highlighted" />
   </div>
 </template>
 
