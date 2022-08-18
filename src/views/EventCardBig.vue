@@ -42,8 +42,8 @@ export default {
 
 .event-card__container--big {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  max-width: 350px;
-  min-height: auto;
+  max-width: 640px;
+  max-height: 640px;
   text-align: center;
   /* margin: auto; */
 }
