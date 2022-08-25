@@ -1,5 +1,11 @@
 <template>
-  <div class="event-card__container event-card__container--big anim--lift-up card--outline">
+  <div
+    class="event-card__container event-card__container--big anim--lift-up card--outline"
+    :style="{
+      'max-width': width + 'px',
+      'max-height': height + 'px',
+    }"
+  >
     <img v-bind:src="'http://127.0.0.1:4000'+item.image" alt="Avatar" id="event-image">
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
     <div class="event-card-big-text">
@@ -48,15 +54,18 @@ export default {
 
 .event-card__container--big {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  max-width: 640px;
-  max-height: 640px;
+  /* max-width: 640px;
+  max-height: 640px; */
   text-align: center;
   /* margin: auto; */
 }
 
 #event-image {
-  vertical-align: middle;
-  width: 100%;
+  /* vertical-align: middle; */
+  /* width: 100%; */
+
+  height: 422.4px;
+  width: auto;
 }
 
 .event-card-big-text {
@@ -64,6 +73,12 @@ export default {
   text-align: left;
   background-color: grey;
   color: white;
+
+
+  height: 211.2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .event-card-big-text h1 {

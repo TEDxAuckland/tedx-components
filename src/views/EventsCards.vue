@@ -3,11 +3,11 @@
 
   <section>
     <h1>Small card</h1>
-    <SmallCard :item="mockEventSmall" />
+    <SmallCard :item="mockEventSmall" :width="320" :height="320" />
     <br/>
     <br/>
     <h1>Big card</h1>
-    <BigCard :item="mockEventBig" />
+    <BigCard :item="mockEventBig" :width="640" :height="640" />
   </section>
 
   </div>

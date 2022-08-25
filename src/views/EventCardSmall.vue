@@ -1,5 +1,11 @@
 <template>
-  <div class="event-card__container event-card__container--small anim--lift-up card--outline">
+  <div
+    class="event-card__container event-card__container--small anim--lift-up card--outline"
+    :style="{
+      'max-width': width + 'px',
+      'max-height': height + 'px',
+    }"
+  >
     <img v-bind:src="'http://127.0.0.1:4000'+item.image" alt="Avatar" id="event-image">
     <div class="event-card-small-text">
       <h1 v-html="`${width}+${height}+${item.title}`"></h1>
@@ -34,8 +40,8 @@ export default {
 
 .event-card__container--small {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  max-width: 320px;
-  max-height: 320px; 
+  /* max-width: ${this.width};
+  max-height: ${this.height};  */
   position: relative;
   /* margin: auto; */
 }
@@ -43,6 +49,11 @@ export default {
 #event-image {
   width: 100%;
   position: relative;
+
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  object-position: left;
 }
 
 .event-card-small-text {
