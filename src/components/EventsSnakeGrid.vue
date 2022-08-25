@@ -27,7 +27,7 @@
           'grid-area': `item-${item.id.replace(/\//g, '-')}`
         }"
       >
-        <slot :item="item"></slot>
+        <slot :item="item" :cellSize="cellSize" :gap="gap"></slot>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@ export default {
       const { history, grid } = generateGridHybrid(this.columns, this.items)
       const areas = getAreas(grid)
       return { history, areas }
-    }
+    },
   },
   methods: {},
 }

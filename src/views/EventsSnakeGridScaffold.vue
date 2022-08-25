@@ -7,9 +7,9 @@
       <EventsSnakeGrid
         :items="items"
         lineColor="#ed3624"
-        v-slot="{ item }"
+        v-slot="{ item, cellSize, gap }"
       >
-        <EventCard :item="item" />
+        <EventCard :item="item" :cellSize="cellSize" :gap="gap" />
       </EventsSnakeGrid>
     </div>
   </section>

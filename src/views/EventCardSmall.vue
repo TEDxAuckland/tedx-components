@@ -2,7 +2,7 @@
   <div class="event-card__container event-card__container--small anim--lift-up card--outline">
     <img v-bind:src="'http://127.0.0.1:4000'+item.image" alt="Avatar" id="event-image">
     <div class="event-card-small-text">
-      <h1 v-html="item.title"></h1>
+      <h1 v-html="`${width}+${height}+${item.title}`"></h1>
       <h2 v-html="item.short_title"></h2>
       <br/>
       <p v-html="`${item.content.slice(0, 100)}...`"></p>
@@ -17,7 +17,14 @@ export default {
   props: {
     item: {
       type: Object,
-    }
+    },
+    width: {
+      type: Number,
+    },
+    height: {
+      type: Number,
+    },
+
   },
 
 }
