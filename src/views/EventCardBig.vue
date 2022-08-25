@@ -21,7 +21,7 @@
         'height': (height * 1 / 3) + 'px',
       }"
     >
-      <h1 v-html="`${width}+${height}+${item.title}`"></h1>
+      <h1 v-html="`${item.title}`"></h1>
       <h2 v-html="item.short_title"></h2>
       <br/>
       <p v-html="`${item.content.slice(0, 100)}...`"></p>
