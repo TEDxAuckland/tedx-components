@@ -6,9 +6,21 @@
       'max-height': height + 'px',
     }"
   >
-    <img v-bind:src="'http://127.0.0.1:4000'+item.image" alt="Avatar" id="event-image">
+    <img
+      v-bind:src="'http://127.0.0.1:4000'+item.image"
+      alt="Avatar"
+      id="event-image"
+      :style="{
+        'height': (height * 2 / 3) + 'px',
+      }"
+    />
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
-    <div class="event-card-big-text">
+    <div
+      class="event-card-big-text"
+      :style="{
+        'height': (height * 1 / 3) + 'px',
+      }"
+    >
       <h1 v-html="`${width}+${height}+${item.title}`"></h1>
       <h2 v-html="item.short_title"></h2>
       <br/>
@@ -63,9 +75,9 @@ export default {
 #event-image {
   /* vertical-align: middle; */
   /* width: 100%; */
-
-  height: 422.4px;
   width: auto;
+
+  /* height: 422.4px; */
 }
 
 .event-card-big-text {
