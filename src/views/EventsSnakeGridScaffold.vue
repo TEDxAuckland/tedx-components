@@ -7,6 +7,8 @@
       <EventsSnakeGrid
         :items="items"
         lineColor="#ed3624"
+        :cellSize="(1200 - 110 * 3) / 4"
+        :gap="110"
         v-slot="{ item, cellSize, gap }"
       >
         <EventCard :item="item" :cellSize="cellSize" :gap="gap" />

@@ -75,7 +75,8 @@ export default {
 #event-image {
   /* vertical-align: middle; */
   /* width: 100%; */
-  width: auto;
+  width: 100%;
+  object-position: center center;
 
   /* height: 422.4px; */
 }
