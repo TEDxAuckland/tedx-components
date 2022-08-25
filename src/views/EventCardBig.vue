@@ -100,8 +100,20 @@ export default {
 
 .event-card-big-text h1 {
   margin: 0;
-  font-size: 3vh;
+  font-size: 25.95px;
 }
+
+.event-card-big-text h2 {
+  /* margin: 0; */
+  font-size: 23.625px;
+  /* font-size: 25.95px; */
+}
+
+
+.event-card-big-text p {
+  /* font-size: 1vh; */
+  font-size: 12px;
+} 
 
 /* .event-card-big-text h2 {
   font-size: 1.5vh;

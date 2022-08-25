@@ -78,16 +78,17 @@ export default {
 
 .event-card-small-text h1 {
   margin: 0;
-  font-size: 2vh;
+  font-size: 17.3px;
   /* mix-blend-mode: difference; */
 }
 
 .event-card-small-text h2 {
   margin: 0;
-  font-size: 2vh;
+  font-size: 17.3px;
   /* mix-blend-mode: difference; */
 }
 .event-card-small-text p {
+  font-size: 12px;
   /* mix-blend-mode: difference; */
 }
 
