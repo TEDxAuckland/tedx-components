@@ -6,15 +6,15 @@
       'max-height': height + 'px',
     }"
   >
-    <img
-      v-bind:src="'http://127.0.0.1:4000'+item.image" 
+    <div
       alt="Avatar"
       id="event-image"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
+        'background-image': 'url(' + 'http://localhost:8080/assets/resized/default-speaker-photo-600.jpg)',
       }"
-    />
+    ></div>
     <div class="event-card-small-text">
       <h1 v-html="`${item.title}`"></h1>
       <h2 v-html="item.short_title"></h2>
@@ -48,6 +48,7 @@ export default {
 
 .event-card__container--small {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: inset 0px -1009px 40px rgb(0 0 0 / 20%);
   /* max-width: ${this.width};
   max-height: ${this.height};  */
   position: relative;
@@ -62,6 +63,9 @@ export default {
   height: 320px; */
   object-fit: cover;
   object-position: left;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .event-card-small-text {
@@ -76,6 +80,16 @@ export default {
 .event-card-small-text h1 {
   margin: 0;
   font-size: 2vh;
+  /* mix-blend-mode: difference; */
+}
+
+.event-card-small-text h2 {
+  margin: 0;
+  font-size: 2vh;
+  /* mix-blend-mode: difference; */
+}
+.event-card-small-text p {
+  /* mix-blend-mode: difference; */
 }
 
 /* .event-card-small-text h2 {

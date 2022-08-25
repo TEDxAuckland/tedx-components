@@ -36,11 +36,9 @@ export default {
 
   computed: {
     width() {
-      console.log('this.item',this.item)
       return this.item.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
     },
     height() {
-      console.log('this.item',this.item)
       return this.item.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
     }
   }

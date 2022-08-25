@@ -6,14 +6,15 @@
       'max-height': height + 'px',
     }"
   >
-    <img
-      v-bind:src="'http://127.0.0.1:4000'+item.image"
+    <div
       alt="Avatar"
       id="event-image"
       :style="{
         'height': (height * 2 / 3) + 'px',
+        'background-image': 'url(' + 'http://localhost:8080/assets/resized/pete-bethune_talk_1-900.jpg)',
       }"
-    />
+    >
+    </div>
     <!-- <h1>BIG EVENT ID: <span v-html="item.id"></span></h1> -->
     <div
       class="event-card-big-text"
@@ -79,6 +80,10 @@ export default {
   object-position: center center;
 
   /* height: 422.4px; */
+  background-repeat: no-repeat;
+  /* box-shadow: inset 0px 0px 10px rgb(0 0 0 / 90%); */
+  background-position: center;
+  background-size: contain;
 }
 
 .event-card-big-text {
