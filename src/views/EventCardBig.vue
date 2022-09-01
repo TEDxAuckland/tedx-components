@@ -21,10 +21,28 @@
       }"
     >
       <div>
-        <div class="event-card-big__header" v-html="`${item.title}`"></div>
-        <div class="event-card-big__header-small" v-html="date_title"></div>
+        <div 
+          class="event-card-big__header" 
+          v-html="`${item.title}`"
+          :style="{
+            'font-size': (width / 545 * 25.95) + 'px',
+          }"
+        ></div>
+        <div
+          class="event-card-big__header-small" 
+          v-html="date_title"
+          :style="{
+            'font-size': (width / 545 * 15.120000000000003) + 'px',
+          }"
+        ></div>
       </div>
-      <div class="event-card-big__desc" v-html="`${item.raw_content.slice(0, 200)}...`"></div>
+      <div 
+        class="event-card-big__desc" 
+        v-html="`${item.raw_content.slice(0, 200)}...`"
+        :style="{
+          'font-size': (width / 545 * 12) + 'px',
+        }"
+      ></div>
     </div>
   </div>
 </template>
@@ -97,7 +115,6 @@ export default {
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin: 0;
-  font-size: 25.95px;
 }
 .event-card-big__header-small {
   display: block;
@@ -107,11 +124,9 @@ export default {
   margin-inline-end: 0px;
   margin:0;
   font-weight: bold;
-  font-size: 15.120000000000003px;
 }
 
 .event-card-big__desc {
   margin-bottom: 1rem;
-  font-size: 12px;
 }
 </style>

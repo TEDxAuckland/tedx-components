@@ -17,8 +17,21 @@
     />
     <div class="event-image-small-shadow"></div>
     <div class="event-card-small-text">
-      <div class="event-card-small__header" v-html="`${item.title}`"></div>
-      <div class="event-card-small__desc" v-html="`${item.raw_content.slice(0, 100)}...`"></div>
+      <div 
+        class="event-card-small__header" 
+        v-html="`${item.title}`"
+        :style="{
+          'font-size': (width / 217.5 * 17.3) + 'px',
+        }"
+      ></div>
+      <div 
+        class="event-card-small__desc" 
+        v-html="`${item.raw_content.slice(0, 100)}...`"
+        :style="{
+          'font-size': (width / 217.5 * 12) + 'px',
+        }"
+
+      ></div>
     </div>
   </div>
 </template>
@@ -88,11 +101,9 @@ export default {
   margin-block-end: 0.83em;
   margin: 0.67em 0;
   margin: 0;
-  font-size: 17.3px;
 }
 
 .event-card-small__desc {
   margin-bottom: 1rem;
-  font-size: 12px;
 }
 </style>
