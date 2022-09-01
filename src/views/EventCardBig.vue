@@ -21,8 +21,8 @@
         'height': (height * 1 / 3) + 'px',
       }"
     >
-      <h1 v-html="`${item.title}`"></h1>
-      <h2 v-html="item.short_title"></h2>
+      <div class="event-card-big__header" v-html="`${item.title}`"></div>
+      <div class="event-card-big__header-small" v-html="item.short_title"></div>
       <p v-html="`${item.content.slice(0, 100)}...`"></p>
     </div>
   </div>

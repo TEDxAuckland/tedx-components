@@ -1,6 +1,6 @@
 <template>
   <div
-    class="event-card__container event-card__container--small anim--lift-up card--outline"
+    class="event-card__container event-card__container--small card--outline"
     :style="{
       'max-width': width + 'px',
       'max-height': height + 'px',
@@ -16,8 +16,8 @@
       }"
     ></div>
     <div class="event-card-small-text">
-      <h1 v-html="`${item.title}`"></h1>
-      <h2 v-html="item.short_title"></h2>
+      <div class="event-card-small__header" v-html="`${item.title}`"></div>
+      <div class="event-card-small__header-small" v-html="item.short_title"></div>
       <p v-html="`${item.content.slice(0, 100)}...`"></p>
     </div>
   </div>
@@ -76,5 +76,40 @@ export default {
 }
 .event-card-small-text p {
   font-size: 12px;
+}
+
+.event-card-small__header {
+  display: block;
+  /* font-size: 2em; */
+  /* margin-block-start: 0.67em; */
+  /* margin-block-end: 0.67em; */
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+
+  /* font-size: 1.5em; */
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+
+  /* font-size: 2em; */
+  margin: 0.67em 0;
+
+  margin: 0;
+  font-size: 17.3px;
+}
+
+.event-card-small__header-small {
+
+  display: block;
+  /* font-size: 1.5em; */
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+
+
+  margin: 0;
+  font-size: 17.3px;
 }
 </style>
