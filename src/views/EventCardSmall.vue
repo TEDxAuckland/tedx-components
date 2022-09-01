@@ -19,9 +19,9 @@
     <div
       class="event-card-small-text"
       :style="{
-        'bottom': (width / 217.5 * 10) + 'px',
-        'left': (width / 217.5 * 15) + 'px',
-        'right': (width / 217.5 * 15) + 'px',
+        'bottom': multiplier * 10 + 'px',
+        'left': multiplier * 15 + 'px',
+        'right': multiplier * 15 + 'px',
       }"
     >
       <div 
@@ -29,15 +29,15 @@
         v-html="`${item.title}`"
         :style="{
           // TODO: here and in other places, use rem or em like Anthony told 
-          'font-size': (width / 217.5 * 17.3) + 'px',
+          'font-size': multiplier * 17.3 + 'px',
         }"
       ></div>
       <div 
         class="event-card-small__desc" 
         v-html="`${item.raw_content.slice(0, 100)}...`"
         :style="{
-          'font-size': (width / 217.5 * 12) + 'px',
-          'margin-bottom': (width / 217.5 * 8) + 'px',
+          'font-size': multiplier * 12 + 'px',
+          'margin-bottom': multiplier * 8 + 'px',
         }"
 
       ></div>
@@ -63,7 +63,10 @@ export default {
     date_title() {
       // TODO: switch to date-fns
       return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long"});
-    }
+    },
+    multiplier() {
+      return this.width / 217.5;
+    },
   }
 }
 </script>
