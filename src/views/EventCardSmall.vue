@@ -6,15 +6,16 @@
       'max-height': height + 'px',
     }"
   >
-    <div
+    <img
       alt="Avatar"
       class="event-image-small"
+      src="http://localhost:8080/assets/resized/default-speaker-photo-600.jpg"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
-        'background-image': 'url(' + 'http://localhost:8080/assets/resized/default-speaker-photo-600.jpg)',
       }"
-    ></div>
+    />
+    <div class="event-image-small-shadow"></div>
     <div class="event-card-small-text">
       <div class="event-card-small__header" v-html="`${item.title}`"></div>
       <!-- <div class="event-card-small__header-small" v-html="date_title"></div> -->
@@ -60,7 +61,13 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+.event-image-small-shadow {
+  position: absolute;
+  width:100%;
+  height:100%;
   box-shadow: inset 0px 1000px 8px 0px rgb(0 0 0 / 50%);
+  top: 0;
 }
 
 .event-card-small-text {
