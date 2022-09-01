@@ -24,7 +24,6 @@
         <div class="event-card-big__header" v-html="`${item.title}`"></div>
         <div class="event-card-big__header-small" v-html="date_title"></div>
       </div>
-      <!-- TODO: change to div -->
       <div class="event-card-big__desc" v-html="`${item.raw_content.slice(0, 200)}...`"></div>
     </div>
   </div>
