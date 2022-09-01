@@ -41,14 +41,28 @@ export default {
   components: {
   },
   mounted() {
-    const canvas = this.$refs.canvas
-    const {cellSize, columns, gap, lineColor} = this
-    const history = this.template.history
-    drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
+    this.drawCanvas()
+  },
+  methods: {
+    clearCanvas() {
+      clearCanvasSnake({ canvas: this.$refs.canvas });
+    },
+    drawCanvas() {
+      const canvas = this.$refs.canvas
+      const history = this.template.history
+      const {cellSize, columns, gap, lineColor} = this
+      drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
+    },
+    redrawCanvas() {
+      this.clearCanvas()
+      this.drawCanvas()
+    }
+  },
+  updated() {
+    this.redrawCanvas()
   },
   beforeDestroy() {
-    const canvas = this.$refs.canvas
-    clearCanvasSnake({ canvas });
+    this.clearCanvas()
   },
   props: {
     items: {
@@ -82,7 +96,6 @@ export default {
       return { history, areas }
     },
   },
-  methods: {},
 }
 </script>
 
