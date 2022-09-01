@@ -33,7 +33,6 @@ export default {
   name: 'event-card-big',
 
   components: {
-
   },
 
   props: {
@@ -55,14 +54,11 @@ export default {
   },
 
   computed: {
-
   }
 }
-
 </script>
 
 <style scoped>
-
 .event-card__container--big {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   text-align: center;
@@ -96,9 +92,7 @@ export default {
   font-size: 23.625px;
 }
 
-
 .event-card-big-text p {
   font-size: 12px;
-} 
-
+}
 </style>
