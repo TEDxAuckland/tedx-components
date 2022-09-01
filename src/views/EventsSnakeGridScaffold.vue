@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-
-  <section>
-    <button @click="isShown = !isShown">Toggle</button>
-    <div v-if="isShown">
-      <EventsSnakeGrid
-        :items="items"
-        lineColor="#ed3624"
-        :cellSize="(1200 - 110 * 3) / 4"
-        :gap="110"
-        v-slot="{ item, cellSize, gap }"
-      >
-        <EventCard :item="item" :cellSize="cellSize" :gap="gap" />
-      </EventsSnakeGrid>
-    </div>
-  </section>
-
+    <section>
+      <button @click="isShown = !isShown">Toggle</button>
+      <div v-if="isShown">
+        <EventsSnakeGrid
+          :items="items"
+          lineColor="#ed3624"
+          :cellSize="(Math.min(gridWidth, 1200) - 110 * 3) / 4"
+          :gap="110"
+          v-slot="{ item, cellSize, gap }"
+        >
+          <EventCard :item="item" :cellSize="cellSize" :gap="gap" />
+        </EventsSnakeGrid>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -679,13 +677,25 @@ export default {
   components: {
     EventsSnakeGrid,
     EventCard
-},
+  },
 
+  methods: {
+    resized() {
+      this.gridWidth = window.innerWidth
+    }
+  },
+  mounted() {
+    window.addEventListener("resize", this.resized);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.resized);
+  },
   data() {
     return {
       items: defaultItems,
       baseUrl: process.env.BASE_URL,
       isShown: true,
+      gridWidth: window.innerWidth
     }
   },
 
