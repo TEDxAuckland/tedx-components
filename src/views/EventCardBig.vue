@@ -21,9 +21,11 @@
         'height': (height * 1 / 3) + 'px',
       }"
     >
-      <div class="event-card-big__header" v-html="`${date_title}`"></div>
-      <div class="event-card-big__header-small" v-html="item.short_title"></div>
-      <p v-html="`${item.raw_content.slice(0, 100)}...`"></p>
+      <div>
+        <div class="event-card-big__header" v-html="`${item.short_title}`"></div>
+        <div class="event-card-big__header-small" v-html="date_title"></div>
+      </div>
+      <p v-html="`${item.raw_content.slice(0, 200)}...`"></p>
     </div>
   </div>
 </template>
@@ -55,7 +57,7 @@ export default {
 
   computed: {
     date_title() {
-      return new Date(this.item.start_date).toLocaleDateString('en-US', { year:"numeric", month:"long"});
+      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
     }
   }
 }
@@ -77,13 +79,14 @@ export default {
 
 .event-card-big-text {
   padding: 6px 16px;
+  padding-bottom: 20px;
   text-align: left;
   background-color: grey;
   color: white;
   height: 211.2px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .event-card-big-text h1 {
@@ -115,7 +118,8 @@ export default {
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  margin:0;
   font-weight: bold;
-  font-size: 23.625px;
+  font-size: 15.120000000000003px;
 }
 </style>
