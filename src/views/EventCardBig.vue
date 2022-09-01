@@ -24,6 +24,7 @@
         <div class="event-card-big__header" v-html="`${item.title}`"></div>
         <div class="event-card-big__header-small" v-html="date_title"></div>
       </div>
+      <!-- TODO: change to div -->
       <p v-html="`${item.raw_content.slice(0, 200)}...`"></p>
     </div>
   </div>
@@ -87,15 +88,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.event-card-big-text h1 {
-  margin: 0;
-  font-size: 25.95px;
-}
-
-.event-card-big-text h2 {
-  font-size: 23.625px;
 }
 
 .event-card-big-text p {

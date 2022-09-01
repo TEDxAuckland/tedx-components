@@ -19,6 +19,7 @@
     <div class="event-card-small-text">
       <div class="event-card-small__header" v-html="`${item.title}`"></div>
       <!-- <div class="event-card-small__header-small" v-html="date_title"></div> -->
+      <!-- TODO: change to div -->
       <p v-html="`${item.raw_content.slice(0, 100)}...`"></p>
     </div>
   </div>
@@ -80,15 +81,6 @@ export default {
   color: white;
 }
 
-.event-card-small-text h1 {
-  margin: 0;
-  font-size: 17.3px;
-}
-
-.event-card-small-text h2 {
-  margin: 0;
-  font-size: 17.3px;
-}
 .event-card-small-text p {
   font-size: 12px;
 }
