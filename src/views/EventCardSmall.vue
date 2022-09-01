@@ -91,17 +91,6 @@ export default {
   font-size: 17.3px;
 }
 
-.event-card-small__header-small {
-  display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  margin: 0;
-  font-size: 11.072000000000003px;
-}
-
 .event-card-small__desc {
   margin-bottom: 1rem;
   font-size: 12px;
