@@ -18,7 +18,6 @@
     <div class="event-image-small-shadow"></div>
     <div class="event-card-small-text">
       <div class="event-card-small__header" v-html="`${item.title}`"></div>
-      <!-- <div class="event-card-small__header-small" v-html="date_title"></div> -->
       <div class="event-card-small__desc" v-html="`${item.raw_content.slice(0, 100)}...`"></div>
     </div>
   </div>
