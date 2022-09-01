@@ -81,7 +81,7 @@ export default {
   padding: 6px 16px;
   padding-bottom: 20px;
   text-align: left;
-  background-color: grey;
+  background-color: #2E2E2E;
   color: white;
   height: 211.2px;
   display: flex;
