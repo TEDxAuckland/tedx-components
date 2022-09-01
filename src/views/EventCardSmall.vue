@@ -17,7 +17,7 @@
     ></div>
     <div class="event-card-small-text">
       <div class="event-card-small__header" v-html="`${item.title}`"></div>
-      <div class="event-card-small__header-small" v-html="date_title"></div>
+      <!-- <div class="event-card-small__header-small" v-html="date_title"></div> -->
       <p v-html="`${item.raw_content.slice(0, 100)}...`"></p>
     </div>
   </div>
@@ -40,7 +40,7 @@ export default {
   computed: {
     date_title() {
       // TODO: switch to date-fns
-      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
+      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long"});
     }
   }
 }
