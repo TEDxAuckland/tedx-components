@@ -8,7 +8,7 @@
   >
     <div
       alt="Avatar"
-      id="event-image"
+      class="event-image-big"
       :style="{
         'height': (height * 2 / 3) + 'px',
         'background-image': 'url(' + 'http://localhost:8080/assets/resized/pete-bethune_talk_1-900.jpg)',
@@ -67,7 +67,7 @@ export default {
   text-align: center;
 }
 
-#event-image {
+.event-image-big {
   width: 100%;
   object-position: center center;
   background-repeat: no-repeat;

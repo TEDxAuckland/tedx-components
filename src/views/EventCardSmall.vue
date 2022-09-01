@@ -8,7 +8,7 @@
   >
     <div
       alt="Avatar"
-      id="event-image"
+      class="event-image-small"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
@@ -52,13 +52,14 @@ export default {
   position: relative;
 }
 
-#event-image {
+.event-image-small {
   position: relative;
   object-fit: cover;
   object-position: left;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  box-shadow: inset 0px 1000px 8px 0px rgb(0 0 0 / 50%);
 }
 
 .event-card-small-text {
