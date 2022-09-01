@@ -16,9 +16,9 @@
       }"
     ></div>
     <div class="event-card-small-text">
-      <div class="event-card-small__header" v-html="`${item.title}`"></div>
-      <div class="event-card-small__header-small" v-html="item.short_title"></div>
-      <p v-html="`${item.content.slice(0, 100)}...`"></p>
+      <div class="event-card-small__header" v-html="`${date_title}`"></div>
+      <div class="event-card-small__header-small" v-html="item.title"></div>
+      <p v-html="`${item.raw_content.slice(0, 100)}...`"></p>
     </div>
   </div>
 </template>
@@ -37,6 +37,11 @@ export default {
       type: Number,
     },
   },
+  computed: {
+    date_title() {
+      return new Date(this.item.start_date).toLocaleDateString('en-US', { year:"numeric", month:"long"});
+    }
+  }
 }
 </script>
 

@@ -21,9 +21,9 @@
         'height': (height * 1 / 3) + 'px',
       }"
     >
-      <div class="event-card-big__header" v-html="`${item.title}`"></div>
+      <div class="event-card-big__header" v-html="`${date_title}`"></div>
       <div class="event-card-big__header-small" v-html="item.short_title"></div>
-      <p v-html="`${item.content.slice(0, 100)}...`"></p>
+      <p v-html="`${item.raw_content.slice(0, 100)}...`"></p>
     </div>
   </div>
 </template>
@@ -54,6 +54,9 @@ export default {
   },
 
   computed: {
+    date_title() {
+      return new Date(this.item.start_date).toLocaleDateString('en-US', { year:"numeric", month:"long"});
+    }
   }
 }
 </script>
