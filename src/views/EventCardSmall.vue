@@ -80,10 +80,6 @@ export default {
   color: white;
 }
 
-.event-card-small-text p {
-  font-size: 12px;
-}
-
 .event-card-small__header {
   display: block;
   margin-inline-start: 0px;

@@ -89,10 +89,6 @@ export default {
   justify-content: space-between;
 }
 
-.event-card-big-text p {
-  font-size: 12px;
-}
-
 .event-card-big__header {
   display: block;
   margin-inline-start: 0px;
