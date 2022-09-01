@@ -25,7 +25,7 @@
         <div class="event-card-big__header-small" v-html="date_title"></div>
       </div>
       <!-- TODO: change to div -->
-      <p v-html="`${item.raw_content.slice(0, 200)}...`"></p>
+      <div class="event-card-big__desc" v-html="`${item.raw_content.slice(0, 200)}...`"></div>
     </div>
   </div>
 </template>
@@ -113,5 +113,10 @@ export default {
   margin:0;
   font-weight: bold;
   font-size: 15.120000000000003px;
+}
+
+.event-card-big__desc {
+  margin-bottom: 1rem;
+  font-size: 12px;
 }
 </style>
