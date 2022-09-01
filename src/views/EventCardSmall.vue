@@ -28,6 +28,7 @@
         class="event-card-small__header" 
         v-html="`${item.title}`"
         :style="{
+          // TODO: here and in other places, use rem or em like Anthony told 
           'font-size': (width / 217.5 * 17.3) + 'px',
         }"
       ></div>
