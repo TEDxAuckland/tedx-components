@@ -672,7 +672,7 @@ const defaultItems =
 
 
 export default {
-  name: 'app',
+  name: 'events-snake-grid-scaffold',
 
   components: {
     EventsSnakeGrid,
