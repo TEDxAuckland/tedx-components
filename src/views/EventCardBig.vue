@@ -18,6 +18,10 @@
       class="event-card-big-text"
       :style="{
         'height': (height * 1 / 3) + 'px',
+        'padding-top': (multiplier * 6) + 'px',
+        'padding-right': (multiplier * 16) + 'px',
+        'padding-bottom': (multiplier * 20) + 'px',
+        'padding-left': (multiplier * 16) + 'px',
       }"
     >
       <div>
@@ -41,6 +45,7 @@
         v-html="`${item.raw_content.slice(0, 200)}...`"
         :style="{
           'font-size': (width / 545 * 12) + 'px',
+          'margin-bottom': multiplier * 8 + 'px',
         }"
       ></div>
     </div>
@@ -75,7 +80,10 @@ export default {
   computed: {
     date_title() {
       return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
-    }
+    },
+    multiplier() {
+      return this.width / 545;
+    },
   }
 }
 </script>
@@ -101,7 +109,6 @@ export default {
   text-align: left;
   background-color: #2E2E2E;
   color: white;
-  height: 211.2px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,6 +134,5 @@ export default {
 }
 
 .event-card-big__desc {
-  margin-bottom: 1rem;
 }
 </style>
