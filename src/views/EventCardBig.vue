@@ -6,15 +6,14 @@
       'max-height': height + 'px',
     }"
   >
-    <div
+    <img
       alt="Avatar"
       class="event-image-big"
+      src="http://localhost:8080/assets/resized/pete-bethune_talk_1-900.jpg"
       :style="{
         'height': (height * 2 / 3) + 'px',
-        'background-image': 'url(' + 'http://localhost:8080/assets/resized/pete-bethune_talk_1-900.jpg)',
       }"
-    >
-    </div>
+    />
     <div
       class="event-card-big-text"
       :style="{
