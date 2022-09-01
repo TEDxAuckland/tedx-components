@@ -74,6 +74,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  display: block;
 }
 
 .event-card-big-text {
