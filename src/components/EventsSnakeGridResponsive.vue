@@ -41,10 +41,6 @@ export default {
     items: {
       type: Array,
     },
-    // lineColor: {
-    //   type: String,
-    //   default: '#000',
-    // },
   },
 
   data() {
