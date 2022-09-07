@@ -275,7 +275,8 @@ export function drawCanvasSnake({
   cellSize,
   columns,
   gap,
-  lineColor,
+  // TODO: remove this argument
+  // lineColor,
   history,
 }) {
   const ctx = canvas.getContext("2d");
