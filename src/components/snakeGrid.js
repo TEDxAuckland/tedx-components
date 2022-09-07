@@ -292,21 +292,83 @@ export function drawCanvasSnake({
   }
 
   ctx.beginPath();
-  ctx.strokeStyle = lineColor;
+
+  const LINE_WIDTH = 15;
+
+
+  // ctx.lineWidth = LINE_WIDTH;
+
   for (const instruction of history) {
+
+    // var tile = document.createElement('canvas')
+    // // tile.width = tile.height = LINE_WIDTH
+    // var tileCtx = tile.getContext('2d')
+    // tileCtx.fillStyle = gradient
+    // tileCtx.fillRect(0, 0, LINE_WIDTH, LINE_WIDTH)
+
+
+    // ctx.strokeStyle = 'red';
+
     if (instruction === "left") {
-      ctx.moveTo(...curPos);
-      ctx.lineTo(clamp(curPos[0] - GRID_STEP), curPos[1]);
+      // ctx.moveTo(curPos[0], curPos[1]);
+      // ctx.lineTo(clamp(curPos[0] - GRID_STEP), curPos[1]);
+
+      const x0 = clamp(curPos[0] - GRID_STEP)
+      const y0 = curPos[1]
+
+      const width = curPos[0] - x0
+      const height = LINE_WIDTH
+
+      const gradient = ctx.createLinearGradient(x0, y0, x0, y0+height)
+      gradient.addColorStop(0, 'red')
+      gradient.addColorStop(1, 'black') 
+
+      ctx.fillStyle = gradient
+      ctx.fillRect(x0, y0, width, height);
+
       curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
     }
     if (instruction === "right") {
-      ctx.moveTo(...curPos);
-      ctx.lineTo(clamp(curPos[0] + GRID_STEP), curPos[1]);
+      // ctx.moveTo(curPos[0], curPos[1]);
+      // ctx.lineTo(clamp(curPos[0] + GRID_STEP), curPos[1]);
+      // ctx.rect(curPos[0], curPos[1], clamp(curPos[0] - GRID_STEP), lineW);
+
+
+
+      const x0 = curPos[0]
+      const y0 = curPos[1]
+
+      const width = clamp(curPos[0] + GRID_STEP) - x0
+      const height = LINE_WIDTH
+
+      // const gradient = ctx.createLinearGradient(x0, y0, x0+width, y0)
+      const gradient = ctx.createLinearGradient(x0, y0, x0, y0+height)
+      gradient.addColorStop(0, 'red')
+      gradient.addColorStop(1, 'black') 
+
+      
+      ctx.fillStyle = gradient
+      ctx.fillRect(x0, y0, width, height);
+
       curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
     }
     if (instruction === "down") {
-      ctx.moveTo(curPos[0], curPos[1]);
-      ctx.lineTo(curPos[0], curPos[1] + GRID_STEP);
+      // ctx.moveTo(curPos[0], curPos[1]);
+      // ctx.lineTo(curPos[0], curPos[1] + GRID_STEP);
+
+      const x0 = curPos[0]
+      const y0 = curPos[1]
+
+      const width = LINE_WIDTH
+      const height = GRID_STEP
+
+      const gradient = ctx.createLinearGradient(x0, y0, x0+width, y0)
+      gradient.addColorStop(0, 'red')
+      gradient.addColorStop(1, 'black') 
+  
+      ctx.fillStyle = gradient
+      ctx.fillRect(x0, y0, width, height);
+
       curPos = [curPos[0], curPos[1] + GRID_STEP];
     }
   }
