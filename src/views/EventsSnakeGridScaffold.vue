@@ -6,8 +6,8 @@
         <EventsSnakeGrid
           :items="items"
           lineColor="#ed3624"
-          :cellSize="(Math.min(gridWidth, 1200) - 110 * 3) / 4"
-          :gap="110"
+          :cellSize="(containerWidth - dynamicGap * 3) / 4"
+          :gap="dynamicGap"
           v-slot="{ item, cellSize, gap }"
         >
           <EventCard :item="item" :cellSize="cellSize" :gap="gap" />
@@ -700,6 +700,12 @@ export default {
   },
 
   computed: {
+    containerWidth() {
+      return Math.min(this.gridWidth, 1200)
+    },
+    dynamicGap() {
+      return this.containerWidth * 11 / 120
+    }
   }
 }
 
