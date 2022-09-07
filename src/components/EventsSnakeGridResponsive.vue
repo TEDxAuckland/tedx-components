@@ -16,7 +16,7 @@
 
 <script>
 import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
-import EventCard from '../components/EventCard'
+import EventCard from '@/components/EventCard'
 
 export default {
   name: 'events-snake-grid-responsive',
@@ -41,10 +41,10 @@ export default {
     items: {
       type: Array,
     },
-    lineColor: {
-      type: String,
-      default: '#000',
-    },
+    // lineColor: {
+    //   type: String,
+    //   default: '#000',
+    // },
   },
 
   data() {
@@ -59,6 +59,9 @@ export default {
     },
     dynamicGap() {
       return this.containerWidth * 11 / 120
+    },
+    lineColor() {
+      return '#ed3624'
     }
   }
 }

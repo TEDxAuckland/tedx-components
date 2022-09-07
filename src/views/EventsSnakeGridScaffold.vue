@@ -3,7 +3,10 @@
     <section>
       <button @click="isShown = !isShown">Toggle</button>
       <div v-if="isShown">
-        <EventsSnakeGrid
+        <EventsSnakeGridResponsive
+          :items="items"
+        />
+        <!-- <EventsSnakeGrid
           :items="items"
           lineColor="#ed3624"
           :cellSize="(containerWidth - dynamicGap * 3) / 4"
@@ -11,15 +14,16 @@
           v-slot="{ item, cellSize, gap }"
         >
           <EventCard :item="item" :cellSize="cellSize" :gap="gap" />
-        </EventsSnakeGrid>
+        </EventsSnakeGrid> -->
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
-import EventCard from '../components/EventCard'
+import EventsSnakeGridResponsive from '@/components/EventsSnakeGridResponsive.vue'
+// import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
+// import EventCard from '../components/EventCard'
 
 const defaultItems = 
 [	
@@ -675,8 +679,9 @@ export default {
   name: 'events-snake-grid-scaffold',
 
   components: {
-    EventsSnakeGrid,
-    EventCard
+    EventsSnakeGridResponsive,
+    // EventsSnakeGrid,
+    // EventCard
   },
 
   methods: {

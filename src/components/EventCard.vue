@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import EventCardBig from '../views/EventCardBig';
-import EventCardSmall from '../views/EventCardSmall';
+import EventCardBig from '@/components/EventCardBig';
+import EventCardSmall from '@/components/EventCardSmall';
 
 export default {
   name: 'event-card',

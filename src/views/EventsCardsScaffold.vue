@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import SmallCard from '@/views/EventCardSmall.vue'
-import BigCard from '@/views/EventCardBig.vue'
+import SmallCard from '@/components/EventCardSmall.vue'
+import BigCard from '@/components/EventCardBig.vue'
 
 const mockEventSmall = 	{
   "content": "## TEDxAuckland *together*\n\nJoin us for TEDxAuckland *together*, a special evening event where five speakers will take centre stage. We're embracing 2022 with a sense of unity as we bring together ideas that will inspire us and showcase great speakers making the future better.\n\nWe'll be hosted by the gorgeous ASB Waterfront Theatre where the break will provide ample opportunities to meet fellow attendees, taste delicious food prepared by local Chefs, discuss the talks and make new connections.\n\nTickets are limited so be quick. Come alone, or bring a friend, either way let's get *together*.\n\n**WEDNESDAY 8th JUNE 2022**<br>**WATERFRONT THEATRE, WYNYARD QUARTER**\n\n#### Event Schedule\n\n4:00pm Registration Opens<br>5:00pm MC kicks off event<br>SESSION 1<br>*Break - Special meal*<br>SESSION 2 END 7:00pm<br>AFTER PARTY\\!\n",
