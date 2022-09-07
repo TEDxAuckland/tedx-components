@@ -1,4 +1,5 @@
 <template>
+  <a :href="item.url">
   <div
     class="event-card__container event-card__container--big card--outline"
     :style="{
@@ -50,6 +51,7 @@
       ></div>
     </div>
   </div>
+  </a>
 </template>
 
 <script>
