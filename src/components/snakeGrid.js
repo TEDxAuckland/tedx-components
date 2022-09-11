@@ -282,24 +282,26 @@ export function drawCanvasSnake({
   cellSize,
   columns,
   gap,
+  pixelDensity,
   history,
 }) {
+  const renderedGap = gap * pixelDensity;
+  const renderedCellSize = cellSize * pixelDensity;
   const ctx = canvas.getContext("2d");
-  const GRID_STEP = cellSize + gap;
-  const GRID_HALF_CELL = cellSize / 2;
-  let curPos = [cellSize / 2, cellSize / 2];
+  const GRID_STEP = renderedCellSize + renderedGap;
+  const GRID_HALF_CELL = renderedCellSize / 2;
+  let curPos = [renderedCellSize / 2, renderedCellSize / 2];
 
   function clamp(num) {
     // 1 grid gap here because each step includes a gap, we just need to remove the last gap
     return Math.max(
-      Math.min(num, GRID_STEP * columns - cellSize / 2 - gap),
+      Math.min(num, GRID_STEP * columns - renderedCellSize / 2 - renderedGap),
       GRID_HALF_CELL
     );
   }
 
   ctx.beginPath();
 
-  const pixelDensity = window.devicePixelRatio;
   const LINE_WIDTH = 15 * pixelDensity;
   let lastInstruction = null;
   let lastDirectionInstruction = history[0];

@@ -52,12 +52,13 @@ export default {
     drawCanvas() {
       const canvas = this.$refs.canvas
       const history = this.template.history
-      const {cellSize, columns, gap} = this
+      const {cellSize, columns, gap, pixelDensity} = this
       drawCanvasSnake({ 
         canvas, 
-        cellSize: cellSize*this.pixelDensity, 
+        cellSize,
         columns, 
-        gap:gap*this.pixelDensity, 
+        gap,
+        pixelDensity,
         history 
       });
     },
