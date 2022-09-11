@@ -310,8 +310,16 @@ export function drawCanvasSnake({
       gradient.addColorStop(0, 'red')
       gradient.addColorStop(1, 'black') 
 
+
+      let region = new Path2D();
+      region.moveTo(x0, y0);
+      region.lineTo(x0+width, y0);
+      region.lineTo(x0+width+LINE_WIDTH, y0+height);
+      region.lineTo(x0, y0+height);
+      region.closePath();
+
       ctx.fillStyle = gradient
-      ctx.fillRect(x0, y0, width+LINE_WIDTH-1, height);
+      ctx.fill(region);
 
       curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
     }
@@ -326,9 +334,15 @@ export function drawCanvasSnake({
       gradient.addColorStop(0, 'red')
       gradient.addColorStop(1, 'black') 
 
-      
+      let region = new Path2D();
+      region.moveTo(x0+LINE_WIDTH, y0);
+      region.lineTo(x0+width+LINE_WIDTH, y0);
+      region.lineTo(x0+width+LINE_WIDTH, y0+height);
+      region.lineTo(x0, y0+height);
+      region.closePath();
+
       ctx.fillStyle = gradient
-      ctx.fillRect(x0, y0, width+LINE_WIDTH-1, height); // -1 to avoid bleeding
+      ctx.fill(region);
 
       curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
     }
@@ -346,7 +360,7 @@ export function drawCanvasSnake({
         region.moveTo(x0, y0+LINE_WIDTH);
         region.lineTo(x0+width, y0);
         region.lineTo(x0+width, y0+height+LINE_WIDTH);
-        region.lineTo(x0, y0+height);
+        region.lineTo(x0, y0+height+LINE_WIDTH);
         region.closePath();
         
         gradient.addColorStop(0, 'black')
@@ -356,7 +370,7 @@ export function drawCanvasSnake({
         // TODO: corner at the bottom too
         region.moveTo(x0, y0);
         region.lineTo(x0+width, y0+LINE_WIDTH);
-        region.lineTo(x0+width, y0+height);
+        region.lineTo(x0+width, y0+height+LINE_WIDTH);
         region.lineTo(x0, y0+height+LINE_WIDTH);
         region.closePath();
 
@@ -366,8 +380,8 @@ export function drawCanvasSnake({
       else {
         region.moveTo(x0, y0);  
         region.lineTo(x0+width, y0);
-        region.lineTo(x0+width, y0+height);
-        region.lineTo(x0, y0+height);
+        region.lineTo(x0+width, y0+height+LINE_WIDTH);
+        region.lineTo(x0, y0+height+LINE_WIDTH);
         region.closePath();
 
         gradient.addColorStop(0, 'red')
