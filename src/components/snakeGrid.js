@@ -270,6 +270,13 @@ export function clearCanvasSnake({ canvas }) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function generateGradient(ctx, x0, y0, x1, y1) {
+  const gradient = ctx.createLinearGradient(x0, y0, x1, y1)
+  gradient.addColorStop(0, 'red')
+  gradient.addColorStop(1, 'black') 
+  return gradient
+}
+
 export function drawCanvasSnake({
   canvas,
   cellSize,
@@ -306,11 +313,6 @@ export function drawCanvasSnake({
       const width = curPos[0] - x0
       const height = LINE_WIDTH
 
-      const gradient = ctx.createLinearGradient(x0, y0, x0, y0+height)
-      gradient.addColorStop(0, 'red')
-      gradient.addColorStop(1, 'black') 
-
-
       let region = new Path2D();
       region.moveTo(x0, y0);
       region.lineTo(x0+width, y0);
@@ -318,7 +320,7 @@ export function drawCanvasSnake({
       region.lineTo(x0, y0+height);
       region.closePath();
 
-      ctx.fillStyle = gradient
+      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height)
       ctx.fill(region);
 
       curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
@@ -329,10 +331,6 @@ export function drawCanvasSnake({
 
       const width = clamp(curPos[0] + GRID_STEP) - x0
       const height = LINE_WIDTH
-
-      const gradient = ctx.createLinearGradient(x0, y0, x0, y0+height)
-      gradient.addColorStop(0, 'red')
-      gradient.addColorStop(1, 'black') 
 
       let region = new Path2D();
       if (lastInstruction == null) {
@@ -346,7 +344,7 @@ export function drawCanvasSnake({
       region.lineTo(x0, y0+height);
       region.closePath();
 
-      ctx.fillStyle = gradient
+      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height)
       ctx.fill(region);
 
       curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
@@ -359,28 +357,19 @@ export function drawCanvasSnake({
       const height = GRID_STEP
 
       let region = new Path2D();
-      const gradient = ctx.createLinearGradient(x0, y0, x0+width, y0)
       if (lastInstruction == 'right') {
-        // TODO: corner at the bottom too
         region.moveTo(x0, y0+LINE_WIDTH);
         region.lineTo(x0+width, y0);
         region.lineTo(x0+width, y0+height+LINE_WIDTH);
         region.lineTo(x0, y0+height+LINE_WIDTH);
         region.closePath();
-        
-        gradient.addColorStop(0, 'black')
-        gradient.addColorStop(1, 'red') 
       }
       else if (lastInstruction == 'left') {
-        // TODO: corner at the bottom too
         region.moveTo(x0, y0);
         region.lineTo(x0+width, y0+LINE_WIDTH);
         region.lineTo(x0+width, y0+height+LINE_WIDTH);
         region.lineTo(x0, y0+height+LINE_WIDTH);
         region.closePath();
-
-        gradient.addColorStop(0, 'red')
-        gradient.addColorStop(1, 'black') 
       }
       else {
         region.moveTo(x0, y0);  
@@ -388,12 +377,9 @@ export function drawCanvasSnake({
         region.lineTo(x0+width, y0+height+LINE_WIDTH);
         region.lineTo(x0, y0+height+LINE_WIDTH);
         region.closePath();
-
-        gradient.addColorStop(0, 'red')
-        gradient.addColorStop(1, 'black') 
       }
 
-      ctx.fillStyle = gradient
+      ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0)
       ctx.fill(region);
 
       curPos = [curPos[0], curPos[1] + GRID_STEP];
