@@ -338,12 +338,19 @@ export function drawCanvasSnake({
       const width = LINE_WIDTH
       const height = GRID_STEP
 
+      let region = new Path2D();
+      region.moveTo(x0, y0);
+      region.lineTo(x0+width, y0);
+      region.lineTo(x0+width, y0+height);
+      region.lineTo(x0, y0+height);
+      region.closePath();
+
       const gradient = ctx.createLinearGradient(x0, y0, x0+width, y0)
       gradient.addColorStop(0, 'red')
       gradient.addColorStop(1, 'black') 
   
       ctx.fillStyle = gradient
-      ctx.fillRect(x0, y0, width, height);
+      ctx.fill(region);
 
       curPos = [curPos[0], curPos[1] + GRID_STEP];
     }
