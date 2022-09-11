@@ -2,12 +2,12 @@
   <div class="events-snake-grid__container">
     <canvas
       ref="canvas" 
-      :width="(cellSize * columns + gap * (columns - 1)) * pixelDensity"
-      :height="(cellSize * template.areas.length + gap * (template.areas.length - 1)) * pixelDensity"
+      :width="canvasWidth * pixelDensity"
+      :height="canvasHeight * pixelDensity"
       :style="{
         'position': 'absolute',
-        width: cellSize * columns + gap * (columns - 1) + 'px',
-        height: cellSize * template.areas.length + gap * (template.areas.length - 1) + 'px',
+        'width': canvasWidth + 'px',
+        'height': canvasHeight + 'px',
       }"
     ></canvas>
     <div
@@ -101,6 +101,12 @@ export default {
     },
     pixelDensity() {
       return window.devicePixelRatio;
+    },
+    canvasWidth() {
+      return this.cellSize * this.columns + this.gap * (this.columns - 1)
+    },
+    canvasHeight() {
+      return this.cellSize * this.template.areas.length + this.gap * (this.template.areas.length - 1)
     }
   },
 }
