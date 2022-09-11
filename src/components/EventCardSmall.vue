@@ -107,7 +107,6 @@ export default {
   display: block;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-weight: bold;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin: 0.67em 0;

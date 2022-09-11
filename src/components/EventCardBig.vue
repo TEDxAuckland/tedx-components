@@ -109,8 +109,8 @@ export default {
   padding: 6px 16px;
   padding-bottom: 20px;
   text-align: left;
-  background-color: #2E2E2E;
-  color: white;
+  background-color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -120,7 +120,6 @@ export default {
   display: block;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-weight: bold;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin: 0;
@@ -132,7 +131,6 @@ export default {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   margin:0;
-  font-weight: bold;
 }
 
 .event-card-big__desc {
