@@ -76,7 +76,6 @@ export default {
 <style>
 .event-card__container--small {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  box-shadow: inset 0px -1009px 40px rgb(0 0 0 / 20%);
   position: relative;
 }
 
