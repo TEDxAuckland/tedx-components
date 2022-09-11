@@ -315,7 +315,8 @@ export function drawCanvasSnake({
 
   ctx.beginPath();
 
-  const LINE_WIDTH = 15 * pixelDensity;
+  const LINE_WIDTH = 50 * pixelDensity;
+  const HALF_LINE_WIDTH = LINE_WIDTH / 2;
   let lastInstruction = null;
   let lastDirectionInstruction = history[0];
   let gradientInverted = false;
@@ -333,10 +334,10 @@ export function drawCanvasSnake({
     }
 
     if (instruction === "left") {
-      const x0 = clamp(curPos[0] - GRID_STEP)
-      const y0 = curPos[1]
+      const x0 = clamp(curPos[0] - GRID_STEP)-HALF_LINE_WIDTH
+      const y0 = curPos[1]-HALF_LINE_WIDTH
 
-      const width = curPos[0] - x0
+      const width = curPos[0] - x0 - HALF_LINE_WIDTH
       const height = LINE_WIDTH
 
       let region = new Path2D();
@@ -352,10 +353,10 @@ export function drawCanvasSnake({
       curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
     }
     if (instruction === "right") {
-      const x0 = curPos[0]
-      const y0 = curPos[1]
+      const x0 = curPos[0]-HALF_LINE_WIDTH
+      const y0 = curPos[1]-HALF_LINE_WIDTH
 
-      const width = clamp(curPos[0] + GRID_STEP) - x0
+      const width = clamp(curPos[0] + GRID_STEP) - x0 - HALF_LINE_WIDTH
       const height = LINE_WIDTH
 
       let region = new Path2D();
@@ -376,8 +377,8 @@ export function drawCanvasSnake({
       curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
     }
     if (instruction === "down") {
-      const x0 = curPos[0]
-      const y0 = curPos[1]
+      const x0 = curPos[0]-HALF_LINE_WIDTH
+      const y0 = curPos[1]-HALF_LINE_WIDTH
 
       const width = LINE_WIDTH
       const height = GRID_STEP
