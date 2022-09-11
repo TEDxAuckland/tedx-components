@@ -270,10 +270,10 @@ export function clearCanvasSnake({ canvas }) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function generateGradient(ctx, x0, y0, x1, y1) {
+function generateGradient(ctx, x0, y0, x1, y1, isInverted) {
   const gradient = ctx.createLinearGradient(x0, y0, x1, y1)
-  gradient.addColorStop(0, 'red')
-  gradient.addColorStop(1, 'black') 
+  gradient.addColorStop(0, isInverted ? 'black' : 'red')
+  gradient.addColorStop(1, isInverted ? 'red' : 'black')
   return gradient
 }
 
@@ -303,8 +303,20 @@ export function drawCanvasSnake({
 
   const LINE_WIDTH = 15;
   let lastInstruction = null;
+  let lastDirectionInstruction = history[0];
+  let gradientInverted = false;
 
   for (const instruction of history) {
+
+    if (instruction === "left" || instruction === "right" || instruction === "down") {
+      if (lastDirectionInstruction == "right" && instruction == "down") {
+        gradientInverted = !gradientInverted
+      }
+      if (lastDirectionInstruction == "down" && instruction == "right") {
+        gradientInverted = !gradientInverted
+      }
+      lastDirectionInstruction = instruction;
+    }
 
     if (instruction === "left") {
       const x0 = clamp(curPos[0] - GRID_STEP)
@@ -320,7 +332,7 @@ export function drawCanvasSnake({
       region.lineTo(x0, y0+height);
       region.closePath();
 
-      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height)
+      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted)
       ctx.fill(region);
 
       curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
@@ -344,7 +356,7 @@ export function drawCanvasSnake({
       region.lineTo(x0, y0+height);
       region.closePath();
 
-      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height)
+      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted)
       ctx.fill(region);
 
       curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
@@ -379,7 +391,7 @@ export function drawCanvasSnake({
         region.closePath();
       }
 
-      ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0)
+      ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0, gradientInverted)
       ctx.fill(region);
 
       curPos = [curPos[0], curPos[1] + GRID_STEP];
