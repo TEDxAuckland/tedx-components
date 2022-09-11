@@ -340,6 +340,7 @@ export function drawCanvasSnake({
       const height = GRID_STEP
 
       let region = new Path2D();
+      const gradient = ctx.createLinearGradient(x0, y0, x0+width, y0)
       if (lastInstruction == 'right') {
         // TODO: corner at the bottom too
         region.moveTo(x0, y0+LINE_WIDTH);
@@ -347,6 +348,9 @@ export function drawCanvasSnake({
         region.lineTo(x0+width, y0+height);
         region.lineTo(x0, y0+height);
         region.closePath();
+        
+        gradient.addColorStop(0, 'black')
+        gradient.addColorStop(1, 'red') 
       }
       else if (lastInstruction == 'left') {
         // TODO: corner at the bottom too
@@ -355,6 +359,9 @@ export function drawCanvasSnake({
         region.lineTo(x0+width, y0+height);
         region.lineTo(x0, y0+height);
         region.closePath();
+
+        gradient.addColorStop(0, 'red')
+        gradient.addColorStop(1, 'black') 
       }
       else {
         region.moveTo(x0, y0);  
@@ -362,12 +369,11 @@ export function drawCanvasSnake({
         region.lineTo(x0+width, y0+height);
         region.lineTo(x0, y0+height);
         region.closePath();
+
+        gradient.addColorStop(0, 'red')
+        gradient.addColorStop(1, 'black') 
       }
 
-      const gradient = ctx.createLinearGradient(x0, y0, x0+width, y0)
-      gradient.addColorStop(0, 'red')
-      gradient.addColorStop(1, 'black') 
-  
       ctx.fillStyle = gradient
       ctx.fill(region);
 
