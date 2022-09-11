@@ -100,7 +100,7 @@ export default {
       return { history, areas }
     },
     pixelDensity() {
-      return 4;
+      return window.devicePixelRatio;
     }
   },
 }

@@ -299,7 +299,7 @@ export function drawCanvasSnake({
 
   ctx.beginPath();
 
-  const pixelDensity = 4;
+  const pixelDensity = window.devicePixelRatio;
   const LINE_WIDTH = 15 * pixelDensity;
   let lastInstruction = null;
   let lastDirectionInstruction = history[0];
