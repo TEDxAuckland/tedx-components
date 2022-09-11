@@ -326,10 +326,10 @@ export function drawCanvasSnake({
       const height = LINE_WIDTH
 
       let region = new Path2D();
-      region.moveTo(x0, y0);
+      region.moveTo(x0+1, y0); // +1 avoids bleeding
       region.lineTo(x0+width, y0);
       region.lineTo(x0+width+LINE_WIDTH, y0+height);
-      region.lineTo(x0, y0+height);
+      region.lineTo(x0+1, y0+height); // +1 avoids bleeding
       region.closePath();
 
       ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted)
@@ -351,8 +351,8 @@ export function drawCanvasSnake({
       else {
         region.moveTo(x0+LINE_WIDTH, y0);
       }
-      region.lineTo(x0+width+LINE_WIDTH, y0);
-      region.lineTo(x0+width+LINE_WIDTH, y0+height);
+      region.lineTo(x0+width+LINE_WIDTH-1, y0); // -1 avoids bleeding
+      region.lineTo(x0+width+LINE_WIDTH-1, y0+height); // -1 avoids bleeding
       region.lineTo(x0, y0+height);
       region.closePath();
 
