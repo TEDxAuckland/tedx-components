@@ -147,11 +147,13 @@ export function generateGridRecursive(columns, items) {
     history: [],
   };
 
+  let snakeProgressFilled = -1;
   for (const item of items) {
     if (item.is_highlighted) {
       if (snakeProgress.direction === "right") {
         if (snakeProgress.column + 1 < columns) {
           snakeProgress = fillBigItem(grid, snakeProgress, item);
+          snakeProgressFilled = snakeProgress.history.length;
           snakeProgress = findEmptyCell(grid, snakeProgress);
         } else {
           // console.error(
@@ -161,6 +163,7 @@ export function generateGridRecursive(columns, items) {
       } else {
         if (snakeProgress.column - 1 >= 0) {
           snakeProgress = fillBigItem(grid, snakeProgress, item);
+          snakeProgressFilled = snakeProgress.history.length;
           snakeProgress = findEmptyCell(grid, snakeProgress);
         } else {
           // console.error(
@@ -170,8 +173,12 @@ export function generateGridRecursive(columns, items) {
       }
     } else {
       grid[snakeProgress.row][snakeProgress.column] = item.id;
+      snakeProgressFilled = snakeProgress.history.length;
       snakeProgress = findEmptyCell(grid, snakeProgress);
     }
+  }
+  if (snakeProgressFilled !== -1) {
+    snakeProgress.history = snakeProgress.history.slice(0, snakeProgressFilled);
   }
 
   return { history: snakeProgress.history, grid };
@@ -211,6 +218,7 @@ export function generateGridSimple(columns, items) {
     return direction === "right" ? 1 : -1;
   }
 
+  let snakeProgressFilled = -1;
   for (const item of items) {
     if (item.is_highlighted) {
       if (direction === "right") {
@@ -231,12 +239,17 @@ export function generateGridSimple(columns, items) {
       grid[row][column + directionSign()] = item.id;
       grid[row + 1][column] = item.id;
       grid[row + 1][column + directionSign()] = item.id;
+      snakeProgressFilled = history.length
       goForward();
       goForward();
     } else {
       grid[row][column] = item.id;
+      snakeProgressFilled = history.length
       goForward();
     }
+  }
+  if (snakeProgressFilled !== -1) {
+    history = history.slice(0, snakeProgressFilled);
   }
 
   return { history, grid };
