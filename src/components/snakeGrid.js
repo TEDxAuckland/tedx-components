@@ -335,7 +335,12 @@ export function drawCanvasSnake({
       gradient.addColorStop(1, 'black') 
 
       let region = new Path2D();
-      region.moveTo(x0+LINE_WIDTH, y0);
+      if (lastInstruction == null) {
+        region.moveTo(x0, y0);
+      }
+      else {
+        region.moveTo(x0+LINE_WIDTH, y0);
+      }
       region.lineTo(x0+width+LINE_WIDTH, y0);
       region.lineTo(x0+width+LINE_WIDTH, y0+height);
       region.lineTo(x0, y0+height);
