@@ -305,6 +305,7 @@ export function drawCanvasSnake({
   gap,
   pixelDensity,
   history,
+  lineWidth,
 }) {
   const renderedGap = gap * pixelDensity;
   const renderedCellSize = cellSize * pixelDensity;
@@ -323,8 +324,8 @@ export function drawCanvasSnake({
 
   ctx.beginPath();
 
-  const LINE_WIDTH = 50 * pixelDensity;
-  const HALF_LINE_WIDTH = LINE_WIDTH / 2;
+  const renderedLineWidth = lineWidth * pixelDensity;
+  const renderedHalfLineWidth = renderedLineWidth / 2;
   let lastInstruction = null;
   let lastDirectionInstruction = history[0];
   let gradientInverted = false;
@@ -342,16 +343,16 @@ export function drawCanvasSnake({
     }
 
     if (instruction === "left") {
-      const x0 = clamp(curPos[0] - GRID_STEP)-HALF_LINE_WIDTH
-      const y0 = curPos[1]-HALF_LINE_WIDTH
+      const x0 = clamp(curPos[0] - GRID_STEP)-renderedHalfLineWidth
+      const y0 = curPos[1]-renderedHalfLineWidth
 
-      const width = curPos[0] - x0 - HALF_LINE_WIDTH
-      const height = LINE_WIDTH
+      const width = curPos[0] - x0 - renderedHalfLineWidth
+      const height = renderedLineWidth
 
       let region = new Path2D();
       region.moveTo(x0+1, y0); // +1 avoids bleeding
       region.lineTo(x0+width, y0);
-      region.lineTo(x0+width+LINE_WIDTH, y0+height);
+      region.lineTo(x0+width+renderedLineWidth, y0+height);
       region.lineTo(x0+1, y0+height); // +1 avoids bleeding
       region.closePath();
 
@@ -361,21 +362,21 @@ export function drawCanvasSnake({
       curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
     }
     if (instruction === "right") {
-      const x0 = curPos[0]-HALF_LINE_WIDTH
-      const y0 = curPos[1]-HALF_LINE_WIDTH
+      const x0 = curPos[0]-renderedHalfLineWidth
+      const y0 = curPos[1]-renderedHalfLineWidth
 
-      const width = clamp(curPos[0] + GRID_STEP) - x0 - HALF_LINE_WIDTH
-      const height = LINE_WIDTH
+      const width = clamp(curPos[0] + GRID_STEP) - x0 - renderedHalfLineWidth
+      const height = renderedLineWidth
 
       let region = new Path2D();
       if (lastInstruction == null) {
         region.moveTo(x0, y0);
       }
       else {
-        region.moveTo(x0+LINE_WIDTH, y0);
+        region.moveTo(x0+renderedLineWidth, y0);
       }
-      region.lineTo(x0+width+LINE_WIDTH-1, y0); // -1 avoids bleeding
-      region.lineTo(x0+width+LINE_WIDTH-1, y0+height); // -1 avoids bleeding
+      region.lineTo(x0+width+renderedLineWidth-1, y0); // -1 avoids bleeding
+      region.lineTo(x0+width+renderedLineWidth-1, y0+height); // -1 avoids bleeding
       region.lineTo(x0, y0+height);
       region.closePath();
 
@@ -385,32 +386,32 @@ export function drawCanvasSnake({
       curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
     }
     if (instruction === "down") {
-      const x0 = curPos[0]-HALF_LINE_WIDTH
-      const y0 = curPos[1]-HALF_LINE_WIDTH
+      const x0 = curPos[0]-renderedHalfLineWidth
+      const y0 = curPos[1]-renderedHalfLineWidth
 
-      const width = LINE_WIDTH
+      const width = renderedLineWidth
       const height = GRID_STEP
 
       let region = new Path2D();
       if (lastInstruction == 'right') {
-        region.moveTo(x0, y0+LINE_WIDTH);
+        region.moveTo(x0, y0+renderedLineWidth);
         region.lineTo(x0+width, y0);
-        region.lineTo(x0+width, y0+height+LINE_WIDTH);
-        region.lineTo(x0, y0+height+LINE_WIDTH);
+        region.lineTo(x0+width, y0+height+renderedLineWidth);
+        region.lineTo(x0, y0+height+renderedLineWidth);
         region.closePath();
       }
       else if (lastInstruction == 'left') {
         region.moveTo(x0, y0);
-        region.lineTo(x0+width, y0+LINE_WIDTH);
-        region.lineTo(x0+width, y0+height+LINE_WIDTH);
-        region.lineTo(x0, y0+height+LINE_WIDTH);
+        region.lineTo(x0+width, y0+renderedLineWidth);
+        region.lineTo(x0+width, y0+height+renderedLineWidth);
+        region.lineTo(x0, y0+height+renderedLineWidth);
         region.closePath();
       }
       else {
         region.moveTo(x0, y0);  
         region.lineTo(x0+width, y0);
-        region.lineTo(x0+width, y0+height+LINE_WIDTH);
-        region.lineTo(x0, y0+height+LINE_WIDTH);
+        region.lineTo(x0+width, y0+height+renderedLineWidth);
+        region.lineTo(x0, y0+height+renderedLineWidth);
         region.closePath();
       }
 

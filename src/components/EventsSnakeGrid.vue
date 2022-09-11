@@ -52,14 +52,15 @@ export default {
     drawCanvas() {
       const canvas = this.$refs.canvas
       const history = this.template.history
-      const {cellSize, columns, gap, pixelDensity} = this
+      const {cellSize, columns, gap, pixelDensity, lineWidth} = this
       drawCanvasSnake({ 
         canvas, 
         cellSize,
         columns, 
         gap,
         pixelDensity,
-        history 
+        history,
+        lineWidth
       });
     },
     redrawCanvas() {
@@ -88,6 +89,10 @@ export default {
     gap: {
       type: Number,
       default: 10,
+    },
+    lineWidth: {
+      type: Number,
+      default: 50,
     },
   },
   data() {

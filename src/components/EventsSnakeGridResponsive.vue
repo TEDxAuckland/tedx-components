@@ -3,6 +3,7 @@
     :items="items"
     :cellSize="(containerWidth - dynamicGap * 3) / 4"
     :gap="dynamicGap"
+    :lineWidth="dynamicLineWidth"
     v-slot="{ item, cellSize, gap }"
   >
     <EventCard
@@ -54,6 +55,9 @@ export default {
     },
     dynamicGap() {
       return this.containerWidth * 11 / 120
+    },
+    dynamicLineWidth() {
+      return this.containerWidth / 120 * 5
     },
   }
 }
