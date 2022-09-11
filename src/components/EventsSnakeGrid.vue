@@ -114,13 +114,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.events-snake-grid__grid {
-  color: black;
-}
-.events-snake-grid__item {
-  background-color: lightGrey;
-}
-.events-snake-grid__item--big {
-  background-color: grey;
-}
 </style>
