@@ -50,8 +50,8 @@ export default {
     drawCanvas() {
       const canvas = this.$refs.canvas
       const history = this.template.history
-      const {cellSize, columns, gap, lineColor} = this
-      drawCanvasSnake({ canvas, cellSize, columns, gap, lineColor, history });
+      const {cellSize, columns, gap} = this
+      drawCanvasSnake({ canvas, cellSize, columns, gap, history });
     },
     redrawCanvas() {
       this.clearCanvas()
@@ -79,10 +79,6 @@ export default {
     gap: {
       type: Number,
       default: 10,
-    },
-    lineColor: {
-      type: String,
-      default: '#000',
     },
   },
   data() {

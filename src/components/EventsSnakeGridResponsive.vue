@@ -1,7 +1,6 @@
 <template>
   <EventsSnakeGrid
     :items="items"
-    :lineColor="lineColor"
     :cellSize="(containerWidth - dynamicGap * 3) / 4"
     :gap="dynamicGap"
     v-slot="{ item, cellSize, gap }"
@@ -56,9 +55,6 @@ export default {
     dynamicGap() {
       return this.containerWidth * 11 / 120
     },
-    lineColor() {
-      return '#ed3624'
-    }
   }
 }
 
