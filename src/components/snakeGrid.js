@@ -299,7 +299,8 @@ export function drawCanvasSnake({
 
   ctx.beginPath();
 
-  const LINE_WIDTH = 15;
+  const pixelDensity = 4;
+  const LINE_WIDTH = 15 * pixelDensity;
   let lastInstruction = null;
   let lastDirectionInstruction = history[0];
   let gradientInverted = false;

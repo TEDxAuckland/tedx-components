@@ -2,10 +2,12 @@
   <div class="events-snake-grid__container">
     <canvas
       ref="canvas" 
-      :width="cellSize * columns + gap * (columns - 1)"
-      :height="cellSize * template.areas.length + gap * (template.areas.length - 1)"
+      :width="(cellSize * columns + gap * (columns - 1)) * pixelDensity"
+      :height="(cellSize * template.areas.length + gap * (template.areas.length - 1)) * pixelDensity"
       :style="{
         'position': 'absolute',
+        width: cellSize * columns + gap * (columns - 1) + 'px',
+        height: cellSize * template.areas.length + gap * (template.areas.length - 1) + 'px',
       }"
     ></canvas>
     <div
@@ -51,7 +53,13 @@ export default {
       const canvas = this.$refs.canvas
       const history = this.template.history
       const {cellSize, columns, gap} = this
-      drawCanvasSnake({ canvas, cellSize, columns, gap, history });
+      drawCanvasSnake({ 
+        canvas, 
+        cellSize: cellSize*this.pixelDensity, 
+        columns, 
+        gap:gap*this.pixelDensity, 
+        history 
+      });
     },
     redrawCanvas() {
       this.clearCanvas()
@@ -91,6 +99,9 @@ export default {
       const areas = getAreas(grid)
       return { history, areas }
     },
+    pixelDensity() {
+      return 4;
+    }
   },
 }
 </script>
