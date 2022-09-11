@@ -348,6 +348,14 @@ export function drawCanvasSnake({
         region.lineTo(x0, y0+height);
         region.closePath();
       }
+      else if (lastInstruction == 'left') {
+        // TODO: corner at the bottom too
+        region.moveTo(x0, y0);
+        region.lineTo(x0+width, y0+LINE_WIDTH);
+        region.lineTo(x0+width, y0+height);
+        region.lineTo(x0, y0+height);
+        region.closePath();
+      }
       else {
         region.moveTo(x0, y0);  
         region.lineTo(x0+width, y0);
