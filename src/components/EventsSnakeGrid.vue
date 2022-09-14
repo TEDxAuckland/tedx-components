@@ -43,7 +43,8 @@ export default {
   components: {
   },
   mounted() {
-    window.visualViewport.addEventListener('resize', this.resizeHandler);
+    // TODO: remove the visual viewport so my laptop doesn't lag
+    // window.visualViewport.addEventListener('resize', this.resizeHandler);
     this.updatePixelRatio()
   },
   methods: {
@@ -86,7 +87,7 @@ export default {
     this.redrawCanvas()
   },
   beforeDestroy() {
-    window.visualViewport.removeEventListener('resize', this.resizeHandler);
+    // window.visualViewport.removeEventListener('resize', this.resizeHandler);
     this.clearCanvas()
   },
   props: {
