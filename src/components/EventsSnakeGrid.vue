@@ -43,8 +43,8 @@ export default {
   components: {
   },
   mounted() {
-    this.drawCanvas()
     window.visualViewport.addEventListener('resize', this.resizeHandler);
+    this.updatePixelRatio()
   },
   methods: {
     clearCanvas() {
@@ -72,6 +72,11 @@ export default {
       this.drawCanvas()
     },
     resizeHandler() {
+      this.redrawCanvas()
+    },
+    updatePixelRatio() {
+      window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+        .addEventListener('change', this.updatePixelRatio, {once: true});
       this.redrawCanvas()
     }
   },
