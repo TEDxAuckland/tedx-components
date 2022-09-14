@@ -18,7 +18,6 @@ import SmallCard from '@/components/EventCardSmall.vue'
 import BigCard from '@/components/EventCardBig.vue'
 
 const mockEventSmall = 	{
-  "content": "## TEDxAuckland *together*\n\nJoin us for TEDxAuckland *together*, a special evening event where five speakers will take centre stage. We're embracing 2022 with a sense of unity as we bring together ideas that will inspire us and showcase great speakers making the future better.\n\nWe'll be hosted by the gorgeous ASB Waterfront Theatre where the break will provide ample opportunities to meet fellow attendees, taste delicious food prepared by local Chefs, discuss the talks and make new connections.\n\nTickets are limited so be quick. Come alone, or bring a friend, either way let's get *together*.\n\n**WEDNESDAY 8th JUNE 2022**<br>**WATERFRONT THEATRE, WYNYARD QUARTER**\n\n#### Event Schedule\n\n4:00pm Registration Opens<br>5:00pm MC kicks off event<br>SESSION 1<br>*Break - Special meal*<br>SESSION 2 END 7:00pm<br>AFTER PARTY\\!\n",
   "date": "2022-08-18 19:26:51 +1200",
   "title": "Together",
   "categories": [],
@@ -61,7 +60,6 @@ const mockEventSmall = 	{
 };
 
 const mockEventBig = {
-  "content": "# TEDxAuckland November 2019\n\n*tūmanako*\\: to hope for a better future\n\nTEDxAuckland is taking over 'ASB Waterfront Theatre' for a full day of talks, performances, inspiration, and new connections.\n\nThe event is fully catered so just bring your lovely self and maybe someone else\\!\n\nFind the growing list of speakers below.\n\n~~Early Bird tickets $99<br>General Release tickets $129~~<br>~~Late Bird $159~~\n\n**When:** Saturday 16 November 2019, midday - 5:30pm\n\nDoors & registration opens at 10:30am<br><br>**Where:** ASB Waterfront Theatre\n",
   "date": "2022-08-18 19:26:51 +1200",
   "title": "tūmanako: Nov 2019",
   "categories": [],

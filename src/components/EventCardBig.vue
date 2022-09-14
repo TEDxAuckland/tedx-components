@@ -10,7 +10,7 @@
     <img
       alt="Avatar"
       class="event-image-big"
-      src="http://localhost:8080/assets/resized/pete-bethune_talk_1-900.jpg"
+      :src="item.event_listing.image"
       :style="{
         'height': (height * 2 / 3) + 'px',
       }"
@@ -43,7 +43,7 @@
       </div>
       <div 
         class="event-card-big__desc" 
-        v-html="`${item.raw_content.slice(0, 200)}...`"
+        v-html="item.event_listing.description"
         :style="{
           'font-size': (width / 545 * 12) + 'px',
           'margin-bottom': multiplier * 8 + 'px',
@@ -81,6 +81,7 @@ export default {
 
   computed: {
     date_title() {
+      // TODO: switch to date-fns
       return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
     },
     multiplier() {

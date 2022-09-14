@@ -1,7 +1,7 @@
 <template>
   <div>
-    <EventCardBig :item="item" v-if="item.is_highlighted" :width="width" :height="height" />
-    <EventCardSmall :item="item" v-if="!item.is_highlighted" :width="width" :height="height"  />
+    <EventCardBig :item="item" v-if="item.event_listing.is_highlighted" :width="width" :height="height" />
+    <EventCardSmall :item="item" v-if="!item.event_listing.is_highlighted" :width="width" :height="height"  />
   </div>
 </template>
 
@@ -36,10 +36,10 @@ export default {
 
   computed: {
     width() {
-      return this.item.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
+      return this.item.event_listing.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
     },
     height() {
-      return this.item.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
+      return this.item.event_listing.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
     }
   }
 }

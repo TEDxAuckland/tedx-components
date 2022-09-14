@@ -10,7 +10,7 @@
     <img
       alt="Avatar"
       class="event-image-small"
-      src="http://localhost:8080/assets/resized/default-speaker-photo-600.jpg"
+      :src="item.event_listing.image"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
@@ -35,7 +35,7 @@
       ></div>
       <div 
         class="event-card-small__desc" 
-        v-html="`${item.raw_content.slice(0, 100)}...`"
+        v-html="item.event_listing.description"
         :style="{
           'font-size': multiplier * 12 + 'px',
           'margin-bottom': multiplier * 8 + 'px',
