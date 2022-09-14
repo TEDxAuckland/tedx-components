@@ -106,7 +106,7 @@ export default {
       return { history, areas }
     },
     pixelDensity() {
-      return Math.max(window.devicePixelRatio, 1);
+      return window.devicePixelRatio * window.visualViewport.scale
     },
     canvasWidth() {
       return this.cellSize * this.columns + this.gap * (this.columns - 1)
