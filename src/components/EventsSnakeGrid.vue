@@ -67,6 +67,7 @@ export default {
         lineWidth
       });
     },
+    // TODO: throttle or debounce
     redrawCanvas() {
       this.clearCanvas()
       this.drawCanvas()
