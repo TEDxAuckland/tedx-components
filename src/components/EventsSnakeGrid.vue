@@ -134,4 +134,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.events-snake-grid__container {
+  display: flex;
+}
 </style>

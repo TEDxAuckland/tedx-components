@@ -1,17 +1,19 @@
 <template>
-  <EventsSnakeGrid
-    :items="items"
-    :cellSize="(containerWidth - dynamicGap * 3) / 4"
-    :gap="dynamicGap"
-    :lineWidth="dynamicLineWidth"
-    v-slot="{ item, cellSize, gap }"
-  >
-    <EventCard
-      :item="item"
-      :cellSize="cellSize"
-      :gap="gap" 
-    />
-  </EventsSnakeGrid>
+  <div style="display: flex; justify-content: center;"> 
+    <EventsSnakeGrid
+      :items="items"
+      :cellSize="(containerWidth - dynamicGap * 3) / 4"
+      :gap="dynamicGap"
+      :lineWidth="dynamicLineWidth"
+      v-slot="{ item, cellSize, gap }"
+    >
+      <EventCard
+        :item="item"
+        :cellSize="cellSize"
+        :gap="gap" 
+      />
+    </EventsSnakeGrid>
+</div>
 </template>
 
 <script>
@@ -28,7 +30,7 @@ export default {
 
   methods: {
     resized() {
-      this.gridWidth = window.innerWidth
+      this.gridWidth = window.innerWidth - 100
     }
   },
   mounted() {
@@ -45,13 +47,13 @@ export default {
 
   data() {
     return {
-      gridWidth: window.innerWidth
+      gridWidth: window.innerWidth - 100
     }
   },
 
   computed: {
     containerWidth() {
-      return Math.min(this.gridWidth, 1200)
+      return Math.min(this.gridWidth, 1100)
     },
     dynamicGap() {
       return this.containerWidth * 11 / 120
