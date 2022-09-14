@@ -44,6 +44,7 @@ export default {
   },
   mounted() {
     this.drawCanvas()
+    window.visualViewport.addEventListener('resize', this.resizeHandler);
   },
   methods: {
     clearCanvas() {
@@ -52,7 +53,10 @@ export default {
     drawCanvas() {
       const canvas = this.$refs.canvas
       const history = this.template.history
-      const {cellSize, columns, gap, pixelDensity, lineWidth} = this
+      const {cellSize, columns, gap, lineWidth} = this
+      const pixelDensity = window.devicePixelRatio * window.visualViewport.scale
+      this.$refs.canvas.width = this.canvasWidth * pixelDensity
+      this.$refs.canvas.height = this.canvasHeight * pixelDensity
       drawCanvasSnake({ 
         canvas, 
         cellSize,
@@ -66,12 +70,16 @@ export default {
     redrawCanvas() {
       this.clearCanvas()
       this.drawCanvas()
+    },
+    resizeHandler() {
+      this.redrawCanvas()
     }
   },
   updated() {
     this.redrawCanvas()
   },
   beforeDestroy() {
+    window.visualViewport.removeEventListener('resize', this.resizeHandler);
     this.clearCanvas()
   },
   props: {
