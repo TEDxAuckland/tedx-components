@@ -104,6 +104,7 @@ export default {
   background-position: center;
   background-size: contain;
   display: block;
+  object-fit: cover;
 }
 
 .event-card-big-text {
