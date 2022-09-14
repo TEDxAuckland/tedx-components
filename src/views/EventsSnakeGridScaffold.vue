@@ -185,7 +185,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland November 2019\n\n*tūmanako*\\: to hope for a better future\n\nTEDxAuckland is taking over 'ASB Waterfront Theatre' for a full day of talks, performances, inspiration, and new connections.\n\nThe event is fully catered so just bring your lovely self and maybe someone else\\!\n\nFind the growing list of speakers below.\n\n~~Early Bird tickets $99<br>General Release tickets $129~~<br>~~Late Bird $159~~\n\n**When:** Saturday 16 November 2019, midday - 5:30pm\n\nDoors & registration opens at 10:30am<br><br>**Where:** ASB Waterfront Theatre\n",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -228,7 +228,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# Introducing A World First\n\nOn August 31st, TEDxAuckland is hosting a Salon event which will be the first TEDx event in the world to be held in **complete darkness**.\n\nHosted by Dans le Noir ? Rydges Auckland and shared with you by Vodafone NZ - this will be an unforgettable experience like no other.\n\n#### TEDxAuckland and Dans le Noir ? are combining to provide you with a unique sensory, social and human experience.\n\n**A Sensory Journey:** Dining in absolute darkness is a sensory experience that awakens senses and enables guests to completely re-evaluate their perception of taste and smell.\n\n**A Place to Socialise:** Darkness eradicates shyness & erases preconceptions. Communication becomes more intense, authentic and spontaneous. Both with the people you sit with, and the TEDxAuckland speakers.\n\n**A Unique Human Experience:** Blind people work not only as waitstaff but also as guides during this experience. Reversing roles, the guide becomes patrons’ eyes for the time of the dinner\\!\n\n#### Event Information:\n\n* Enjoy a three course meal, with 3 different menu versions freshly created for this experience.\n* 2x Speakers will present in pitch black between meal courses.\n* Just like the food, information about the speakers has been hidden so attendee's go into the event with zero preconceptions.\n* **When**\\: Saturday August 31st starting 6pm till late.\n* **Where**\\: Dans le Noir ? Rydges Auckland.\n* **Price**\\: $199.\n* The event will be followed by an afterparty at The Glass Goose.\n\nIf you would like to attend, you will need to register at the link below. Spaces are extremely limited, so make sure to get in quick.\n",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -400,7 +400,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland 2016\n\n2016 TEDxAuckland was a little different. We curated ideas for a global audience; global in their diversity, expertise and residence. Say hello to TEDxAuckland 2016!\n\n#### Our Theme this year is: *flipside*\n\n* The perspective you get from seeing an old problem in a new way.\n* Turning hierarchies on their head and putting ideas ahead of ideology.\n* Sidestepping power structures, gender, race and geography.\n* Stepping outside your workplace, your country and even your hemisphere to connect with a community of speakers, delegates and partners united by a healthy disrespect for business as usual.\n\nThe event featured ideas and talks from amazing people changing the world. We’ll be matching the diversity of ideas with an equally diverse audience, you!\n\nTEDxAuckland 2016: *flipside* featured talks over two days, events, activities and social time. Shed 10 the venue provided the perfect space for hosting, break out spaces and food and beverage side you deserve.\n\n[See the 2016 FoodStory Video.](https://www.youtube.com/watch?v=J0s-ob4FGcg)\n",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -486,7 +486,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "TEDxAuckland 2014 took place at the Aotea Centre on Saturday 16th August. *Ascending* was the overriding theme for TEDxAuckland 2014. The day was packed with over 16 speakers, musical acts and an after party.\n\nTheme<br>*Ascending* is about individuals and society rising to a higher level of consciousness.\n\n*Ascending* is about finding the positives in any situation and building on them to make our lives, community, business and planet better.",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -615,7 +615,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -658,7 +658,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
 	}
 	
 ]
