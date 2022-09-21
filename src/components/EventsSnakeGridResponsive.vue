@@ -61,18 +61,10 @@ export default {
       return (this.containerWidth - this.gap * gapCount) / this.columns
     },
     gap() {
-      if (this.clientWidth <= 768) {
-        return this.containerWidth * 11 / 120 / 4 * 3
-      } else {
-        return this.containerWidth * 11 / 120
-      }
+      return this.containerWidth * 11 / 120 / 4 * this.columns
     },
     lineWidth() {
-      if (this.clientWidth <= 768) {
-        return this.containerWidth / 120 * 5
-      } else {
-        return this.containerWidth / 120 * 5
-      }
+      return this.containerWidth / 120 * 5
     },
     columns() {
       if (this.clientWidth <= 768) {
