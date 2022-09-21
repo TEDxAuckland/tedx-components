@@ -111,7 +111,7 @@ export default {
   padding: 6px 16px;
   padding-bottom: 20px;
   text-align: left;
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
   display: flex;
   flex-direction: column;
