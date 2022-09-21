@@ -5,6 +5,7 @@
       :cellSize="cellSize"
       :gap="gap"
       :lineWidth="lineWidth"
+      :columns="columns"
       v-slot="{ item, cellSize, gap }"
     >
       <EventCard
@@ -56,14 +57,33 @@ export default {
       return Math.min(this.clientWidth * 0.98, 1200)
     },
     cellSize() {
-      return (this.containerWidth - this.gap * 3) / 4
+      if (this.clientWidth <= 768) {
+        return (this.containerWidth - this.gap * 1) / 2
+      } else {
+        return (this.containerWidth - this.gap * 3) / 4
+      }
     },
     gap() {
-      return this.containerWidth * 11 / 120
+      if (this.clientWidth <= 768) {
+        return this.containerWidth * 11 / 120 / 4
+      } else {
+        return this.containerWidth * 11 / 120
+      }
     },
     lineWidth() {
-      return this.containerWidth / 120 * 5
+      if (this.clientWidth <= 768) {
+        return this.containerWidth / 120 * 5
+      } else {
+        return this.containerWidth / 120 * 5
+      }
     },
+    columns() {
+      if (this.clientWidth <= 768) {
+        return 2
+      } else {
+        return 4
+      }
+    }
   }
 }
 
