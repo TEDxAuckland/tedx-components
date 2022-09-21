@@ -57,15 +57,12 @@ export default {
       return Math.min(this.clientWidth * 0.98, 1200)
     },
     cellSize() {
-      if (this.clientWidth <= 768) {
-        return (this.containerWidth - this.gap * 1) / 2
-      } else {
-        return (this.containerWidth - this.gap * 3) / 4
-      }
+      const gapCount = this.columns - 1
+      return (this.containerWidth - this.gap * gapCount) / this.columns
     },
     gap() {
       if (this.clientWidth <= 768) {
-        return this.containerWidth * 11 / 120 / 4
+        return this.containerWidth * 11 / 120 / 4 * 3
       } else {
         return this.containerWidth * 11 / 120
       }
@@ -79,7 +76,7 @@ export default {
     },
     columns() {
       if (this.clientWidth <= 768) {
-        return 2
+        return 3
       } else {
         return 4
       }
