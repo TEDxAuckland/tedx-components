@@ -67,7 +67,9 @@ export default {
       return this.containerWidth / 120 * 5
     },
     columns() {
-      if (this.clientWidth <= 768) {
+      // TODO: use 46.87em
+      // TODO: use getComputedStyle(document.documentElement).fontSize? https://stackoverflow.com/questions/36532307/rem-px-in-javascript
+      if (this.clientWidth < 750) {
         return 3
       } else {
         return 4
