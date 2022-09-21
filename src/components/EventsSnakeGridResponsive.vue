@@ -2,7 +2,7 @@
   <div style="display: flex; justify-content: center;"> 
     <EventsSnakeGrid
       :items="items"
-      :cellSize="(containerWidth - dynamicGap * 3) / 4"
+      :cellSize="cellSize"
       :gap="dynamicGap"
       :lineWidth="dynamicLineWidth"
       v-slot="{ item, cellSize, gap }"
@@ -54,6 +54,9 @@ export default {
   computed: {
     containerWidth() {
       return Math.min(this.clientWidth * 0.98, 1200)
+    },
+    cellSize() {
+      return (this.containerWidth - this.dynamicGap * 3) / 4
     },
     dynamicGap() {
       return this.containerWidth * 11 / 120
