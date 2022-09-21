@@ -1,5 +1,6 @@
 <template>
-  <div style="display: flex; justify-content: center;"> 
+  <!-- TODO: use 37.5em instead -->
+  <div style="display: flex; justify-content: center;" v-if="clientWidth > 600"> 
     <EventsSnakeGrid
       :items="items"
       :cellSize="cellSize"
@@ -14,11 +15,21 @@
         :gap="gap" 
       />
     </EventsSnakeGrid>
-</div>
+  </div>
+  <div style="display: flex; align-items: center; flex-direction: column;" v-else> 
+    <div v-for="item in items" :key="item.id">
+      <EventCardBig
+        :item="item"
+        :cellSize="containerWidth/2"
+        :gap="0" 
+      />
+    </div>
+  </div>
 </template>
 
 <script>
 import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
+import EventCardBig from '@/components/EventCardBig'
 import EventCard from '@/components/EventCard'
 
 export default {
@@ -26,7 +37,8 @@ export default {
 
   components: {
     EventsSnakeGrid,
-    EventCard
+    EventCardBig,
+    EventCard,
   },
 
   methods: {
