@@ -14,6 +14,7 @@
 <script>
 import EventsSnakeGridResponsive from '@/components/EventsSnakeGridResponsive.vue'
 
+// TODO: reduce down to only used properties
 const defaultItems = 
 [	
 	{
