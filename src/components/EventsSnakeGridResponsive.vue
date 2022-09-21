@@ -16,11 +16,11 @@
       />
     </EventsSnakeGrid>
   </div>
-  <div style="display: flex; align-items: center; flex-direction: column;" v-else> 
+  <div style="display: flex; align-items: center; flex-direction: column; gap: 20px;" v-else> 
     <div v-for="item in items" :key="item.id">
       <EventCardBig
         :item="item"
-        :cellSize="containerWidth/2"
+        :width="containerWidth"
         :gap="0" 
       />
     </div>
