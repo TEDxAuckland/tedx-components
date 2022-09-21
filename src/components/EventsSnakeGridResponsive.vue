@@ -30,7 +30,7 @@ export default {
 
   methods: {
     resized() {
-      this.gridWidth = Math.min(document.documentElement.clientWidth * 0.98, 1200)
+      this.clientWidth = document.documentElement.clientWidth
     }
   },
   mounted() {
@@ -47,13 +47,13 @@ export default {
 
   data() {
     return {
-      gridWidth: Math.min(document.documentElement.clientWidth * 0.98, 1200),
+      clientWidth: document.documentElement.clientWidth,
     }
   },
 
   computed: {
     containerWidth() {
-      return this.gridWidth
+      return Math.min(this.clientWidth * 0.98, 1200)
     },
     dynamicGap() {
       return this.containerWidth * 11 / 120
