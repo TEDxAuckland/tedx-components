@@ -37,7 +37,7 @@
             class="event-card-mobile__header-small" 
             v-html="date_title"
             :style="{
-              'font-size': (width / 545 * 15.120000000000003) + 'px',
+              'font-size': (width / 545 * 15.12) + 'px',
             }"
           ></div>
         </div>
