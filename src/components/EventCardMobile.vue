@@ -49,7 +49,7 @@
             'margin-bottom': multiplier * 8 + 'px',
           }"
         ></div>
-        <button>View Past Event</button>
+        <button class="event-card-mobile__cta">View Past Event</button>
       </div>
     </div>
     </a>
@@ -136,6 +136,16 @@
   }
   
   .event-card-mobile__desc {
+  }
+
+  .event-card-mobile__cta {
+    border: none;
+    color: #f44336;
+    border: 1px solid #f44336;
+    border-radius: 4px;
+    padding: 16px 32px;
+    font-size: 16px;
+    cursor: pointer;
   }
   </style>
   
