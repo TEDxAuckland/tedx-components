@@ -4,7 +4,6 @@
       class="event-card__container event-card__container--mobile card--outline"
       :style="{
         'max-width': width + 'px',
-        'max-height': height + 'px',
       }"
     >
       <img
@@ -18,7 +17,6 @@
       <div
         class="event-card-mobile-text"
         :style="{
-          'height': (height * 1 / 3) + 'px',
           'padding-top': (multiplier * 6) + 'px',
           'padding-right': (multiplier * 16) + 'px',
           'padding-bottom': (multiplier * 20) + 'px',
@@ -49,7 +47,11 @@
             'margin-bottom': multiplier * 8 + 'px',
           }"
         ></div>
-        <button class="event-card-mobile__cta">View Past Event</button>
+        <button
+          class="event-card-mobile__cta"
+          :style="{
+          }"
+        >View Past Event</button>
       </div>
     </div>
     </a>
