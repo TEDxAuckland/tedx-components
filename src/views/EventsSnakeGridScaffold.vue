@@ -57,7 +57,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "## TEDxAuckland *together*\n\nJoin us for TEDxAuckland *together*, a special evening event where five speakers will take centre stage. We're embracing 2022 with a sense of unity as we bring together ideas that will inspire us and showcase great speakers making the future better.\n\nWe'll be hosted by the gorgeous ASB Waterfront Theatre where the break will provide ample opportunities to meet fellow attendees, taste delicious food prepared by local Chefs, discuss the talks and make new connections.\n\nTickets are limited so be quick. Come alone, or bring a friend, either way let's get *together*.\n\n**WEDNESDAY 8th JUNE 2022**<br>**WATERFRONT THEATRE, WYNYARD QUARTER**\n\n#### Event Schedule\n\n4:00pm Registration Opens<br>5:00pm MC kicks off event<br>SESSION 1<br>*Break - Special meal*<br>SESSION 2 END 7:00pm<br>AFTER PARTY\\!\n",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -100,7 +100,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "*Kia whakatōmuri te haere whakamua - ‘I walk backwards into the **future** with my eyes fixed on my **past**.’ - Māori Proverb.*\n\nTEDxAuckland 2021 is putting optimism centre stage with a offering of diverse speakers and ideas with the potential to change the World. Reset your thinking with ideas that can reshape the world for better.\n\nYou’ll experience incredible talks and performances during an immersive program. Extended breaks provide ample opportunities to meet fellow attendees, taste delicious food prepared by local Chefs, discuss the talks and meet speakers from this and previous events.\n\nJoin us at **TEDxAuckland 2021** as we emerge from 2020 and build a promising vision for the future at LIFE Central, Auckland's brand new, state of the art, purpose built convention centre.\n\nThe event is kid & child friendly\\! At the venue there will be staffed rooms for babies, toddlers and kids\\! Children under 10 free.\n\n\\#bethere\n\n**Venue:**&nbsp; &nbsp;[LIFE Central](https://lifenz.org/life-central/){: target=\"_blank\" rel=\"noopener\"}&nbsp; \\| &nbsp;25 Normanby Road, Mount Eden, Auckland 1024<br>**Time:**&nbsp; &nbsp; &nbsp; Starts at Midday\n\nE̶A̶R̶L̶Y̶ ̶B̶I̶R̶D̶ ̶$̶9̶9̶.̶0̶0̶\n\nN̶O̶R̶M̶A̶L̶ ̶B̶I̶R̶D̶ ̶$̶1̶4̶9̶.̶0̶0̶\n\nL̶A̶T̶E̶ ̶B̶I̶R̶D̶ ̶$̶1̶9̶9̶.̶0̶0̶\n\n### EVENT SCHEDULE\n\n* **11:30am Arrive & Register\\!**\n* **12:30pm MC kicks off event**\n* **SESSION 1**\n* [Matt Liggins](https://tedxauckland.com/people/matt-liggins/)\n* [Kate Meyer](https://tedxauckland.com/people/kate-meyer/)\n* [Greg Hart](https://tedxauckland.com/people/greg-hart/)\n* *Break 1 - Panel Discussion in breakout room*\n* **SESSION 2**\n* [Will Hewitt](https://tedxauckland.com/people/will-hewitt/)\n* [Clive Elliott](https://tedxauckland.com/people/clive-elliott/)\n* &nbsp;[Kaye-Maree Dunn](https://tedxauckland.com/people/kaye-maree-dunn/)\n* *Break 2 - Panel Discussion in breakout room*\n* **SESSION 3**\n* [Claire Conza](https://tedxauckland.com/people/claire-conza/)\n* [Paul Adams](https://tedxauckland.com/people/paul-adams/)\n* [Niva & Yotam Kay](https://tedxauckland.com/people/niva--yotam-kay/)\n* **END 4:45pm roughly…**\n\n##### &nbsp;\n\n# After Party\n\nCome join us at **the Chatham** in Victoria park for food, drinks and great banter.\n\n**The Chatham, 27 Drake Street, Victoria Park Market**\n\n&nbsp;\n\n&nbsp;\n",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -143,7 +143,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland November 2020\n\n**TEDxAuckland** is back at Whoa\\! Studios and The Grounds. Get ready for an exceptional confluence of ideas, networking, and culinary experience (and of course the famous after-party).\n\nEvery year typically has a few defining moments, but 2020 has outdone itself. It’s been a year of world-changing, paradigm-shifting developments\\! With a pandemic still raging and waves of social change swelling around the globe, there’s still a lot of history left to be made in 2020.\n\nJoin the conversation, as we make history - and make sense of it. We’ll be one of the very few, live in person TEDx events taking place in the world and we’d love you to be part of it.\n\nWe’ll be hosted by Whoa\\! Studios in Henderson with an exceptional dining experience by multi-award winning Kiwi chef&nbsp;[Ben Bayly](https://benbayly.co.nz) of [The Grounds](https://thegrounds.co.nz) and [Ahi Restaurant](https://www.ahirestaurant.co.nz).\n\nWe have an incredible line up of 5 speakers and a 4 course dinner. With only 150 places available, get in quick to be a part of it.\n\nJoin us at Whoa\\! Studios on Saturday 14th November 2020 for a night you’ll never forget in a year you’d like to forget.\n\n**Timetable**<br>4:30pm - Guests to arrive at Whoa\\! Studios greeted with drinks<br>5:30pm - 6:45pm TEDxAuckland 2020<br>Anderson Rocio -&nbsp;*Performance*<br>Shalsee Vigeant<br>Sir Peter Gluckman<br>Belinda McKenzie<br>A meditation in blackness -&nbsp;*Performance*\n\n7pm - 10pm: Dinner & Drinks\n\nWhoa\\! Studios + The Grounds location:&nbsp;[https://goo.gl/maps/b6FZcC2mN6D2E3iW9](https://goo.gl/maps/b6FZcC2mN6D2E3iW9)\n\n**Menu matched with Wine or Beer**<br>*Round 1*<br>Dairy Flat goats fromage frais<br>Organic asparagus w fennel jam & cropper tomatoes\n\n*Round 2*<br>Scampi Corn dogs w Jo-Bros original sauce<br>[Koura](https://www.koruafood.com) Wagyu tartare with [Ahi](https://www.ahirestaurant.co.nz) hot sauce, nasturtium, crispy agria & bull kelp salt\n\n*Round 3*<br>[Jo-Bros](https://www.jobrosburgers.com) x [Korua](https://www.koruafood.com) Wagyu Burger\n\n*Round 4*<br>Strawberry & elderflower TEDx magnum gelato with passionfruit pavlova\n",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -186,7 +186,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland November 2019\n\n*tūmanako*\\: to hope for a better future\n\nTEDxAuckland is taking over 'ASB Waterfront Theatre' for a full day of talks, performances, inspiration, and new connections.\n\nThe event is fully catered so just bring your lovely self and maybe someone else\\!\n\nFind the growing list of speakers below.\n\n~~Early Bird tickets $99<br>General Release tickets $129~~<br>~~Late Bird $159~~\n\n**When:** Saturday 16 November 2019, midday - 5:30pm\n\nDoors & registration opens at 10:30am<br><br>**Where:** ASB Waterfront Theatre\n",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -229,7 +229,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# Introducing A World First\n\nOn August 31st, TEDxAuckland is hosting a Salon event which will be the first TEDx event in the world to be held in **complete darkness**.\n\nHosted by Dans le Noir ? Rydges Auckland and shared with you by Vodafone NZ - this will be an unforgettable experience like no other.\n\n#### TEDxAuckland and Dans le Noir ? are combining to provide you with a unique sensory, social and human experience.\n\n**A Sensory Journey:** Dining in absolute darkness is a sensory experience that awakens senses and enables guests to completely re-evaluate their perception of taste and smell.\n\n**A Place to Socialise:** Darkness eradicates shyness & erases preconceptions. Communication becomes more intense, authentic and spontaneous. Both with the people you sit with, and the TEDxAuckland speakers.\n\n**A Unique Human Experience:** Blind people work not only as waitstaff but also as guides during this experience. Reversing roles, the guide becomes patrons’ eyes for the time of the dinner\\!\n\n#### Event Information:\n\n* Enjoy a three course meal, with 3 different menu versions freshly created for this experience.\n* 2x Speakers will present in pitch black between meal courses.\n* Just like the food, information about the speakers has been hidden so attendee's go into the event with zero preconceptions.\n* **When**\\: Saturday August 31st starting 6pm till late.\n* **Where**\\: Dans le Noir ? Rydges Auckland.\n* **Price**\\: $199.\n* The event will be followed by an afterparty at The Glass Goose.\n\nIf you would like to attend, you will need to register at the link below. Spaces are extremely limited, so make sure to get in quick.\n",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -272,7 +272,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland May 2019\n\nIn 2019, TEDxAuckland reaches its 10th year of celebrating ideas, innovation and inspiration. So to celebrate we’re holding not one but multiple events around Auckland\\!\n\nOur first event on **May 1st** will host 5 amazing speakers at **Whoa\\! Studios** - a state of the art studio and theatre that produces numerous New Zealand and international films, television and stage productions.\n\nAfter the event, all attendees will socialise with our speakers at the inclusive dinner in The Grounds Eatery. This four-course shared dinner, accompanied with wine and drinks, will be orchestrated by the acclaimed and multi-award winning Kiwi chef, Ben Bayly, conjuring it up with local produce from West Auckland.\n\nThere are only 160 seats available for this more intimate experience, so make sure to register your interest quickly. Tickets are $139. **Update**\\: **Sold out\\!**\n\n**Timetable for the event:**\n\n5pm-5:30pm: Guests to arrive at Whoa\\! Studios<br>6pm-7pm: Speaker talks<br>7pm-10pm: Dinner & Drinks\n\n**Whoa\\! Studios + The Grounds location**\\:\n\n[https://goo.gl/maps/b6FZcC2mN6D2E3iW9](https://goo.gl/maps/b6FZcC2mN6D2E3iW9){: target=\"_blank\"}\n\n&nbsp;\n",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -315,7 +315,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland 2018\n\nIn 2018, TEDxAuckland's annual festival of ideas is returning to **Shed 10** on **October 13th**. This year will see speakers from New Zealand and around the globe come together for a day of inspiration and connection in the heart of Auckland City.\n\n#### Off-Piste: Adjective, adverb.\n\n1. Away from prepared ski runs.\n2. So as to deviate from what is conventional, usual, or expected.\n3. An unsupervised, ungroomed, and unmarked area.\n\nSpeakers, performers, food vendors, and event details to be announced here and on [facebook](https://www.facebook.com/events/629283860774532){: target=\"_blank\"} in the coming weeks.\n",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -358,7 +358,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland 2017\n\nThis year we’re back at the Aotea Centre for our 2nd multi-day festival. Join us for 21 talks from local and international speakers, food, fun and partner activations.\n\nTEDxAuckland is an Ideas Festival. Get ready to be inspired and challenged by local and international people changing the world with their unique ideas, and in the breaks get chatting to the equally incredible attendees around you\\!\n\nFood and drink during the event is included in your Multi-Day Pass and on Saturday evening, once the talks are done, another experience awaits VIP ticket holders.\n\n#### The Program\n\nThe Festival opens at 3pm Friday for registrations and activations. The first talks start at 5.00pm through to 7pm.\n\nThe Friday night Burger Banquet is made by: Tiger Burger / Wise Boys / Judge Bao / Ralphs / Bird on a wire\n\nOn Saturday the Festival opens at 9.30am with the first talks beginning at 10am.<br>Lunch on Saturday is made by Eat My Lunch, thanks to Fonterra.\n\nThe talks will conclude around 5pm on Saturday. Those attending the sold out VIP SocialDinner will jump on a bus (provided) for a 5 course dinner produced by some amazing local chefs. Matched with local beer and wine.\n\nThose keen to kick on are invited to join TEDx crew, speakers and friends at Sweat Shop Brew Kitchen, Sale St, Freemans Bay after 9pm.\n\n&nbsp;\n",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -401,7 +401,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "# TEDxAuckland 2016\n\n2016 TEDxAuckland was a little different. We curated ideas for a global audience; global in their diversity, expertise and residence. Say hello to TEDxAuckland 2016!\n\n#### Our Theme this year is: *flipside*\n\n* The perspective you get from seeing an old problem in a new way.\n* Turning hierarchies on their head and putting ideas ahead of ideology.\n* Sidestepping power structures, gender, race and geography.\n* Stepping outside your workplace, your country and even your hemisphere to connect with a community of speakers, delegates and partners united by a healthy disrespect for business as usual.\n\nThe event featured ideas and talks from amazing people changing the world. We’ll be matching the diversity of ideas with an equally diverse audience, you!\n\nTEDxAuckland 2016: *flipside* featured talks over two days, events, activities and social time. Shed 10 the venue provided the perfect space for hosting, break out spaces and food and beverage side you deserve.\n\n[See the 2016 FoodStory Video.](https://www.youtube.com/watch?v=J0s-ob4FGcg)\n",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -444,7 +444,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -487,7 +487,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "TEDxAuckland 2014 took place at the Aotea Centre on Saturday 16th August. *Ascending* was the overriding theme for TEDxAuckland 2014. The day was packed with over 16 speakers, musical acts and an after party.\n\nTheme<br>*Ascending* is about individuals and society rising to a higher level of consciousness.\n\n*Ascending* is about finding the positives in any situation and building on them to make our lives, community, business and planet better.",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -530,7 +530,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -573,7 +573,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": false,
-    "event_listing": {"is_highlighted":false,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":false,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -616,7 +616,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	},
 	
 	{
@@ -659,7 +659,7 @@ const defaultItems =
     "ext": ".md",
     "raw_content": "",
     "is_highlighted": true,
-    "event_listing": {"is_highlighted":true,"description":null,"image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true,"description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
 	}
 	
 ]
