@@ -21,6 +21,7 @@
           'padding-right': (multiplier * 20 / 13.3578 * 16) + 'px',
           'padding-bottom': (multiplier * 20 / 13.3578 * 16) + 'px',
           'padding-left': (multiplier * 20 / 13.3578 * 16) + 'px',
+          gap: (width / 364 * 16) + 'px',
         }"
       >
         <div 
@@ -106,8 +107,6 @@
   }
   
   .event-card-mobile-text {
-    padding: 6px 16px;
-    padding-bottom: 20px;
     text-align: left;
     background-color: whitesmoke;
     color: black;
