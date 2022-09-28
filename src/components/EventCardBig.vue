@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: fix indentation -->
   <a :href="item.url">
   <div
     class="event-card__container event-card__container--big card--outline"
