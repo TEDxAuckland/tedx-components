@@ -17,39 +17,34 @@
       <div
         class="event-card-mobile-text"
         :style="{
-          'padding-top': (multiplier * 6) + 'px',
-          'padding-right': (multiplier * 16) + 'px',
-          'padding-bottom': (multiplier * 20) + 'px',
-          'padding-left': (multiplier * 16) + 'px',
+          'padding-top': (multiplier * 20 / 13.3578 * 16) + 'px',
+          'padding-right': (multiplier * 20 / 13.3578 * 16) + 'px',
+          'padding-bottom': (multiplier * 20 / 13.3578 * 16) + 'px',
+          'padding-left': (multiplier * 20 / 13.3578 * 16) + 'px',
         }"
       >
-        <div>
-          <div 
-            class="event-card-mobile__header" 
-            v-html="`${item.title}`"
-            :style="{
-              'font-size': (width / 545 * 20.961590611423) + 'px',
-            }"
-          ></div>
-          <!-- <div
-            class="event-card-mobile__header-small" 
-            v-html="date_title"
-            :style="{
-              'font-size': (width / 545 * 15.12) + 'px',
-            }"
-          ></div> -->
-        </div>
+        <div 
+          class="event-card-mobile__header" 
+          v-html="`${item.title}`"
+          :style="{
+            'font-size': (width / 545 * 20.961590611423) + 'px',
+            'line-height': 1,
+          }"
+        ></div>
         <div 
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
           :style="{
             'font-size': (width / 545 * 17.967030499034273) + 'px',
-            'margin-bottom': multiplier * 8 + 'px',
+            'line-height': 1,
           }"
         ></div>
         <button
           class="event-card-mobile__cta"
           :style="{
+            height: (width / 364 * 40 ) + 'px',
+            'border-radius': (width / 364 * 4) + 'px',
+            'font-size': (width / 364 * 12) + 'px',
           }"
         >View Past Event</button>
       </div>
@@ -88,6 +83,7 @@
         return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
       },
       multiplier() {
+        // TODO: re-grade everything to 364
         return this.width / 545;
       },
     }
@@ -118,6 +114,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 16px;
   }
   
   .event-card-mobile__header {
@@ -147,10 +144,12 @@
     border: none;
     color: #f44336;
     border: 1px solid #f44336;
-    border-radius: 4px;
-    padding: 16px 32px;
-    font-size: 16px;
     cursor: pointer;
+  }
+  .event-card-mobile__cta:active {
+    color: white;
+    background-color: #f44336;
+
   }
   </style>
   

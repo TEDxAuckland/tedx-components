@@ -16,7 +16,7 @@
       />
     </EventsSnakeGrid>
   </div>
-  <div style="display: flex; align-items: center; flex-direction: column; gap: 20px;" v-else> 
+  <div style="display: flex; align-items: center; flex-direction: column; gap: 40px;" v-else> 
     <div v-for="item in items" :key="item.id" :style="{ width: mobileCardWidth + 'px'}">
       <EventCardMobile
         :item="item"
