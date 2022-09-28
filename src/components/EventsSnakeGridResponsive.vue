@@ -17,11 +17,11 @@
     </EventsSnakeGrid>
   </div>
   <div style="display: flex; align-items: center; flex-direction: column; gap: 20px;" v-else> 
-    <div v-for="item in items" :key="item.id" :style="{ width: containerWidth + 'px'}">
+    <div v-for="item in items" :key="item.id" :style="{ width: mobileCardWidth + 'px'}">
       <EventCardMobile
         :item="item"
-        :width="containerWidth"
-        :height="containerWidth"
+        :width="mobileCardWidth"
+        :height="mobileCardWidth"
         :gap="0" 
       />
     </div>
@@ -68,6 +68,9 @@ export default {
   computed: {
     containerWidth() {
       return Math.min(this.clientWidth * 0.98, 1200)
+    },
+    mobileCardWidth() {
+      return this.clientWidth - 64
     },
     cellSize() {
       const gapCount = this.columns - 1
