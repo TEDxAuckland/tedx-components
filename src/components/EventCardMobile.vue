@@ -43,7 +43,7 @@
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
           :style="{
-            'font-size': (width / 545 * 12) + 'px',
+            'font-size': (width / 545 * 17.967030499034273) + 'px',
             'margin-bottom': multiplier * 8 + 'px',
           }"
         ></div>
