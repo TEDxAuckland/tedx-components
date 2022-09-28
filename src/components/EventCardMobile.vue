@@ -31,13 +31,13 @@
               'font-size': (width / 545 * 20.961590611423) + 'px',
             }"
           ></div>
-          <div
+          <!-- <div
             class="event-card-mobile__header-small" 
             v-html="date_title"
             :style="{
               'font-size': (width / 545 * 15.12) + 'px',
             }"
-          ></div>
+          ></div> -->
         </div>
         <div 
           class="event-card-mobile__desc" 
