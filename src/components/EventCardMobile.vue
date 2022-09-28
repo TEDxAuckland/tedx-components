@@ -32,6 +32,7 @@
             'line-height': 1,
           }"
         ></div>
+        <!-- TODO: does this need to show date fully, actually use date_title? -->
         <div 
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
@@ -47,7 +48,8 @@
             'border-radius': (width / 364 * 4) + 'px',
             'font-size': (width / 364 * 12) + 'px',
           }"
-        >View Past Event</button>
+          v-html="viewPostCopy"
+        ></button>
       </div>
     </div>
     </a>
@@ -86,6 +88,9 @@
       multiplier() {
         // TODO: re-grade everything to 364
         return this.width / 545;
+      },
+      viewPostCopy() {
+        return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
       },
     }
   }
