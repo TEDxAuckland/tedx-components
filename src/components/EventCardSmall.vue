@@ -108,6 +108,7 @@ export default {
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin: 0.67em 0;
+  /* TODO: remove overwritten */
   margin: 0;
 }
 

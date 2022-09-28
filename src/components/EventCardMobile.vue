@@ -127,6 +127,7 @@
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin: 0;
+    /* TODO: remove overwritten */
     font-weight: 600;
   }
   .event-card-mobile__header-small {
@@ -135,6 +136,7 @@
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    /* TODO: remove overwritten */
     margin:0;
   }
   
