@@ -28,7 +28,7 @@
             class="event-card-mobile__header" 
             v-html="`${item.title}`"
             :style="{
-              'font-size': (width / 545 * 25.95) + 'px',
+              'font-size': (width / 545 * 20.961590611423) + 'px',
             }"
           ></div>
           <div
@@ -127,6 +127,7 @@
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin: 0;
+    font-weight: 600;
   }
   .event-card-mobile__header-small {
     display: block;
