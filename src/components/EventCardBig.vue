@@ -36,7 +36,7 @@
         ></div>
         <div
           class="event-card-big__header-small" 
-          v-html="date_title"
+          v-html="dateTitle"
           :style="{
             'font-size': (width / 545 * 15.12) + 'px',
           }"
@@ -81,7 +81,7 @@ export default {
   },
 
   computed: {
-    date_title() {
+    dateTitle() {
       // TODO: switch to date-fns
       return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
     },

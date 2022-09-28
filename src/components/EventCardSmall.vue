@@ -62,7 +62,7 @@ export default {
     },
   },
   computed: {
-    date_title() {
+    dateTitle() {
       // TODO: switch to date-fns
       return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long"});
     },

@@ -32,7 +32,7 @@
             'line-height': 1,
           }"
         ></div>
-        <!-- TODO: does this need to show date fully, actually use date_title? -->
+        <!-- TODO: does this need to show date fully, actually use dateTitle? -->
         <div 
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
@@ -81,7 +81,7 @@
     },
   
     computed: {
-      date_title() {
+      dateTitle() {
         // TODO: switch to date-fns
         return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
       },
