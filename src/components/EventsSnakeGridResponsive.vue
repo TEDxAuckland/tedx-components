@@ -18,7 +18,7 @@
   </div>
   <div style="display: flex; align-items: center; flex-direction: column; gap: 20px;" v-else> 
     <div v-for="item in items" :key="item.id" :style="{ width: containerWidth + 'px', height: containerWidth + 'px' }">
-      <EventCardBig
+      <EventCardMobile
         :item="item"
         :width="containerWidth"
         :height="containerWidth"
@@ -30,7 +30,7 @@
 
 <script>
 import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
-import EventCardBig from '@/components/EventCardBig'
+import EventCardMobile from '@/components/EventCardMobile'
 import EventCard from '@/components/EventCard'
 
 export default {
@@ -38,7 +38,7 @@ export default {
 
   components: {
     EventsSnakeGrid,
-    EventCardBig,
+    EventCardMobile,
     EventCard,
   },
 

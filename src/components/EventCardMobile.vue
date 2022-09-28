@@ -49,6 +49,7 @@
             'margin-bottom': multiplier * 8 + 'px',
           }"
         ></div>
+        <button>View Past Event</button>
       </div>
     </div>
     </a>
