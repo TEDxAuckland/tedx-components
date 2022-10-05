@@ -9,7 +9,8 @@
       <img
         alt="Avatar"
         class="event-card-mobile__image"
-        :src="item.event_listing.image"
+        :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
+        :src="addHost(item.event_listing.image)"
         :style="{
           'height': (height * 2 / 3) + 'px',
         }"
@@ -73,7 +74,16 @@
         type: Number,
       },
     },
-  
+    methods: {
+      addHost(imageSrc) {
+        return `http://localhost:4000${imageSrc}`;
+      },
+      getResizedImage(width) {
+        const image = this.item.event_listing.image;
+        const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
+        return this.addHost(`/assets/resized/${imageName}-${width}.jpg`)
+      }
+    },
     data() {
       return {
         baseUrl: process.env.BASE_URL,
