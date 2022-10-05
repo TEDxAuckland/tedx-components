@@ -11,7 +11,7 @@
       alt="Avatar"
       class="event-image-small"
       :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
-      :src="getResizedImage(200)"
+      :src="item.event_listing.image"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
