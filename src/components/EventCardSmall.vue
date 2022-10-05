@@ -10,7 +10,7 @@
     <img
       alt="Avatar"
       class="event-image-small"
-      :src="item.event_listing.image"
+      :src="'http://localhost:4000/assets/resized'+item.event_listing.image.replace(/^\/uploads/, '').replace(/.jpg$/, '')+'-200.jpg'"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
