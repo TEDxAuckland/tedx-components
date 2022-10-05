@@ -13,6 +13,7 @@
         :item="item"
         :cellSize="cellSize"
         :gap="gap" 
+        :host="host"
       />
     </EventsSnakeGrid>
   </div>
@@ -23,6 +24,7 @@
         :width="mobileCardWidth"
         :height="mobileCardWidth"
         :gap="0" 
+        :host="host"
       />
     </div>
   </div>
@@ -57,6 +59,9 @@ export default {
     items: {
       type: Array,
     },
+    host: {
+      type: String,
+    }
   },
 
   data() {

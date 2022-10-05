@@ -1,7 +1,19 @@
 <template>
   <div>
-    <EventCardBig :item="item" v-if="item.event_listing.is_highlighted" :width="width" :height="height" />
-    <EventCardSmall :item="item" v-if="!item.event_listing.is_highlighted" :width="width" :height="height"  />
+    <EventCardBig
+      v-if="item.event_listing.is_highlighted"
+      :item="item"
+      :width="width"
+      :height="height"
+      :host="host"
+    />
+    <EventCardSmall 
+      v-if="!item.event_listing.is_highlighted"
+      :item="item"
+      :width="width"
+      :height="height"
+      :host="host"
+    />
   </div>
 </template>
 
@@ -26,6 +38,9 @@ export default {
     },
     gap: {
       type: Number,
+    },
+    host: {
+      type: String,
     }
   },
 

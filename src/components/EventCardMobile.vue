@@ -73,10 +73,13 @@ export default {
     height: {
       type: Number,
     },
+    host: {
+      type: String,
+    }
   },
   methods: {
     addHost(imageSrc) {
-      return `http://localhost:4000${imageSrc}`;
+      return `${this.host}${imageSrc}`;
     },
     // TODO: reduce code duplication between big/small/mobile cards
     getResizedImage(width) {

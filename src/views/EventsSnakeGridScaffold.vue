@@ -5,6 +5,7 @@
       <div v-if="isShown">
         <EventsSnakeGridResponsive
           :items="items"
+          host="http://localhost:4000"
         />
       </div>
     </section>
