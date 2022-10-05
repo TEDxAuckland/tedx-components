@@ -30,7 +30,7 @@
           class="event-card-mobile__header" 
           v-html="`${item.title}`"
           :style="{
-            'font-size': (width / 545 * 20.961590611423) + 'px',
+            'font-size': (width / 364 * 14) + 'px',
             'line-height': 1,
           }"
         ></div>
@@ -39,7 +39,7 @@
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
           :style="{
-            'font-size': (width / 545 * 17.967030499034273) + 'px',
+            'font-size': (width / 364 * 12) + 'px',
             'line-height': 1,
           }"
         ></div>
