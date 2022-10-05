@@ -10,7 +10,7 @@
     <img
       alt="Avatar"
       class="event-image-small"
-      :src="'http://localhost:4000/assets/resized'+item.event_listing.image.replace(/^\/uploads/, '').replace(/.jpg$/, '')+'-200.jpg'"
+      :src="getResizedImage(200)"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
@@ -60,6 +60,13 @@ export default {
     height: {
       type: Number,
     },
+  },
+  methods: {
+    getResizedImage(width) {
+      const image = this.item.event_listing.image;
+      const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
+      return `http://localhost:4000/assets/resized/${imageName}-${width}.jpg`
+    }
   },
   computed: {
     dateTitle() {
