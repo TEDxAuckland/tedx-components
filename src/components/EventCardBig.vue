@@ -10,7 +10,7 @@
       <img
         alt="Avatar"
         class="event-image-big"
-        :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
+        :srcset="srcset"
         :src="addHost(item.event_listing.image)"
         :style="{
           'width': width + 'px',
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { getResizedImage, addHost } from './responsiveImage'
+import { getSrcSet, addHost } from './responsiveImage'
 import { format } from 'date-fns'
 
 export default {
@@ -85,9 +85,6 @@ export default {
     addHost(imageSrc) {
       return addHost(this.host, imageSrc);
     },
-    getResizedImage(width) {
-      return getResizedImage(this.host, this.item.event_listing.image, width);
-    }
   },
   data() {
     return {
@@ -102,6 +99,10 @@ export default {
     multiplier() {
       return this.width / 545;
     },
+    srcset() {
+      const widths = [200, 300, 600, 900];
+      return getSrcSet(this.host, this.item.event_listing.image, widths);
+    }
   }
 }
 </script>
