@@ -1,6 +1,6 @@
 <template>
   <!-- TODO: use 37.5em instead -->
-  <div style="display: flex; justify-content: center;" v-if="clientWidth > 600"> 
+  <div class="events-snake-grid__container events-snake-grid__container--desktop" v-if="clientWidth > 600"> 
     <EventsSnakeGrid
       :items="items"
       :cellSize="cellSize"
@@ -16,7 +16,7 @@
       />
     </EventsSnakeGrid>
   </div>
-  <div style="display: flex; align-items: center; flex-direction: column; gap: 40px;" v-else> 
+  <div class="events-snake-grid__container events-snake-grid__container--mobile" v-else> 
     <div v-for="item in items" :key="item.id" :style="{ width: mobileCardWidth + 'px'}">
       <EventCardMobile
         :item="item"
@@ -97,4 +97,17 @@ export default {
 </script>
 
 <style scoped>
+.events-snake-grid__container {
+  display: flex; 
+}
+
+.events-snake-grid__container-desktop {
+  justify-content: center;
+}
+
+.events-snake-grid__container--mobile {
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
 </style>
