@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import { getResizedImage, addHost } from './responsiveImage'
+
 export default {
   name: 'event-card-big',
 
@@ -79,13 +81,10 @@ export default {
 
   methods: {
     addHost(imageSrc) {
-      return `${this.host}${imageSrc}`;
+      return addHost(this.host, imageSrc);
     },
-    // TODO: reduce code duplication between big/small/mobile cards
     getResizedImage(width) {
-      const image = this.item.event_listing.image;
-      const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
-      return this.addHost(`/assets/resized/${imageName}-${width}.jpg`)
+      return getResizedImage(this.host, this.item.event_listing.image, width);
     }
   },
   data() {
