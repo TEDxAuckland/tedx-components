@@ -11,7 +11,7 @@
       alt="Avatar"
       class="event-image-small"
       :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
-      :src="item.event_listing.image"
+      :src="addHost(item.event_listing.image)"
       :style="{
         'width': width + 'px',
         'height': height + 'px',
@@ -63,10 +63,13 @@ export default {
     },
   },
   methods: {
+    addHost(imageSrc) {
+      return `http://localhost:4000${imageSrc}`;
+    },
     getResizedImage(width) {
       const image = this.item.event_listing.image;
       const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
-      return `http://localhost:4000/assets/resized/${imageName}-${width}.jpg`
+      return this.addHost(`/assets/resized/${imageName}-${width}.jpg`)
     }
   },
   computed: {
