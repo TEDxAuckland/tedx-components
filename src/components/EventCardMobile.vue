@@ -19,10 +19,10 @@
       <div
         class="event-card-mobile-text"
         :style="{
-          'padding-top': (multiplier * 20 / 13.3578 * 16) + 'px',
-          'padding-right': (multiplier * 20 / 13.3578 * 16) + 'px',
-          'padding-bottom': (multiplier * 20 / 13.3578 * 16) + 'px',
-          'padding-left': (multiplier * 20 / 13.3578 * 16) + 'px',
+          'padding-top': (multiplier * 16) + 'px',
+          'padding-right': (multiplier * 16) + 'px',
+          'padding-bottom': (multiplier * 16) + 'px',
+          'padding-left': (multiplier * 16) + 'px',
           gap: (width / 364 * 16) + 'px',
         }"
       >
@@ -97,7 +97,7 @@ export default {
   computed: {
     multiplier() {
       // TODO: re-grade everything to 364
-      return this.width / 545;
+      return this.width / 364;
     },
     viewPostCopy() {
       return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
