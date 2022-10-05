@@ -17,6 +17,7 @@
 import SmallCard from '@/components/EventCardSmall.vue'
 import BigCard from '@/components/EventCardBig.vue'
 
+// TODO: fix this mock data
 const mockEventSmall = 	{
   "date": "2022-08-18 19:26:51 +1200",
   "title": "Together",
