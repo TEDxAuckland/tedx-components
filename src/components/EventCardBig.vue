@@ -58,6 +58,7 @@
 
 <script>
 import { getResizedImage, addHost } from './responsiveImage'
+import { format } from 'date-fns'
 
 export default {
   name: 'event-card-big',
@@ -96,8 +97,7 @@ export default {
 
   computed: {
     dateTitle() {
-      // TODO: switch to date-fns
-      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
+      return format(new Date(this.item.start_date), 'd MMMM yyyy')
     },
     multiplier() {
       return this.width / 545;

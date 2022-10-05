@@ -95,10 +95,6 @@ export default {
   },
 
   computed: {
-    dateTitle() {
-      // TODO: switch to date-fns
-      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
-    },
     multiplier() {
       // TODO: re-grade everything to 364
       return this.width / 545;

@@ -76,10 +76,6 @@ export default {
     }
   },
   computed: {
-    dateTitle() {
-      // TODO: switch to date-fns
-      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long"});
-    },
     multiplier() {
       return this.width / 217.5;
     },
