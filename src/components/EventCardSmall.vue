@@ -1,50 +1,50 @@
 <template>
   <a :href="item.url">
-  <div
-    class="event-card__container event-card__container--small card--outline"
-    :style="{
-      'max-width': width + 'px',
-      'max-height': height + 'px',
-    }"
-  >
-    <img
-      alt="Avatar"
-      class="event-image-small"
-      :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
-      :src="addHost(item.event_listing.image)"
-      :style="{
-        'width': width + 'px',
-        'height': height + 'px',
-      }"
-    />
-    <div class="event-image-small-shadow"></div>
     <div
-      class="event-card-small-text"
+      class="event-card__container event-card__container--small card--outline"
       :style="{
-        'bottom': multiplier * 10 + 'px',
-        'left': multiplier * 15 + 'px',
-        'right': multiplier * 15 + 'px',
+        'max-width': width + 'px',
+        'max-height': height + 'px',
       }"
     >
-      <div 
-        class="event-card-small__header" 
-        v-html="`${item.title}`"
+      <img
+        alt="Avatar"
+        class="event-image-small"
+        :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
+        :src="addHost(item.event_listing.image)"
         :style="{
-          // TODO: here and in other places, use rem or em like Anthony told 
-          'font-size': multiplier * 17.3 + 'px',
+          'width': width + 'px',
+          'height': height + 'px',
         }"
-      ></div>
-      <div 
-        class="event-card-small__desc" 
-        v-html="item.event_listing.description"
+      />
+      <div class="event-image-small-shadow"></div>
+      <div
+        class="event-card-small-text"
         :style="{
-          'font-size': multiplier * 12 + 'px',
-          'margin-bottom': multiplier * 8 + 'px',
+          'bottom': multiplier * 10 + 'px',
+          'left': multiplier * 15 + 'px',
+          'right': multiplier * 15 + 'px',
         }"
+      >
+        <div 
+          class="event-card-small__header" 
+          v-html="`${item.title}`"
+          :style="{
+            // TODO: here and in other places, use rem or em like Anthony told 
+            'font-size': multiplier * 17.3 + 'px',
+          }"
+        ></div>
+        <div 
+          class="event-card-small__desc" 
+          v-html="item.event_listing.description"
+          :style="{
+            'font-size': multiplier * 12 + 'px',
+            'margin-bottom': multiplier * 8 + 'px',
+          }"
 
-      ></div>
+        ></div>
+      </div>
     </div>
-  </div>
   </a>
 </template>
 

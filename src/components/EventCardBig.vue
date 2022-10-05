@@ -1,58 +1,57 @@
 <template>
-  <!-- TODO: fix indentation -->
   <a :href="item.url">
-  <div
-    class="event-card__container event-card__container--big card--outline"
-    :style="{
-      'max-width': width + 'px',
-      'max-height': height + 'px',
-    }"
-  >
-    <img
-      alt="Avatar"
-      class="event-image-big"
-      :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
-      :src="addHost(item.event_listing.image)"
-      :style="{
-        'height': (height * 2 / 3) + 'px',
-      }"
-    />
     <div
-      class="event-card-big-text"
+      class="event-card__container event-card__container--big card--outline"
       :style="{
-        'height': (height * 1 / 3) + 'px',
-        'padding-top': (multiplier * 6) + 'px',
-        'padding-right': (multiplier * 16) + 'px',
-        'padding-bottom': (multiplier * 20) + 'px',
-        'padding-left': (multiplier * 16) + 'px',
+        'max-width': width + 'px',
+        'max-height': height + 'px',
       }"
     >
-      <div>
+      <img
+        alt="Avatar"
+        class="event-image-big"
+        :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
+        :src="addHost(item.event_listing.image)"
+        :style="{
+          'height': (height * 2 / 3) + 'px',
+        }"
+      />
+      <div
+        class="event-card-big-text"
+        :style="{
+          'height': (height * 1 / 3) + 'px',
+          'padding-top': (multiplier * 6) + 'px',
+          'padding-right': (multiplier * 16) + 'px',
+          'padding-bottom': (multiplier * 20) + 'px',
+          'padding-left': (multiplier * 16) + 'px',
+        }"
+      >
+        <div>
+          <div 
+            class="event-card-big__header" 
+            v-html="`${item.title}`"
+            :style="{
+              'font-size': (width / 545 * 25.95) + 'px',
+            }"
+          ></div>
+          <div
+            class="event-card-big__header-small" 
+            v-html="dateTitle"
+            :style="{
+              'font-size': (width / 545 * 15.12) + 'px',
+            }"
+          ></div>
+        </div>
         <div 
-          class="event-card-big__header" 
-          v-html="`${item.title}`"
+          class="event-card-big__desc" 
+          v-html="item.event_listing.description"
           :style="{
-            'font-size': (width / 545 * 25.95) + 'px',
-          }"
-        ></div>
-        <div
-          class="event-card-big__header-small" 
-          v-html="dateTitle"
-          :style="{
-            'font-size': (width / 545 * 15.12) + 'px',
+            'font-size': (width / 545 * 12) + 'px',
+            'margin-bottom': multiplier * 8 + 'px',
           }"
         ></div>
       </div>
-      <div 
-        class="event-card-big__desc" 
-        v-html="item.event_listing.description"
-        :style="{
-          'font-size': (width / 545 * 12) + 'px',
-          'margin-bottom': multiplier * 8 + 'px',
-        }"
-      ></div>
     </div>
-  </div>
   </a>
 </template>
 

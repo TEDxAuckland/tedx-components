@@ -1,5 +1,5 @@
 <template>
-    <a :href="item.url">
+  <a :href="item.url">
     <div
       class="event-card__container event-card__container--mobile card--outline"
       :style="{
@@ -53,108 +53,107 @@
         ></button>
       </div>
     </div>
-    </a>
-  </template>
-  
-  <script>
-  export default {
-    name: 'event-card-mobile',
-  
-    components: {
+  </a>
+</template>
+
+<script>
+export default {
+  name: 'event-card-mobile',
+
+  components: {
+  },
+
+  props: {
+    item: {
+      type: Object,
     },
-  
-    props: {
-      item: {
-        type: Object,
-      },
-      width: {
-        type: Number,
-      },
-      height: {
-        type: Number,
-      },
+    width: {
+      type: Number,
     },
-    methods: {
-      addHost(imageSrc) {
-        return `http://localhost:4000${imageSrc}`;
-      },
-      // TODO: reduce code duplication between big/small/mobile cards
-      getResizedImage(width) {
-        const image = this.item.event_listing.image;
-        const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
-        return this.addHost(`/assets/resized/${imageName}-${width}.jpg`)
-      }
+    height: {
+      type: Number,
     },
-    data() {
-      return {
-        baseUrl: process.env.BASE_URL,
-      }
+  },
+  methods: {
+    addHost(imageSrc) {
+      return `http://localhost:4000${imageSrc}`;
     },
-  
-    computed: {
-      dateTitle() {
-        // TODO: switch to date-fns
-        return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
-      },
-      multiplier() {
-        // TODO: re-grade everything to 364
-        return this.width / 545;
-      },
-      viewPostCopy() {
-        return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
-      },
+    // TODO: reduce code duplication between big/small/mobile cards
+    getResizedImage(width) {
+      const image = this.item.event_listing.image;
+      const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
+      return this.addHost(`/assets/resized/${imageName}-${width}.jpg`)
     }
-  }
-  </script>
-  
-  <style scoped>
-  .event-card__container--mobile {
-    text-align: center;
-  }
-  
-  .event-card-mobile__image {
-    width: 100%;
-    object-position: center center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    display: block;
-    object-fit: cover;
-  }
-  
-  .event-card-mobile-text {
-    text-align: left;
-    background-color: whitesmoke;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  
-  .event-card-mobile__header {
-    display: block;
-    margin: 0;
-    font-weight: 600;
-  }
-  .event-card-mobile__header-small {
-    display: block;
-    margin:0;
-  }
-  
-  .event-card-mobile__desc {
-  }
+  },
+  data() {
+    return {
+      baseUrl: process.env.BASE_URL,
+    }
+  },
 
-  .event-card-mobile__cta {
-    border: none;
-    color: #f44336;
-    border: 1px solid #f44336;
-    cursor: pointer;
+  computed: {
+    dateTitle() {
+      // TODO: switch to date-fns
+      return new Date(this.item.start_date).toLocaleDateString('en-NZ', { year:"numeric", month:"long", day: 'numeric'});
+    },
+    multiplier() {
+      // TODO: re-grade everything to 364
+      return this.width / 545;
+    },
+    viewPostCopy() {
+      return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
+    },
   }
-  .event-card-mobile__cta:active {
-    color: white;
-    background-color: #f44336;
+}
+</script>
 
-  }
-  </style>
-  
+<style scoped>
+.event-card__container--mobile {
+  text-align: center;
+}
+
+.event-card-mobile__image {
+  width: 100%;
+  object-position: center center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: block;
+  object-fit: cover;
+}
+
+.event-card-mobile-text {
+  text-align: left;
+  background-color: whitesmoke;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.event-card-mobile__header {
+  display: block;
+  margin: 0;
+  font-weight: 600;
+}
+.event-card-mobile__header-small {
+  display: block;
+  margin:0;
+}
+
+.event-card-mobile__desc {
+}
+
+.event-card-mobile__cta {
+  border: none;
+  color: #f44336;
+  border: 1px solid #f44336;
+  cursor: pointer;
+}
+.event-card-mobile__cta:active {
+  color: white;
+  background-color: #f44336;
+
+}
+</style>
