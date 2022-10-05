@@ -23,14 +23,14 @@
           'padding-right': (multiplier * 16) + 'px',
           'padding-bottom': (multiplier * 16) + 'px',
           'padding-left': (multiplier * 16) + 'px',
-          gap: (width / 364 * 16) + 'px',
+          gap: (multiplier * 16) + 'px',
         }"
       >
         <div 
           class="event-card-mobile__header" 
           v-html="`${item.title}`"
           :style="{
-            'font-size': (width / 364 * 14) + 'px',
+            'font-size': (multiplier * 14) + 'px',
             'line-height': 1,
           }"
         ></div>
@@ -39,16 +39,16 @@
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
           :style="{
-            'font-size': (width / 364 * 12) + 'px',
+            'font-size': (multiplier * 12) + 'px',
             'line-height': 1,
           }"
         ></div>
         <button
           class="event-card-mobile__cta"
           :style="{
-            height: (width / 364 * 40 ) + 'px',
-            'border-radius': (width / 364 * 4) + 'px',
-            'font-size': (width / 364 * 12) + 'px',
+            height: (multiplier * 40 ) + 'px',
+            'border-radius': (multiplier * 4) + 'px',
+            'font-size': (multiplier * 12) + 'px',
           }"
           v-html="viewPostCopy"
         ></button>
@@ -96,7 +96,6 @@ export default {
 
   computed: {
     multiplier() {
-      // TODO: re-grade everything to 364
       return this.width / 364;
     },
     viewPostCopy() {
