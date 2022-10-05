@@ -78,6 +78,7 @@
       addHost(imageSrc) {
         return `http://localhost:4000${imageSrc}`;
       },
+      // TODO: reduce code duplication between big/small/mobile cards
       getResizedImage(width) {
         const image = this.item.event_listing.image;
         const imageName = image.replace(/^\/uploads\//, '').replace(/.jpg$/, '');
