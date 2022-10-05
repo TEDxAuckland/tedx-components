@@ -132,20 +132,10 @@ export default {
 
 .event-card-big__header {
   display: block;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  /* TODO: remove overwritten */
   margin: 0;
 }
 .event-card-big__header-small {
   display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  /* TODO: remove overwritten */
   margin:0;
 }
 
