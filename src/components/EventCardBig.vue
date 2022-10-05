@@ -32,14 +32,14 @@
             class="event-card-big__header" 
             v-html="`${item.title}`"
             :style="{
-              'font-size': (width / 545 * 25.95) + 'px',
+              'font-size': (multiplier * 25.95) + 'px',
             }"
           ></div>
           <div
             class="event-card-big__header-small" 
             v-html="dateTitle"
             :style="{
-              'font-size': (width / 545 * 15.12) + 'px',
+              'font-size': (multiplier * 15.12) + 'px',
             }"
           ></div>
         </div>
@@ -47,7 +47,7 @@
           class="event-card-big__desc" 
           v-html="item.event_listing.description"
           :style="{
-            'font-size': (width / 545 * 12) + 'px',
+            'font-size': (multiplier * 12) + 'px',
             'margin-bottom': multiplier * 8 + 'px',
           }"
         ></div>
