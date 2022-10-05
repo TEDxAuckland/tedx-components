@@ -13,6 +13,7 @@
         :srcset="`${getResizedImage(200)} 200w, ${getResizedImage(300)} 300w, ${getResizedImage(600)} 600w, ${getResizedImage(900)} 900w`"
         :src="addHost(item.event_listing.image)"
         :style="{
+          'width': width + 'px',
           'height': (height * 2 / 3) + 'px',
         }"
       />
