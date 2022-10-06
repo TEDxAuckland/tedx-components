@@ -22,7 +22,6 @@
       }"
     >
       <div 
-        :class="item.is_highlighted ? 'events-snake-grid__item events-snake-grid__item--big' : 'events-snake-grid__item'" 
         v-for="item in items" 
         :key="item.id" 
         :style="{
