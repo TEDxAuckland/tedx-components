@@ -285,16 +285,8 @@ export function clearCanvasSnake({ canvas }) {
 
 function generateGradient(ctx, x0, y0, x1, y1, isInverted) {
   const gradient = ctx.createLinearGradient(x0, y0, x1, y1)
-  if (isInverted) {
-    gradient.addColorStop(0,  'red')
-    gradient.addColorStop(0.25, 'black')
-    gradient.addColorStop(1,  'red')  
-  }
-  else {
-    gradient.addColorStop(0, 'red')
-    gradient.addColorStop(0.75, 'black')
-    gradient.addColorStop(1, 'red')    
-  }
+  gradient.addColorStop(0, isInverted ? 'black' : 'red')
+  gradient.addColorStop(1, isInverted ? 'red' : 'black')
   return gradient
 }
 
