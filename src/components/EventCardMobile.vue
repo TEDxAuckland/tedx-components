@@ -47,7 +47,6 @@
           class="event-card-mobile__cta"
           :style="{
             height: (multiplier * 40 ) + 'px',
-            'border-radius': (multiplier * 4) + 'px',
             'font-size': (multiplier * 12) + 'px',
           }"
           v-html="viewPostCopy"
@@ -129,6 +128,8 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
+  background: #131313;
+  color: white;
 }
 
 .event-card-mobile__header {
@@ -149,6 +150,7 @@ export default {
   color: #f44336;
   border: 1px solid #f44336;
   cursor: pointer;
+  background: transparent;
 }
 .event-card-mobile__cta:active {
   color: white;

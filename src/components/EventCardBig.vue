@@ -131,6 +131,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: #131313;
+  color: white;
 }
 
 .event-card-big__header {
