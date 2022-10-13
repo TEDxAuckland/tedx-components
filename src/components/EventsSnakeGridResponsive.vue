@@ -85,7 +85,7 @@ export default {
       return this.containerWidth * 11 / 120 / 4 * this.columns
     },
     lineWidth() {
-      return this.containerWidth / 120 * 5
+      return this.cellSize
     },
     columns() {
       // TODO: use 46.87em
