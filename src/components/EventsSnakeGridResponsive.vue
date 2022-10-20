@@ -82,7 +82,7 @@ export default {
       return (this.containerWidth - this.gap * gapCount) / this.columns
     },
     gap() {
-      return this.containerWidth * 11 / 120 / 24 * this.columns
+      return this.containerWidth * 11 / 120 / 12 * this.columns
     },
     lineWidth() {
       return 15
