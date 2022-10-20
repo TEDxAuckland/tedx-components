@@ -91,7 +91,7 @@ export default {
       // TODO: use 46.87em
       // TODO: use getComputedStyle(document.documentElement).fontSize? https://stackoverflow.com/questions/36532307/rem-px-in-javascript
       if (this.clientWidth < 750) {
-        return 3
+        return 4
       } else {
         return 6
       }
