@@ -98,6 +98,11 @@ export default {
 <style>
 .event-card__container--small {
   position: relative;
+  box-shadow: 0 0 0.4rem rgb(0 0 0 / 20%);
+}
+.event-card__container:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 1rem 1rem rgb(0 0 0 / 50%);
 }
 
 .event-image-small {
