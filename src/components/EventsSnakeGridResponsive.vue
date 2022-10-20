@@ -82,10 +82,10 @@ export default {
       return (this.containerWidth - this.gap * gapCount) / this.columns
     },
     gap() {
-      return this.containerWidth * 11 / 120 / 4 * this.columns
+      return this.containerWidth * 11 / 120 / 24 * this.columns
     },
     lineWidth() {
-      return this.cellSize
+      return 15
     },
     columns() {
       // TODO: use 46.87em
@@ -93,7 +93,7 @@ export default {
       if (this.clientWidth < 750) {
         return 3
       } else {
-        return 4
+        return 6
       }
     }
   }
