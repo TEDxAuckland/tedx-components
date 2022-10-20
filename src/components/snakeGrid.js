@@ -382,7 +382,6 @@ export function drawCanvasSnake({
 
     const renderedLineWidth = lineWidth * pixelDensity;
     const renderedHalfLineWidth = renderedLineWidth / 2;
-    let lastInstruction = null;
     let lastDirectionInstruction = history[0];
     let gradientInverted = false;
 
@@ -406,10 +405,10 @@ export function drawCanvasSnake({
         const height = renderedLineWidth
 
         let region = new Path2D();
-        region.moveTo(x0+1, y0); // +1 avoids bleeding
-        region.lineTo(x0+width, y0);
-        region.lineTo(x0+width+renderedLineWidth, y0+height);
-        region.lineTo(x0+1, y0+height); // +1 avoids bleeding
+        region.moveTo(x0, y0); // +1 avoids bleeding
+        region.lineTo(x0+width+1, y0);
+        region.lineTo(x0+width+1, y0+height);
+        region.lineTo(x0, y0+height); // +1 avoids bleeding
         region.closePath();
 
         ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted, lineColor)
@@ -425,15 +424,10 @@ export function drawCanvasSnake({
         const height = renderedLineWidth
 
         let region = new Path2D();
-        if (lastInstruction == null) {
-          region.moveTo(x0, y0);
-        }
-        else {
-          region.moveTo(x0+renderedLineWidth, y0);
-        }
-        region.lineTo(x0+width+renderedLineWidth-1, y0); // -1 avoids bleeding
-        region.lineTo(x0+width+renderedLineWidth-1, y0+height); // -1 avoids bleeding
-        region.lineTo(x0, y0+height);
+        region.moveTo(x0+renderedLineWidth-1, y0);
+        region.lineTo(x0+width+renderedLineWidth, y0); // -1 avoids bleeding
+        region.lineTo(x0+width+renderedLineWidth, y0+height); // -1 avoids bleeding
+        region.lineTo(x0+renderedLineWidth-1, y0+height);
         region.closePath();
 
         ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted, lineColor)
@@ -446,37 +440,20 @@ export function drawCanvasSnake({
         const y0 = curPos[1]-renderedHalfLineWidth
 
         const width = renderedLineWidth
-        const height = GRID_STEP
+        const height = GRID_STEP-renderedLineWidth
 
         let region = new Path2D();
-        if (lastInstruction == 'right') {
-          region.moveTo(x0, y0+renderedLineWidth);
-          region.lineTo(x0+width, y0);
-          region.lineTo(x0+width, y0+height+renderedLineWidth);
-          region.lineTo(x0, y0+height+renderedLineWidth);
-          region.closePath();
-        }
-        else if (lastInstruction == 'left') {
-          region.moveTo(x0, y0);
-          region.lineTo(x0+width, y0+renderedLineWidth);
-          region.lineTo(x0+width, y0+height+renderedLineWidth);
-          region.lineTo(x0, y0+height+renderedLineWidth);
-          region.closePath();
-        }
-        else {
-          region.moveTo(x0, y0);  
-          region.lineTo(x0+width, y0);
-          region.lineTo(x0+width, y0+height+renderedLineWidth);
-          region.lineTo(x0, y0+height+renderedLineWidth);
-          region.closePath();
-        }
+        region.moveTo(x0, y0+renderedLineWidth-1);  
+        region.lineTo(x0+width, y0+renderedLineWidth-1);
+        region.lineTo(x0+width, y0+height+renderedLineWidth+renderedLineWidth);
+        region.lineTo(x0, y0+height+renderedLineWidth+renderedLineWidth);
+        region.closePath();
 
         ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0, gradientInverted, lineColor)
         ctx.fill(region);
 
         curPos = [curPos[0], curPos[1] + GRID_STEP];
       }
-      lastInstruction = instruction;
     }
     ctx.stroke();
   }
