@@ -40,7 +40,7 @@
           v-html="item.event_listing.subtitle"
           :style="{
             'font-size': multiplier * 12 + 'px',
-            'margin-bottom': multiplier * 8 + 'px',
+            'margin-bottom': multiplier * 4 + 'px',
           }"
         ></div>
         <div 
