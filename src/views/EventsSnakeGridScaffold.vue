@@ -47,7 +47,7 @@ const defaultItems = [
   {
     "id": "/events/dining-in-the-dark",
     "url": "/events/08-2019/",
-    "event_listing": {"is_highlighted":true, "subtitle": "Hello world!", "description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true, "subtitle": "Event subtitle", "description":"Lorem ipsum dolor sit amet","image":"/uploads/default-speaker-photo.jpg"},
     "title": "IN THE DARK",
     "start_date": "2019-08-31 00:00:00 +1200"
   },
@@ -96,14 +96,14 @@ const defaultItems = [
   {
     "id": "/events/tedxauckland-2013",
     "url": "/events/2013/",
-    "event_listing": {"is_highlighted":true, "subtitle": "Hello world!", "description":"TEDxAkl AUG 2013: Aotea Centre","image":"/uploads/georgia-s-77.jpg"},
+    "event_listing": {"is_highlighted":true, "subtitle": "Event subtitle", "description":"TEDxAkl AUG 2013: Aotea Centre","image":"/uploads/georgia-s-77.jpg"},
     "title": "2013 event",
     "start_date": "2013-08-03 00:00:00 +1200"
   },
   {
     "id": "/events/tedxauckland-2012",
     "url": "/events/2012/",
-    "event_listing": {"is_highlighted":true, "subtitle": "Hello world!", "description":"TEDxAkl 2012","image":"/uploads/default-speaker-photo.jpg"},
+    "event_listing": {"is_highlighted":true, "subtitle": "Event subtitle", "description":"TEDxAkl 2012","image":"/uploads/default-speaker-photo.jpg"},
     "title": "2012 event",
     "start_date": "2012-10-06 00:00:00 +1300"
   },
