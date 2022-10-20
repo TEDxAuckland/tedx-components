@@ -10,10 +10,11 @@
         alt="Avatar"
         class="event-card-mobile__image"
         :srcset="srcset"
-        :src="addHost(item.event_listing.image)"
+        :src="src"
         :style="{
           'width': width + 'px',
           'height': (height * 2 / 3) + 'px',
+          'object-position': objectPosition
         }"
       />
       <div
@@ -98,8 +99,29 @@ export default {
       return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
     },
     srcset() {
-      const widths = [200, 300, 600, 900];
-      return getSrcSet(this.host, this.item.event_listing.image, widths);
+      if (this.item.id === '/events/dining-in-the-dark') {
+        return undefined
+      }
+      else {
+        const widths = [200, 300, 600, 900];
+        return getSrcSet(this.host, this.item.event_listing.image, widths);
+      }
+    },
+    src() {
+      if (this.item.id === '/events/dining-in-the-dark') {
+        return addHost(this.host, '/uploads/in-the-dark-card-bg.gif')
+      }
+      else {
+        return addHost(this.host, this.item.event_listing.image)
+      }
+    },
+    objectPosition() {
+      if (this.item.id === '/events/dining-in-the-dark') {
+        return 'top center'
+      }
+      else {
+        return 'center center'
+      }
     }
   }
 }
