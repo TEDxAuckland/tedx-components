@@ -128,8 +128,6 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
-  background: #131313;
-  color: white;
 }
 
 .event-card-mobile__header {
