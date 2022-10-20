@@ -35,13 +35,21 @@
           }"
         ></div>
         <div 
+          v-if="item.event_listing.is_highlighted"
+          class="event-card-small__desc" 
+          v-html="item.event_listing.subtitle"
+          :style="{
+            'font-size': multiplier * 12 + 'px',
+            'margin-bottom': multiplier * 8 + 'px',
+          }"
+        ></div>
+        <div 
           class="event-card-small__desc" 
           v-html="item.event_listing.description"
           :style="{
             'font-size': multiplier * 12 + 'px',
             'margin-bottom': multiplier * 8 + 'px',
           }"
-
         ></div>
       </div>
     </div>
@@ -65,6 +73,9 @@ export default {
     },
     host: {
       type: String,
+    },
+    is_highlighted: {
+      type: Boolean,
     },
   },
   methods: {

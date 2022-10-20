@@ -1,14 +1,13 @@
 <template>
   <div>
-    <EventCardBig
+    <!-- <EventCardBig
       v-if="item.event_listing.is_highlighted"
       :item="item"
       :width="width"
       :height="height"
       :host="host"
-    />
+    /> -->
     <EventCardSmall 
-      v-if="!item.event_listing.is_highlighted"
       :item="item"
       :width="width"
       :height="height"
