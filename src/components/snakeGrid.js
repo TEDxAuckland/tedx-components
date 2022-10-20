@@ -338,11 +338,11 @@ export function clearCanvasSnake({ canvas }) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function generateGradient(ctx, x0, y0, x1, y1, isInverted) {
+function generateGradient(ctx, x0, y0, x1, y1, isInverted, lineColor) {
   const gradient = ctx.createLinearGradient(x0, y0, x1, y1)
   // TODO: just solid color
-  gradient.addColorStop(0, isInverted ? 'red' : 'red')
-  gradient.addColorStop(1, isInverted ? 'red' : 'red')
+  gradient.addColorStop(0, isInverted ? lineColor : lineColor)
+  gradient.addColorStop(1, isInverted ? lineColor : lineColor)
   return gradient
 }
 
@@ -358,9 +358,9 @@ export function drawCanvasSnake({
   const renderedGap = gap * pixelDensity;
   const renderedCellSize = cellSize * pixelDensity;
   const ctx = canvas.getContext("2d");
+
   const GRID_STEP = renderedCellSize + renderedGap;
   const GRID_HALF_CELL = renderedCellSize / 2;
-  let curPos = [renderedCellSize / 2, renderedCellSize / 2];
 
   function clamp(num) {
     // 1 grid gap here because each step includes a gap, we just need to remove the last gap
@@ -370,105 +370,115 @@ export function drawCanvasSnake({
     );
   }
 
-  ctx.beginPath();
+  ctx.filter = 'blur(4px) opacity(0.5)';
+  renderLine('rgba(0, 0, 0, 1)', lineWidth + 5);
+  ctx.filter = 'blur(0)';
+  renderLine('red', lineWidth);
 
-  const renderedLineWidth = lineWidth * pixelDensity;
-  const renderedHalfLineWidth = renderedLineWidth / 2;
-  let lastInstruction = null;
-  let lastDirectionInstruction = history[0];
-  let gradientInverted = false;
+  function renderLine(lineColor, lineWidth) {
+    let curPos = [renderedCellSize / 2, renderedCellSize / 2];
 
-  for (const instruction of history) {
+    ctx.beginPath();
 
-    if (instruction === "left" || instruction === "right" || instruction === "down") {
-      if (lastDirectionInstruction == "right" && instruction == "down") {
-        gradientInverted = !gradientInverted
+    const renderedLineWidth = lineWidth * pixelDensity;
+    const renderedHalfLineWidth = renderedLineWidth / 2;
+    let lastInstruction = null;
+    let lastDirectionInstruction = history[0];
+    let gradientInverted = false;
+
+    for (const instruction of history) {
+
+      if (instruction === "left" || instruction === "right" || instruction === "down") {
+        if (lastDirectionInstruction == "right" && instruction == "down") {
+          gradientInverted = !gradientInverted
+        }
+        if (lastDirectionInstruction == "down" && instruction == "right") {
+          gradientInverted = !gradientInverted
+        }
+        lastDirectionInstruction = instruction;
       }
-      if (lastDirectionInstruction == "down" && instruction == "right") {
-        gradientInverted = !gradientInverted
-      }
-      lastDirectionInstruction = instruction;
-    }
 
-    if (instruction === "left") {
-      const x0 = clamp(curPos[0] - GRID_STEP)-renderedHalfLineWidth
-      const y0 = curPos[1]-renderedHalfLineWidth
+      if (instruction === "left") {
+        const x0 = clamp(curPos[0] - GRID_STEP)-renderedHalfLineWidth
+        const y0 = curPos[1]-renderedHalfLineWidth
 
-      const width = curPos[0] - x0 - renderedHalfLineWidth
-      const height = renderedLineWidth
+        const width = curPos[0] - x0 - renderedHalfLineWidth
+        const height = renderedLineWidth
 
-      let region = new Path2D();
-      region.moveTo(x0+1, y0); // +1 avoids bleeding
-      region.lineTo(x0+width, y0);
-      region.lineTo(x0+width+renderedLineWidth, y0+height);
-      region.lineTo(x0+1, y0+height); // +1 avoids bleeding
-      region.closePath();
-
-      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted)
-      ctx.fill(region);
-
-      curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
-    }
-    if (instruction === "right") {
-      const x0 = curPos[0]-renderedHalfLineWidth
-      const y0 = curPos[1]-renderedHalfLineWidth
-
-      const width = clamp(curPos[0] + GRID_STEP) - x0 - renderedHalfLineWidth
-      const height = renderedLineWidth
-
-      let region = new Path2D();
-      if (lastInstruction == null) {
-        region.moveTo(x0, y0);
-      }
-      else {
-        region.moveTo(x0+renderedLineWidth, y0);
-      }
-      region.lineTo(x0+width+renderedLineWidth-1, y0); // -1 avoids bleeding
-      region.lineTo(x0+width+renderedLineWidth-1, y0+height); // -1 avoids bleeding
-      region.lineTo(x0, y0+height);
-      region.closePath();
-
-      ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted)
-      ctx.fill(region);
-
-      curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
-    }
-    if (instruction === "down") {
-      const x0 = curPos[0]-renderedHalfLineWidth
-      const y0 = curPos[1]-renderedHalfLineWidth
-
-      const width = renderedLineWidth
-      const height = GRID_STEP
-
-      let region = new Path2D();
-      if (lastInstruction == 'right') {
-        region.moveTo(x0, y0+renderedLineWidth);
+        let region = new Path2D();
+        region.moveTo(x0+1, y0); // +1 avoids bleeding
         region.lineTo(x0+width, y0);
-        region.lineTo(x0+width, y0+height+renderedLineWidth);
-        region.lineTo(x0, y0+height+renderedLineWidth);
+        region.lineTo(x0+width+renderedLineWidth, y0+height);
+        region.lineTo(x0+1, y0+height); // +1 avoids bleeding
         region.closePath();
-      }
-      else if (lastInstruction == 'left') {
-        region.moveTo(x0, y0);
-        region.lineTo(x0+width, y0+renderedLineWidth);
-        region.lineTo(x0+width, y0+height+renderedLineWidth);
-        region.lineTo(x0, y0+height+renderedLineWidth);
-        region.closePath();
-      }
-      else {
-        region.moveTo(x0, y0);  
-        region.lineTo(x0+width, y0);
-        region.lineTo(x0+width, y0+height+renderedLineWidth);
-        region.lineTo(x0, y0+height+renderedLineWidth);
-        region.closePath();
-      }
 
-      ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0, gradientInverted)
-      ctx.fill(region);
+        ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted, lineColor)
+        ctx.fill(region);
 
-      curPos = [curPos[0], curPos[1] + GRID_STEP];
+        curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
+      }
+      if (instruction === "right") {
+        const x0 = curPos[0]-renderedHalfLineWidth
+        const y0 = curPos[1]-renderedHalfLineWidth
+
+        const width = clamp(curPos[0] + GRID_STEP) - x0 - renderedHalfLineWidth
+        const height = renderedLineWidth
+
+        let region = new Path2D();
+        if (lastInstruction == null) {
+          region.moveTo(x0, y0);
+        }
+        else {
+          region.moveTo(x0+renderedLineWidth, y0);
+        }
+        region.lineTo(x0+width+renderedLineWidth-1, y0); // -1 avoids bleeding
+        region.lineTo(x0+width+renderedLineWidth-1, y0+height); // -1 avoids bleeding
+        region.lineTo(x0, y0+height);
+        region.closePath();
+
+        ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted, lineColor)
+        ctx.fill(region);
+
+        curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
+      }
+      if (instruction === "down") {
+        const x0 = curPos[0]-renderedHalfLineWidth
+        const y0 = curPos[1]-renderedHalfLineWidth
+
+        const width = renderedLineWidth
+        const height = GRID_STEP
+
+        let region = new Path2D();
+        if (lastInstruction == 'right') {
+          region.moveTo(x0, y0+renderedLineWidth);
+          region.lineTo(x0+width, y0);
+          region.lineTo(x0+width, y0+height+renderedLineWidth);
+          region.lineTo(x0, y0+height+renderedLineWidth);
+          region.closePath();
+        }
+        else if (lastInstruction == 'left') {
+          region.moveTo(x0, y0);
+          region.lineTo(x0+width, y0+renderedLineWidth);
+          region.lineTo(x0+width, y0+height+renderedLineWidth);
+          region.lineTo(x0, y0+height+renderedLineWidth);
+          region.closePath();
+        }
+        else {
+          region.moveTo(x0, y0);  
+          region.lineTo(x0+width, y0);
+          region.lineTo(x0+width, y0+height+renderedLineWidth);
+          region.lineTo(x0, y0+height+renderedLineWidth);
+          region.closePath();
+        }
+
+        ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0, gradientInverted, lineColor)
+        ctx.fill(region);
+
+        curPos = [curPos[0], curPos[1] + GRID_STEP];
+      }
+      lastInstruction = instruction;
     }
-    lastInstruction = instruction;
+    ctx.stroke();
   }
-  ctx.stroke();
+
 }
