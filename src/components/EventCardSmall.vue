@@ -100,7 +100,7 @@ export default {
   position: relative;
   box-shadow: 0 0 0.4rem rgb(0 0 0 / 20%);
 }
-.event-card__container:hover {
+.event-card__container--small:hover {
   transform: translateY(-1rem);
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 50%);
 }
