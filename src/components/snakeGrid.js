@@ -1,4 +1,4 @@
-const CIRCUIT_BREAKER_ITERATIONS = 5;
+const CIRCUIT_BREAKER_ITERATIONS = 7;
 
 function invertDirection(dir) {
   return dir === "right" ? "left" : "right";
@@ -114,11 +114,66 @@ function fillBigItem(
   // if the adjacent cell is not empty, keep looking
   let iterations = 0;
   while (
-    grid[snakeProgress.row][snakeProgress.column + directionSign()] !== null
+    !(
+      grid[snakeProgress.row][snakeProgress.column] === null &&
+      grid[snakeProgress.row][snakeProgress.column + directionSign()] === null &&
+      grid[snakeProgress.row][snakeProgress.column + directionSign() + directionSign()] === null &&
+      grid[snakeProgress.row + 1][snakeProgress.column] === null &&
+      grid[snakeProgress.row + 1][snakeProgress.column + directionSign()] === null &&
+      grid[snakeProgress.row + 1][snakeProgress.column + directionSign() + directionSign()] === null &&
+      grid[snakeProgress.row + 2][snakeProgress.column] === null &&
+      grid[snakeProgress.row + 2][snakeProgress.column + directionSign()] === null &&
+      grid[snakeProgress.row + 2][snakeProgress.column + directionSign() + directionSign()] === null
+    )
   ) {
     iterations++;
     if (iterations > CIRCUIT_BREAKER_ITERATIONS) {
-      throw new Error("Could not find empty cell");
+      throw new Error("Could not find empty cell in fillBigItem");
+    }
+
+    snakeProgress = findEmptyCell(grid, snakeProgress);
+  }
+
+  // fill the 9 cells
+  grid[snakeProgress.row][snakeProgress.column] = item.id;
+  grid[snakeProgress.row][snakeProgress.column + directionSign()] = item.id;
+  grid[snakeProgress.row][snakeProgress.column + directionSign() + directionSign()] = item.id;
+  grid[snakeProgress.row + 1][snakeProgress.column] = item.id;
+  grid[snakeProgress.row + 1][snakeProgress.column + directionSign()] = item.id;
+  grid[snakeProgress.row + 1][snakeProgress.column + directionSign() + directionSign()] = item.id;
+  grid[snakeProgress.row + 2][snakeProgress.column] = item.id;
+  grid[snakeProgress.row + 2][snakeProgress.column + directionSign()] = item.id;
+  grid[snakeProgress.row + 2][snakeProgress.column + directionSign() + directionSign()] = item.id;
+
+  return {
+    ...snakeProgress,
+    column: snakeProgress.column + directionSign() + directionSign(),
+    history: [...snakeProgress.history, snakeProgress.direction, snakeProgress.direction],
+  };
+}
+
+function fillSmallItem(
+  grid,
+  snakeProgress,
+  item
+) {
+  function directionSign() {
+    return snakeProgress.direction === "right" ? 1 : -1;
+  }
+
+  // if the adjacent cell is not empty, keep looking
+  let iterations = 0;
+  while (
+    !(
+      grid[snakeProgress.row][snakeProgress.column] === null &&
+      grid[snakeProgress.row][snakeProgress.column + directionSign()] === null &&
+      grid[snakeProgress.row + 1][snakeProgress.column] === null &&
+      grid[snakeProgress.row + 1][snakeProgress.column + directionSign()] === null
+    )
+  ) {
+    iterations++;
+    if (iterations > CIRCUIT_BREAKER_ITERATIONS) {
+      throw new Error("Could not find empty cell in fillSmallItem");
     }
 
     snakeProgress = findEmptyCell(grid, snakeProgress);
@@ -139,7 +194,7 @@ function fillBigItem(
 
 
 export function generateGridRecursive(columns, items) {
-  let grid = [...Array(2).keys()].map(() => Array(columns).fill(null));
+  let grid = [...Array(3).keys()].map(() => Array(columns).fill(null));
   let snakeProgress = {
     row: 0,
     column: 0,
@@ -172,7 +227,7 @@ export function generateGridRecursive(columns, items) {
         }
       }
     } else {
-      grid[snakeProgress.row][snakeProgress.column] = item.id;
+      snakeProgress = fillSmallItem(grid, snakeProgress, item)
       snakeProgressFilled = snakeProgress.history.length;
       snakeProgress = findEmptyCell(grid, snakeProgress);
     }

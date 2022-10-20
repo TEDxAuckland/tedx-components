@@ -51,10 +51,10 @@ export default {
 
   computed: {
     width() {
-      return this.item.event_listing.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
+      return this.item.event_listing.is_highlighted ? this.cellSize * 3 + this.gap * 2 : this.cellSize * 2 + this.gap;
     },
     height() {
-      return this.item.event_listing.is_highlighted ? this.cellSize * 2 + this.gap : this.cellSize;
+      return this.item.event_listing.is_highlighted ? this.cellSize * 3 + this.gap * 2 : this.cellSize * 2 + this.gap;
     }
   }
 }
