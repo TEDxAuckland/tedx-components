@@ -11,7 +11,7 @@
         alt="Avatar"
         class="event-image-small"
         :srcset="srcset"
-        :src="addHost(item.event_listing.image)"
+        :src="src"
         :style="{
           'width': width + 'px',
           'height': height + 'px',
@@ -88,8 +88,21 @@ export default {
       return this.width / 217.5;
     },
     srcset() {
-      const widths = [200, 300, 600, 900];
-      return getSrcSet(this.host, this.item.event_listing.image, widths);
+      if (this.item.id === '/events/dining-in-the-dark') {
+        return undefined
+      }
+      else {
+        const widths = [200, 300, 600, 900];
+        return getSrcSet(this.host, this.item.event_listing.image, widths);
+      }
+    },
+    src() {
+      if (this.item.id === '/events/dining-in-the-dark') {
+        return addHost(this.host, '/uploads/in-the-dark-card-bg.gif')
+      }
+      else {
+        return addHost(this.host, this.item.event_listing.image)
+      }
     }
   }
 }
