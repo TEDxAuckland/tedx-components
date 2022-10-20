@@ -31,7 +31,7 @@
           v-html="`${item.title}`"
           :style="{
             // TODO: here and in other places, use rem or em like Anthony told 
-            'font-size': multiplier * 17.3 + 'px',
+            'font-size': adjustedMultiplier * 17.3 + 'px',
           }"
         ></div>
         <div 
@@ -39,16 +39,16 @@
           class="event-card-small__desc" 
           v-html="item.event_listing.subtitle"
           :style="{
-            'font-size': multiplier * 12 + 'px',
-            'margin-bottom': multiplier * 4 + 'px',
+            'font-size': adjustedMultiplier * 12 + 'px',
+            'margin-bottom': adjustedMultiplier * 4 + 'px',
           }"
         ></div>
         <div 
           class="event-card-small__desc" 
           v-html="item.event_listing.description"
           :style="{
-            'font-size': multiplier * 12 + 'px',
-            'margin-bottom': multiplier * 8 + 'px',
+            'font-size': adjustedMultiplier * 12 + 'px',
+            'margin-bottom': adjustedMultiplier * 8 + 'px',
           }"
         ></div>
       </div>
@@ -86,6 +86,10 @@ export default {
   computed: {
     multiplier() {
       return this.width / 217.5;
+    },
+    adjustedMultiplier() {
+      const is_highlighted = this.item.event_listing.is_highlighted;
+      return this.multiplier / (is_highlighted ? 3 : 2) * 2;
     },
     srcset() {
       if (this.item.id === '/events/dining-in-the-dark') {
