@@ -110,6 +110,7 @@ export default {
 
 <style>
 .event-card__container--small {
+  transition: all 0.2s;
   position: relative;
   box-shadow: 0 0 0.4rem rgb(0 0 0 / 20%);
 }
