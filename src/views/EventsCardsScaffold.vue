@@ -8,6 +8,10 @@
     <br/>
     <h1>3x2 card</h1>
     <ThreeByTwoCard :item="mockEventBig" :width="640" :height="640" host="http://localhost:4000" />
+    <br/>
+    <br/>
+    <h1>Mobile card</h1>
+    <MobileCard :item="mockEventBig" :width="640" :height="640" host="http://localhost:4000" />
   </section>
 
   </div>
@@ -16,6 +20,7 @@
 <script>
 import SquareCard from '@/components/EventCardSquare.vue'
 import ThreeByTwoCard from '@/components/EventCardThreeByTwo.vue'
+import MobileCard from '@/components/EventCardMobile.vue'
 
 const mockEventSmall = {
   "id": "/events/november-2020",
@@ -39,12 +44,14 @@ export default {
   components: {
     SquareCard,
     ThreeByTwoCard,
+    MobileCard,
   },
 
   data() {
     return {
       mockEventSmall,
       mockEventBig,
+      MobileCard,
     }
   }
 }
