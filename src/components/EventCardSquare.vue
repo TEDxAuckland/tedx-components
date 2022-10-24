@@ -114,7 +114,7 @@ export default {
 
 <style>
 .event-card__container--square {
-  transition: all 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   box-shadow: 0 0 0.4rem rgb(0 0 0 / 20%);
 }
