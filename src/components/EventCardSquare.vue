@@ -136,7 +136,7 @@ export default {
   position: absolute;
   width:100%;
   height:100%;
-  box-shadow: inset 0px 1000px 8px 0px rgb(0 0 0 / 50%);
+  box-shadow: inset 0px 1000px 8px 0px rgb(0 0 0 / 25%);
   top: 0;
 }
 
