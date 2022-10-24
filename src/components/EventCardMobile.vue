@@ -162,9 +162,6 @@ export default {
   margin:0;
 }
 
-.event-card-mobile__desc {
-}
-
 .event-card-mobile__cta {
   border: none;
   color: #f44336;
@@ -175,6 +172,5 @@ export default {
 .event-card-mobile__cta:active {
   color: white;
   background-color: #f44336;
-
 }
 </style>
