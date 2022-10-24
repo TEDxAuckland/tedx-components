@@ -1,4 +1,4 @@
-const CIRCUIT_BREAKER_ITERATIONS = 7;
+const CIRCUIT_BREAKER_ITERATIONS = 8;
 
 function invertDirection(dir) {
   return dir === "right" ? "left" : "right";
