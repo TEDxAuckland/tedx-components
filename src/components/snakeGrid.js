@@ -365,7 +365,7 @@ export function drawCanvasSnake({
   ctx.filter = 'blur(4px) opacity(0.5)';
   renderLine('rgba(0, 0, 0, 1)', lineWidth + 5);
   ctx.filter = 'blur(0)';
-  renderLine('red', lineWidth); // TODO: brand color
+  renderLine('#ed3624', lineWidth);
 
   function renderLine(lineColor, lineWidth) {
     let curPos = [renderedCellSize / 2, renderedCellSize / 2];
