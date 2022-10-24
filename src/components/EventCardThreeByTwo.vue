@@ -1,7 +1,7 @@
 <template>
   <a :href="item.url">
     <div
-      class="event-card__container event-card__container--big card--outline"
+      class="event-card__container event-card__container--three-by-two card--outline"
       :style="{
         'max-width': width + 'px',
         'max-height': height + 'px',
@@ -9,7 +9,7 @@
     >
       <img
         alt="Avatar"
-        class="event-image-big"
+        class="event-image-three-by-two"
         :srcset="srcset"
         :src="addHost(item.event_listing.image)"
         :style="{
@@ -18,7 +18,7 @@
         }"
       />
       <div
-        class="event-card-big-text"
+        class="event-card-three-by-two-text"
         :style="{
           'height': (height * 1 / 3) + 'px',
           'padding-top': (multiplier * 6) + 'px',
@@ -29,14 +29,14 @@
       >
         <div>
           <div 
-            class="event-card-big__header" 
+            class="event-card-three-by-two__header" 
             v-html="`${item.title}`"
             :style="{
               'font-size': (multiplier * 25.95) + 'px',
             }"
           ></div>
           <div
-            class="event-card-big__header-small" 
+            class="event-card-three-by-two__header-small" 
             v-html="dateTitle"
             :style="{
               'font-size': (multiplier * 15.12) + 'px',
@@ -44,7 +44,7 @@
           ></div>
         </div>
         <div 
-          class="event-card-big__desc" 
+          class="event-card-three-by-two__desc" 
           v-html="item.event_listing.description"
           :style="{
             'font-size': (multiplier * 12) + 'px',
@@ -108,11 +108,11 @@ export default {
 </script>
 
 <style scoped>
-.event-card__container--big {
+.event-card__container--three-by-two {
   text-align: center;
 }
 
-.event-image-big {
+.event-image-three-by-two {
   width: 100%;
   object-position: center center;
   background-repeat: no-repeat;
@@ -122,7 +122,7 @@ export default {
   object-fit: cover;
 }
 
-.event-card-big-text {
+.event-card-three-by-two-text {
   padding: 6px 16px;
   padding-bottom: 20px;
   text-align: left;
@@ -133,11 +133,11 @@ export default {
   justify-content: space-between;
 }
 
-.event-card-big__header {
+.event-card-three-by-two__header {
   display: block;
   margin: 0;
 }
-.event-card-big__header-small {
+.event-card-three-by-two__header-small {
   display: block;
   margin:0;
 }
