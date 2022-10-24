@@ -35,7 +35,6 @@
             'line-height': 1,
           }"
         ></div>
-        <!-- TODO: does this need to show date fully, actually use dateTitle? -->
         <div 
           class="event-card-mobile__desc" 
           v-html="item.event_listing.description"
