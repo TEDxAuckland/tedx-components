@@ -1,7 +1,7 @@
 <template>
   <a :href="item.url">
     <div
-      class="event-card__container event-card__container--small card--outline"
+      class="event-card__container event-card__container--square card--outline"
       :style="{
         'max-width': width + 'px',
         'max-height': height + 'px',
@@ -9,7 +9,7 @@
     >
       <img
         alt="Avatar"
-        class="event-image-small"
+        class="event-image-square"
         :srcset="srcset"
         :src="src"
         :style="{
@@ -17,9 +17,9 @@
           'height': height + 'px',
         }"
       />
-      <div class="event-image-small-shadow"></div>
+      <div class="event-image-square-shadow"></div>
       <div
-        class="event-card-small-text"
+        class="event-card-square-text"
         :style="{
           'bottom': multiplier * 10 + 'px',
           'left': multiplier * 15 + 'px',
@@ -27,7 +27,7 @@
         }"
       >
         <div 
-          class="event-card-small__header" 
+          class="event-card-square__header" 
           v-html="`${item.title}`"
           :style="{
             // TODO: here and in other places, use rem or em like Anthony told 
@@ -36,7 +36,7 @@
         ></div>
         <div 
           v-if="item.event_listing.is_highlighted"
-          class="event-card-small__desc" 
+          class="event-card-square__desc" 
           v-html="item.event_listing.subtitle"
           :style="{
             'font-size': adjustedMultiplier * 12 + 'px',
@@ -44,7 +44,7 @@
           }"
         ></div>
         <div 
-          class="event-card-small__desc" 
+          class="event-card-square__desc" 
           v-html="item.event_listing.description"
           :style="{
             'font-size': adjustedMultiplier * 12 + 'px',
@@ -113,17 +113,17 @@ export default {
 </script>
 
 <style>
-.event-card__container--small {
+.event-card__container--square {
   transition: all 0.2s;
   position: relative;
   box-shadow: 0 0 0.4rem rgb(0 0 0 / 20%);
 }
-.event-card__container--small:hover {
+.event-card__container--square:hover {
   transform: translateY(-1rem);
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 50%);
 }
 
-.event-image-small {
+.event-image-square {
   position: relative;
   object-fit: cover;
   object-position: left;
@@ -132,7 +132,7 @@ export default {
   background-size: contain;
   display: block;
 }
-.event-image-small-shadow {
+.event-image-square-shadow {
   position: absolute;
   width:100%;
   height:100%;
@@ -140,17 +140,15 @@ export default {
   top: 0;
 }
 
-.event-card-small-text {
+.event-card-square-text {
   position: absolute;
   text-align: left;
   color: white;
 }
 
-.event-card-small__header {
+.event-card-square__header {
   display: block;
   margin: 0;
 }
 
-.event-card-small__desc {
-}
 </style>
