@@ -1,19 +1,10 @@
 <template>
-  <div>
-    <!-- <EventCardBig
-      v-if="item.event_listing.is_highlighted"
-      :item="item"
-      :width="width"
-      :height="height"
-      :host="host"
-    /> -->
-    <EventCardSquare 
-      :item="item"
-      :width="width"
-      :height="height"
-      :host="host"
-    />
-  </div>
+  <EventCardSquare 
+    :item="item"
+    :width="width"
+    :height="height"
+    :host="host"
+  />
 </template>
 
 <script>
