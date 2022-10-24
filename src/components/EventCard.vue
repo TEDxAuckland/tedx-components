@@ -7,7 +7,7 @@
       :height="height"
       :host="host"
     /> -->
-    <EventCardSmall 
+    <EventCardSquare 
       :item="item"
       :width="width"
       :height="height"
@@ -18,14 +18,14 @@
 
 <script>
 import EventCardBig from '@/components/EventCardBig';
-import EventCardSmall from '@/components/EventCardSmall';
+import EventCardSquare from '@/components/EventCardSquare';
 
 export default {
   name: 'event-card',
 
   components: {
     EventCardBig,
-    EventCardSmall
+    EventCardSquare
   },
 
   props: {

@@ -60,7 +60,7 @@
 import { getSrcSet, addHost } from './responsiveImage'
 
 export default {
-  name: 'event-card-small',
+  name: 'event-card-square',
   props: {
     item: {
       type: Object,

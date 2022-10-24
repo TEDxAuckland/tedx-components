@@ -2,11 +2,11 @@
   <div id="app">
 
   <section>
-    <h1>Small card</h1>
-    <SmallCard :item="mockEventSmall" :width="320" :height="320" host="http://localhost:4000" />
+    <h1>Square card</h1>
+    <SquareCard :item="mockEventSmall" :width="320" :height="320" host="http://localhost:4000" />
     <br/>
     <br/>
-    <h1>Big card</h1>
+    <h1>3x2 card</h1>
     <BigCard :item="mockEventBig" :width="640" :height="640" host="http://localhost:4000" />
   </section>
 
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import SmallCard from '@/components/EventCardSmall.vue'
+import SquareCard from '@/components/EventCardSquare.vue'
 import BigCard from '@/components/EventCardBig.vue'
 
 const mockEventSmall = {
@@ -37,7 +37,7 @@ export default {
   name: 'app',
 
   components: {
-    SmallCard,
+    SquareCard,
     BigCard,
   },
 
