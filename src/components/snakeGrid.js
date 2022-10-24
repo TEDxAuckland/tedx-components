@@ -338,14 +338,6 @@ export function clearCanvasSnake({ canvas }) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function generateGradient(ctx, x0, y0, x1, y1, isInverted, lineColor) {
-  const gradient = ctx.createLinearGradient(x0, y0, x1, y1)
-  // TODO: just solid color
-  gradient.addColorStop(0, isInverted ? lineColor : lineColor)
-  gradient.addColorStop(1, isInverted ? lineColor : lineColor)
-  return gradient
-}
-
 export function drawCanvasSnake({
   canvas,
   cellSize,
@@ -373,7 +365,7 @@ export function drawCanvasSnake({
   ctx.filter = 'blur(4px) opacity(0.5)';
   renderLine('rgba(0, 0, 0, 1)', lineWidth + 5);
   ctx.filter = 'blur(0)';
-  renderLine('red', lineWidth);
+  renderLine('red', lineWidth); // TODO: brand color
 
   function renderLine(lineColor, lineWidth) {
     let curPos = [renderedCellSize / 2, renderedCellSize / 2];
@@ -411,7 +403,7 @@ export function drawCanvasSnake({
         region.lineTo(x0, y0+height); // +1 avoids bleeding
         region.closePath();
 
-        ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted, lineColor)
+        ctx.fillStyle = lineColor
         ctx.fill(region);
 
         curPos = [clamp(curPos[0] - GRID_STEP), curPos[1]];
@@ -430,7 +422,7 @@ export function drawCanvasSnake({
         region.lineTo(x0+renderedLineWidth-1, y0+height);
         region.closePath();
 
-        ctx.fillStyle = generateGradient(ctx, x0, y0, x0, y0+height, gradientInverted, lineColor)
+        ctx.fillStyle = lineColor
         ctx.fill(region);
 
         curPos = [clamp(curPos[0] + GRID_STEP), curPos[1]];
@@ -449,7 +441,7 @@ export function drawCanvasSnake({
         region.lineTo(x0, y0+height+renderedLineWidth+renderedLineWidth);
         region.closePath();
 
-        ctx.fillStyle = generateGradient(ctx, x0, y0, x0+width, y0, gradientInverted, lineColor)
+        ctx.fillStyle = lineColor
         ctx.fill(region);
 
         curPos = [curPos[0], curPos[1] + GRID_STEP];
