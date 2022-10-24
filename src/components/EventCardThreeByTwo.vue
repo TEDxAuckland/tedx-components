@@ -61,7 +61,7 @@ import { getSrcSet, addHost } from './responsiveImage'
 import { format } from 'date-fns'
 
 export default {
-  name: 'event-card-big',
+  name: 'event-card-three-by-two',
 
   components: {
   },
@@ -140,8 +140,5 @@ export default {
 .event-card-big__header-small {
   display: block;
   margin:0;
-}
-
-.event-card-big__desc {
 }
 </style>
