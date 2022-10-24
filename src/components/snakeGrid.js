@@ -202,32 +202,18 @@ export function generateGridRecursive(columns, items) {
   for (const item of items) {
     if (item.event_listing.is_highlighted) {
       if (snakeProgress.direction === "right") {
-        if (snakeProgress.column + 1 < columns) {
-          snakeProgress = fillBigItem(grid, snakeProgress, item);
-          snakeProgressFilled = snakeProgress.history.length;
-          snakeProgress = findEmptyCell(grid, snakeProgress);
-        } else {
-          // console.error(
-          //   "This code path should not be hit - we avoid stopping on edges (right-to-left case)"
-          // );
-        }
+        snakeProgress = fillBigItem(grid, snakeProgress, item);
+        snakeProgressFilled = snakeProgress.history.length;
       } else {
-        if (snakeProgress.column - 1 >= 0) {
-          snakeProgress = fillBigItem(grid, snakeProgress, item);
-          snakeProgressFilled = snakeProgress.history.length;
-          snakeProgress = findEmptyCell(grid, snakeProgress);
-        } else {
-          // console.error(
-          //   "This code path should not be hit - we avoid stopping on edges (left-to-right case)"
-          // );
-        }
+        snakeProgress = fillBigItem(grid, snakeProgress, item);
+        snakeProgressFilled = snakeProgress.history.length;
       }
     } else {
       snakeProgress = fillSmallItem(grid, snakeProgress, item)
       snakeProgressFilled = snakeProgress.history.length;
-      snakeProgress = findEmptyCell(grid, snakeProgress);
     }
   }
+
   if (snakeProgressFilled !== -1) {
     snakeProgress.history = snakeProgress.history.slice(0, snakeProgressFilled);
   }
@@ -236,7 +222,7 @@ export function generateGridRecursive(columns, items) {
 }
 
 export function generateGridSimple(columns, items) {
-  let grid = [...Array(2).keys()].map(() => Array(columns).fill(null));
+  let grid = [...Array(3).keys()].map(() => Array(columns).fill(null));
   let row = 0;
   let column = 0;
   let direction = "right";
@@ -245,10 +231,11 @@ export function generateGridSimple(columns, items) {
   function downAndInvert(col) {
     grid.push(Array(columns).fill(null));
     grid.push(Array(columns).fill(null));
-    row += 2;
+    grid.push(Array(columns).fill(null));
+    row += 3;
     column = col;
     direction = invertDirection(direction);
-    history.push("down", "down");
+    history.push("down", "down", "down");
   }
 
   function goForward() {
@@ -273,13 +260,15 @@ export function generateGridSimple(columns, items) {
   for (const item of items) {
     if (item.event_listing.is_highlighted) {
       if (direction === "right") {
-        if (column + 1 <= columns - 1) {
+        // gotta have 2 extra on the right
+        if (column + 2 <= columns - 1) {
           // will be enough space to fill the big item
         } else {
           downAndInvert(columns - 1);
         }
       } else {
-        if (column - 1 >= 0) {
+        // gotta have 2 extra on the left
+        if (column - 2 >= 0) {
           // will be enough space to fill the big item
         } else {
           downAndInvert(0);
@@ -288,14 +277,39 @@ export function generateGridSimple(columns, items) {
 
       grid[row][column] = item.id;
       grid[row][column + directionSign()] = item.id;
+      grid[row][column + directionSign() + directionSign()] = item.id;
+      grid[row + 1][column] = item.id;
+      grid[row + 1][column + directionSign()] = item.id;
+      grid[row + 1][column + directionSign() + directionSign()] = item.id;
+      grid[row + 2][column] = item.id;
+      grid[row + 2][column + directionSign()] = item.id;
+      grid[row + 2][column + directionSign() + directionSign()] = item.id;
+      snakeProgressFilled = history.length
+      goForward();
+      goForward();
+      goForward();
+    } else {
+      if (direction === "right") {
+        // gotta have 1 extra on the right
+        if (column + 1 <= columns - 1) {
+          // will be enough space to fill the big item
+        } else {
+          downAndInvert(columns - 1);
+        }
+      } else {
+        // gotta have 1 extra on the left
+        if (column - 1 >= 0) {
+          // will be enough space to fill the big item
+        } else {
+          downAndInvert(0);
+        }
+      }
+      grid[row][column] = item.id;
+      grid[row][column + directionSign()] = item.id;
       grid[row + 1][column] = item.id;
       grid[row + 1][column + directionSign()] = item.id;
       snakeProgressFilled = history.length
       goForward();
-      goForward();
-    } else {
-      grid[row][column] = item.id;
-      snakeProgressFilled = history.length
       goForward();
     }
   }
