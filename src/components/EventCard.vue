@@ -8,14 +8,12 @@
 </template>
 
 <script>
-import EventCardBig from '@/components/EventCardBig';
 import EventCardSquare from '@/components/EventCardSquare';
 
 export default {
   name: 'event-card',
 
   components: {
-    EventCardBig,
     EventCardSquare
   },
 
@@ -41,14 +39,17 @@ export default {
 
   computed: {
     width() {
-      return this.item.event_listing.is_highlighted ? this.cellSize * 3 + this.gap * 2 : this.cellSize * 2 + this.gap;
+      const { cellSize, gap } = this;
+      const { is_highlighted } = this.item.event_listing;
+      return is_highlighted ? cellSize * 3 + gap * 2 : cellSize * 2 + gap;
     },
     height() {
-      return this.item.event_listing.is_highlighted ? this.cellSize * 3 + this.gap * 2 : this.cellSize * 2 + this.gap;
+      const { cellSize, gap } = this;
+      const { is_highlighted } = this.item.event_listing;
+      return is_highlighted ? cellSize * 3 + gap * 2 : cellSize * 2 + gap;
     }
   }
 }
-
 </script>
 
 <style scoped>
