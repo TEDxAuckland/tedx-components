@@ -144,6 +144,7 @@ export default {
   position: absolute;
   text-align: left;
   color: white;
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .event-card-square__header {
