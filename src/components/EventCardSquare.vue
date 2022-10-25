@@ -45,12 +45,25 @@
         ></div>
         <div 
           class="event-card-square__desc" 
-          v-html="item.event_listing.description"
+          v-if="description"
           :style="{
             'font-size': adjustedMultiplier * 12 + 'px',
             'margin-bottom': adjustedMultiplier * 8 + 'px',
           }"
-        ></div>
+        >
+          <span 
+            v-html="description.split('|')[0]"
+            :style="{
+              'font-style': description.split('|')[1] ? 'italic' : 'normal',
+            }"
+          ></span>
+          <span
+            v-if="description.split('|')[1]"
+          > | </span>
+          <span
+            v-html="description.split('|')[1]"
+          ></span>
+        </div>
       </div>
     </div>
   </a>
@@ -86,6 +99,9 @@ export default {
   computed: {
     multiplier() {
       return this.width / 217.5;
+    },
+    description() {
+      return this.item.event_listing.description
     },
     adjustedMultiplier() {
       const is_highlighted = this.item.event_listing.is_highlighted;
