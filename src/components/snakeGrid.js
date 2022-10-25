@@ -372,8 +372,10 @@ export function drawCanvasSnake({
     );
   }
 
-  ctx.filter = 'blur(4px) opacity(0.5)';
-  renderLine('rgba(0, 0, 0, 1)', lineWidth + 5, 5);
+  if (ctx.filter !== undefined) {
+    ctx.filter = 'blur(4px) opacity(0.5)';
+    renderLine('rgba(0, 0, 0, 1)', lineWidth + 5, 5);
+  }
   ctx.filter = 'blur(0)';
   renderLine('#ed3624', lineWidth);
 
