@@ -52,16 +52,16 @@
           }"
         >
           <span 
-            v-html="description.split('|')[0]"
+            v-html="preface"
             :style="{
-              'font-style': description.split('|')[1] ? 'italic' : 'normal',
+              'font-style': conclusion ? 'italic' : 'normal',
             }"
           ></span>
           <span
-            v-if="description.split('|')[1]"
+            v-if="conclusion"
           > | </span>
           <span
-            v-html="description.split('|')[1]"
+            v-html="conclusion"
           ></span>
         </div>
       </div>
@@ -102,6 +102,12 @@ export default {
     },
     description() {
       return this.item.event_listing.description
+    },
+    preface() {
+      return this.description.split('|')[0]
+    },
+    conclusion() {
+      return this.description.split('|')[1]
     },
     adjustedMultiplier() {
       const is_highlighted = this.item.event_listing.is_highlighted;
