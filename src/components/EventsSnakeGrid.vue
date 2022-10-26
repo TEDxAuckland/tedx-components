@@ -108,10 +108,6 @@ export default {
       default: 50,
     },
   },
-  data() {
-    return {
-    }
-  },
   computed: {
     template() {
       const { history, grid } = generateGridHybrid(this.columns, this.items)
