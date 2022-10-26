@@ -35,6 +35,7 @@
 import EventsSnakeGrid from '@/components/EventsSnakeGrid.vue'
 import EventCardMobile from '@/components/EventCardMobile'
 import EventCard from '@/components/EventCard'
+import { throttle } from 'lodash'
 
 export default {
   name: 'events-snake-grid-responsive',
@@ -51,7 +52,7 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("resize", this.resized);
+    window.addEventListener("resize", throttle(this.resized, 200, { trailing: true }));
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.resized);
