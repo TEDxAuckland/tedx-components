@@ -34,7 +34,6 @@
 
 <script>
 import { getAreas, generateGridHybrid, clearCanvasSnake, drawCanvasSnake } from './snakeGrid'
-import { throttle } from 'lodash'
 
 export default {
   name: "events-snake-grid",
