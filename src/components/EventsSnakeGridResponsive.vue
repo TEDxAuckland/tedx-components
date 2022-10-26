@@ -14,6 +14,7 @@
         :cellSize="cellSize"
         :gap="gap" 
         :host="host"
+        :clientWidth="clientWidth"
       />
     </EventsSnakeGrid>
   </div>

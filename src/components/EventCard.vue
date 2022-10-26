@@ -4,6 +4,7 @@
     :width="width"
     :height="height"
     :host="host"
+    :clientWidth="clientWidth"
   />
 </template>
 
@@ -29,7 +30,10 @@ export default {
     },
     host: {
       type: String,
-    }
+    },
+    clientWidth: {
+      type: Number,
+    },
   },
 
   data() {

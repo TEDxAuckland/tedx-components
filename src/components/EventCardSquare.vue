@@ -31,7 +31,7 @@
           v-html="`${item.title}`"
           :style="{
             // TODO: here and in other places, use rem or em like Anthony told 
-            'font-size': (adjustedMultiplier * 17.3 / 8) + 'rem',
+            'font-size': rem(adjustedMultiplier * 17.3),
           }"
         ></div>
         <div 
@@ -39,16 +39,16 @@
           class="event-card-square__desc" 
           v-html="item.event_listing.subtitle"
           :style="{
-            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
-            'margin-bottom': (adjustedMultiplier * 4 / 8) + 'rem',
+            'font-size': rem(adjustedMultiplier * 12),
+            'margin-bottom': rem(adjustedMultiplier * 4),
           }"
         ></div>
         <div 
           class="event-card-square__desc" 
           v-if="item.event_listing.description"
           :style="{
-            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
-            'margin-bottom': (adjustedMultiplier * 8 / 8) + 'rem',
+            'font-size': rem(adjustedMultiplier * 12),
+            'margin-bottom': rem(adjustedMultiplier * 8),
           }"
         >
           <EventCardDescription :description="item.event_listing.description" />
@@ -60,6 +60,7 @@
 
 <script>
 import { getSrcSet, addHost } from './responsiveImage'
+import { rem } from './rem'
 import EventCardDescription from '@/components/EventCardDescription';
 
 export default {
@@ -85,11 +86,17 @@ export default {
     is_highlighted: {
       type: Boolean,
     },
+    clientWidth: {
+      type: Number,
+    },
   },
   methods: {
     addHost(imageSrc) {
       return addHost(this.host, imageSrc);
     },
+    rem(pixels) {
+      return rem(pixels, this.clientWidth);
+    }
   },
   computed: {
     multiplier() {
