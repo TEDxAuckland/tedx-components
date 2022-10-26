@@ -31,7 +31,7 @@
           v-html="`${item.title}`"
           :style="{
             // TODO: here and in other places, use rem or em like Anthony told 
-            'font-size': adjustedMultiplier * 17.3 + 'px',
+            'font-size': (adjustedMultiplier * 17.3 / 8) + 'rem',
           }"
         ></div>
         <div 
@@ -39,16 +39,16 @@
           class="event-card-square__desc" 
           v-html="item.event_listing.subtitle"
           :style="{
-            'font-size': adjustedMultiplier * 12 + 'px',
-            'margin-bottom': adjustedMultiplier * 4 + 'px',
+            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
+            'margin-bottom': (adjustedMultiplier * 4 / 8) + 'rem',
           }"
         ></div>
         <div 
           class="event-card-square__desc" 
           v-if="item.event_listing.description"
           :style="{
-            'font-size': adjustedMultiplier * 12 + 'px',
-            'margin-bottom': adjustedMultiplier * 8 + 'px',
+            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
+            'margin-bottom': (adjustedMultiplier * 8 / 8) + 'rem',
           }"
         >
           <EventCardDescription :description="item.event_listing.description" />
@@ -95,12 +95,9 @@ export default {
     multiplier() {
       return this.width / 217.5;
     },
-    remMultiplier() {
-      return parseFloat(getComputedStyle(document.documentElement).fontSize.split("px")[0]) / 8
-    },
     adjustedMultiplier() {
       const is_highlighted = this.item.event_listing.is_highlighted;
-      return this.multiplier / (is_highlighted ? 3 : 2) * 2 * this.remMultiplier;
+      return this.multiplier / (is_highlighted ? 3 : 2) * 2;
     },
     srcset() {
       if (this.item.id === '/events/dining-in-the-dark') {
