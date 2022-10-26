@@ -26,6 +26,7 @@
         :height="mobileCardWidth"
         :gap="0" 
         :host="host"
+        :clientWidth="clientWidth"
       />
     </div>
   </div>

@@ -24,21 +24,21 @@
           'padding-right': (multiplier * 16) + 'px',
           'padding-bottom': (multiplier * 16) + 'px',
           'padding-left': (multiplier * 16) + 'px',
-          gap: (adjustedMultiplier * 16 / 8) + 'rem',
+          gap: rem(adjustedMultiplier * 16),
         }"
       >
         <div 
           class="event-card-mobile__header" 
           v-html="`${item.title}`"
           :style="{
-            'font-size': (adjustedMultiplier * 14 / 8) + 'rem',
+            'font-size': rem(adjustedMultiplier * 14),
             'line-height': 1,
           }"
         ></div>
         <div 
           class="event-card-mobile__desc" 
           :style="{
-            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
+            'font-size': rem(adjustedMultiplier * 12),
             'line-height': 1,
           }"
         >
@@ -47,8 +47,8 @@
         <button
           class="event-card-mobile__cta"
           :style="{
-            height: (adjustedMultiplier * 40 / 8) + 'rem',
-            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
+            height: rem(adjustedMultiplier * 40),
+            'font-size': rem(adjustedMultiplier * 12),
           }"
           v-html="viewPostCopy"
         ></button>
@@ -59,6 +59,7 @@
 
 <script>
 import { getSrcSet, addHost } from './responsiveImage'
+import { rem } from './rem'
 import EventCardDescription from '@/components/EventCardDescription';
 
 export default {
@@ -80,12 +81,18 @@ export default {
     },
     host: {
       type: String,
-    }
+    },
+    clientWidth: {
+      type: Number,
+    },
   },
   methods: {
     addHost(imageSrc) {
       return addHost(this.host, imageSrc);
     },
+    rem(pixels) {
+      return rem(pixels, this.clientWidth);
+    }
   },
   data() {
     return {
