@@ -95,9 +95,12 @@ export default {
     multiplier() {
       return this.width / 217.5;
     },
+    remMultiplier() {
+      return parseFloat(getComputedStyle(document.documentElement).fontSize.split("px")[0]) / 8
+    },
     adjustedMultiplier() {
       const is_highlighted = this.item.event_listing.is_highlighted;
-      return this.multiplier / (is_highlighted ? 3 : 2) * 2;
+      return this.multiplier / (is_highlighted ? 3 : 2) * 2 * this.remMultiplier;
     },
     srcset() {
       if (this.item.id === '/events/dining-in-the-dark') {
