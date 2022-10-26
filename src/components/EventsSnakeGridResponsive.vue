@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO: use 37.5em instead -->
   <div class="events-snake-grid__container events-snake-grid__container--desktop" v-if="clientWidth > 600"> 
     <EventsSnakeGrid
       :items="items"
@@ -90,8 +89,6 @@ export default {
       return 15
     },
     columns() {
-      // TODO: use 46.87em
-      // TODO: use getComputedStyle(document.documentElement).fontSize? https://stackoverflow.com/questions/36532307/rem-px-in-javascript
       if (this.clientWidth < 750) {
         return 4
       } else {

@@ -30,7 +30,6 @@
           class="event-card-square__header" 
           v-html="`${item.title}`"
           :style="{
-            // TODO: here and in other places, use rem or em like Anthony told 
             'font-size': rem(adjustedMultiplier * 17.3),
           }"
         ></div>
