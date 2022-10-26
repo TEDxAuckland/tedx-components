@@ -39,8 +39,6 @@ import { getAreas, generateGridHybrid, clearCanvasSnake, drawCanvasSnake } from 
 
 export default {
   name: "events-snake-grid",
-  components: {
-  },
   mounted() {
     // TODO: remove the visual viewport so my laptop doesn't lag
     // window.visualViewport.addEventListener('resize', this.resizeHandler);

@@ -63,9 +63,6 @@ import { format } from 'date-fns'
 export default {
   name: 'event-card-three-by-two',
 
-  components: {
-  },
-
   props: {
     item: {
       type: Object,
