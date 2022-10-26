@@ -200,7 +200,8 @@ export function generateGridRecursive(columns, items) {
 
   let snakeProgressFilled = -1;
   for (const item of items) {
-    if (item.event_listing.is_highlighted) {
+    const isHighlighted = item.event_listing.is_highlighted
+    if (isHighlighted) {
       if (snakeProgress.direction === "right") {
         snakeProgress = fillBigItem(grid, snakeProgress, item);
         snakeProgressFilled = snakeProgress.history.length;
@@ -258,7 +259,8 @@ export function generateGridSimple(columns, items) {
 
   let snakeProgressFilled = -1;
   for (const item of items) {
-    if (item.event_listing.is_highlighted) {
+    const isHighlighted = item.event_listing.is_highlighted
+    if (isHighlighted) {
       if (direction === "right") {
         // gotta have 2 extra on the right
         if (column + 2 <= columns - 1) {

@@ -39,13 +39,13 @@ export default {
   computed: {
     width() {
       const { cellSize, gap } = this;
-      const { is_highlighted } = this.item.event_listing;
-      return is_highlighted ? cellSize * 3 + gap * 2 : cellSize * 2 + gap;
+      const isHighlighted = this.item.event_listing.is_highlighted;
+      return isHighlighted ? cellSize * 3 + gap * 2 : cellSize * 2 + gap;
     },
     height() {
       const { cellSize, gap } = this;
-      const { is_highlighted } = this.item.event_listing;
-      return is_highlighted ? cellSize * 3 + gap * 2 : cellSize * 2 + gap;
+      const isHighlighted = this.item.event_listing.is_highlighted;
+      return isHighlighted ? cellSize * 3 + gap * 2 : cellSize * 2 + gap;
     }
   }
 }

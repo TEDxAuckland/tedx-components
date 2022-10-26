@@ -35,7 +35,7 @@
           }"
         ></div>
         <div 
-          v-if="item.event_listing.is_highlighted"
+          v-if="isHighlighted"
           class="event-card-square__desc" 
           v-html="item.event_listing.subtitle"
           :style="{
@@ -83,9 +83,6 @@ export default {
     host: {
       type: String,
     },
-    is_highlighted: {
-      type: Boolean,
-    },
     clientWidth: {
       type: Number,
     },
@@ -102,9 +99,11 @@ export default {
     multiplier() {
       return this.width / 217.5;
     },
+    isHighlighted() {
+      return this.item.event_listing.is_highlighted;
+    },
     adjustedMultiplier() {
-      const is_highlighted = this.item.event_listing.is_highlighted;
-      return this.multiplier / (is_highlighted ? 3 : 2) * 2;
+      return this.multiplier / (this.isHighlighted ? 3 : 2) * 2;
     },
     srcset() {
       if (this.item.id === '/events/dining-in-the-dark') {
