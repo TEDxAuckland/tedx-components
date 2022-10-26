@@ -361,7 +361,9 @@ export function drawCanvasSnake({
 }) {
   const renderedGap = gap * pixelDensity;
   const renderedCellSize = cellSize * pixelDensity;
-  const ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d", { alpha: false });
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   const GRID_STEP = renderedCellSize + renderedGap;
   const GRID_HALF_CELL = renderedCellSize / 2;
