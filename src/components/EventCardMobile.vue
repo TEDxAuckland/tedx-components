@@ -37,12 +37,25 @@
         ></div>
         <div 
           class="event-card-mobile__desc" 
-          v-html="item.event_listing.description"
           :style="{
             'font-size': (multiplier * 12) + 'px',
             'line-height': 1,
           }"
-        ></div>
+        >
+          <span 
+            v-html="preface"
+            :style="{
+              'font-style': conclusion ? 'italic' : 'normal',
+            }"
+          ></span>
+          <span
+            v-if="conclusion"
+          > | </span>
+          <span
+            v-html="conclusion"
+          ></span>
+
+        </div>
         <button
           class="event-card-mobile__cta"
           :style="{
@@ -93,6 +106,15 @@ export default {
   computed: {
     multiplier() {
       return this.width / 364;
+    },
+    description() {
+      return this.item.event_listing.description
+    },
+    preface() {
+      return this.description.split('|')[0]
+    },
+    conclusion() {
+      return this.description.split('|')[1]
     },
     viewPostCopy() {
       return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
