@@ -52,7 +52,6 @@ export default {
       const history = this.template.history
       const {cellSize, columns, gap, lineWidth} = this
       const pixelDensity = window.devicePixelRatio * window.visualViewport.scale
-      // TODO: make real canvas width a state property?
       this.$refs.canvas.width = this.canvasWidth * pixelDensity
       this.$refs.canvas.height = this.canvasHeight * pixelDensity
       drawCanvasSnake({ 
