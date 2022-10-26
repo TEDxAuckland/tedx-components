@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     desc_array() {
-      return this.description.split('|');
+      return (this.description || "").split('|');
     },
     theme() {
       return this.desc_array[0]
