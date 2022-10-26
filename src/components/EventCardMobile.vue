@@ -94,12 +94,6 @@ export default {
       return rem(pixels, this.clientWidth);
     }
   },
-  data() {
-    return {
-      baseUrl: process.env.BASE_URL,
-    }
-  },
-
   computed: {
     multiplier() {
       return this.width / 364;

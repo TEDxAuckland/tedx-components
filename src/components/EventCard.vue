@@ -36,11 +36,6 @@ export default {
     },
   },
 
-  data() {
-    return {
-    }
-  },
-
   computed: {
     width() {
       const { cellSize, gap } = this;

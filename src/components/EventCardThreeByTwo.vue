@@ -86,11 +86,6 @@ export default {
       return addHost(this.host, imageSrc);
     },
   },
-  data() {
-    return {
-      baseUrl: process.env.BASE_URL,
-    }
-  },
 
   computed: {
     dateTitle() {

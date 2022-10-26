@@ -140,7 +140,6 @@ export default {
   data() {
     return {
       items: defaultItems,
-      baseUrl: process.env.BASE_URL,
       isShown: true,
     }
   },

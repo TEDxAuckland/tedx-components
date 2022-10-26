@@ -10,11 +10,6 @@ export default {
 
   props: ['path', 'widths'],
 
-  data() {
-    return {
-    }
-  },
-
   computed: {
 
     paths() {
