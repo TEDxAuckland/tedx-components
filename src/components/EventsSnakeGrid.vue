@@ -2,8 +2,6 @@
   <div class="events-snake-grid__container">
     <canvas
       ref="canvas" 
-      :width="canvasWidth * pixelDensity"
-      :height="canvasHeight * pixelDensity"
       :style="{
         'position': 'absolute',
         'width': canvasWidth + 'px',
@@ -36,6 +34,7 @@
 
 <script>
 import { getAreas, generateGridHybrid, clearCanvasSnake, drawCanvasSnake } from './snakeGrid'
+import { throttle } from 'lodash'
 
 export default {
   name: "events-snake-grid",
@@ -66,22 +65,26 @@ export default {
         lineWidth
       });
     },
-    // TODO: throttle or debounce
-    redrawCanvas() {
-      this.clearCanvas()
-      this.drawCanvas()
+    considerRedrawCanvas() {
+      const pixelDensity = window.devicePixelRatio * window.visualViewport.scale
+      const newWidth = Math.floor(this.canvasWidth * pixelDensity);
+      const newHeight = Math.floor(this.canvasHeight * pixelDensity);
+      // FYI: this assumes items won't change after page load
+      if (this.$refs.canvas.width !== newWidth || this.$refs.canvas.height !== newHeight) {
+        this.drawCanvas()
+      }
     },
     resizeHandler() {
-      this.redrawCanvas()
+      this.considerRedrawCanvas()
     },
     updatePixelRatio() {
       window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
         .addEventListener('change', this.updatePixelRatio, {once: true});
-      this.redrawCanvas()
+      this.considerRedrawCanvas()
     }
   },
   updated() {
-    this.redrawCanvas()
+    this.considerRedrawCanvas()
   },
   beforeDestroy() {
     // window.visualViewport.removeEventListener('resize', this.resizeHandler);
