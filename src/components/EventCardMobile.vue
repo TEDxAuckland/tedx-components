@@ -24,21 +24,21 @@
           'padding-right': (multiplier * 16) + 'px',
           'padding-bottom': (multiplier * 16) + 'px',
           'padding-left': (multiplier * 16) + 'px',
-          gap: (multiplier * 16) + 'px',
+          gap: (adjustedMultiplier * 16 / 8) + 'rem',
         }"
       >
         <div 
           class="event-card-mobile__header" 
           v-html="`${item.title}`"
           :style="{
-            'font-size': (multiplier * 14) + 'px',
+            'font-size': (adjustedMultiplier * 14 / 8) + 'rem',
             'line-height': 1,
           }"
         ></div>
         <div 
           class="event-card-mobile__desc" 
           :style="{
-            'font-size': (multiplier * 12) + 'px',
+            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
             'line-height': 1,
           }"
         >
@@ -47,8 +47,8 @@
         <button
           class="event-card-mobile__cta"
           :style="{
-            height: (multiplier * 40 ) + 'px',
-            'font-size': (multiplier * 12) + 'px',
+            height: (adjustedMultiplier * 40 / 8) + 'rem',
+            'font-size': (adjustedMultiplier * 12 / 8) + 'rem',
           }"
           v-html="viewPostCopy"
         ></button>
@@ -96,6 +96,9 @@ export default {
   computed: {
     multiplier() {
       return this.width / 364;
+    },
+    adjustedMultiplier() {
+      return this.multiplier;
     },
     viewPostCopy() {
       return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
