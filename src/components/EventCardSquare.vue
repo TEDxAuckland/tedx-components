@@ -45,24 +45,13 @@
         ></div>
         <div 
           class="event-card-square__desc" 
-          v-if="description"
+          v-if="item.event_listing.description"
           :style="{
             'font-size': adjustedMultiplier * 12 + 'px',
             'margin-bottom': adjustedMultiplier * 8 + 'px',
           }"
         >
-          <span 
-            v-html="preface"
-            :style="{
-              'font-style': conclusion ? 'italic' : 'normal',
-            }"
-          ></span>
-          <span
-            v-if="conclusion"
-          > | </span>
-          <span
-            v-html="conclusion"
-          ></span>
+          <EventCardDescription :description="item.event_listing.description" />
         </div>
       </div>
     </div>
@@ -71,9 +60,15 @@
 
 <script>
 import { getSrcSet, addHost } from './responsiveImage'
+import EventCardDescription from '@/components/EventCardDescription';
 
 export default {
   name: 'event-card-square',
+
+  components: {
+    EventCardDescription,
+  },
+
   props: {
     item: {
       type: Object,
@@ -99,15 +94,6 @@ export default {
   computed: {
     multiplier() {
       return this.width / 217.5;
-    },
-    description() {
-      return this.item.event_listing.description
-    },
-    preface() {
-      return this.description.split('|')[0]
-    },
-    conclusion() {
-      return this.description.split('|')[1]
     },
     adjustedMultiplier() {
       const is_highlighted = this.item.event_listing.is_highlighted;

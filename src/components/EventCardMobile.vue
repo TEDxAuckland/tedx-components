@@ -42,19 +42,7 @@
             'line-height': 1,
           }"
         >
-          <span 
-            v-html="preface"
-            :style="{
-              'font-style': conclusion ? 'italic' : 'normal',
-            }"
-          ></span>
-          <span
-            v-if="conclusion"
-          > | </span>
-          <span
-            v-html="conclusion"
-          ></span>
-
+          <EventCardDescription :description="item.event_listing.description" />
         </div>
         <button
           class="event-card-mobile__cta"
@@ -71,11 +59,13 @@
 
 <script>
 import { getSrcSet, addHost } from './responsiveImage'
+import EventCardDescription from '@/components/EventCardDescription';
 
 export default {
   name: 'event-card-mobile',
 
   components: {
+    EventCardDescription,
   },
 
   props: {
@@ -106,15 +96,6 @@ export default {
   computed: {
     multiplier() {
       return this.width / 364;
-    },
-    description() {
-      return this.item.event_listing.description
-    },
-    preface() {
-      return this.description.split('|')[0]
-    },
-    conclusion() {
-      return this.description.split('|')[1]
     },
     viewPostCopy() {
       return new Date() < new Date(this.item.start_date) ? 'View Event' : 'View Past Event';
