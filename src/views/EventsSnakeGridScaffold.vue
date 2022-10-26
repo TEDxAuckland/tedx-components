@@ -144,9 +144,6 @@ export default {
       isShown: true,
     }
   },
-
-  computed: {
-  }
 }
 
 </script>
