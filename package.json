@@ -16,11 +16,12 @@
     "build:lib": "vue-cli-service build --target lib ./src/sections/index.js",
     "export:components": "cp dist/ted-x-components.umd.min.js ../tedx-auckland-site/src/assets/js/",
     "export:hoopercss": "cp node_modules/hooper/dist/hooper.css ../tedx-auckland-site/src/assets/css/",
-    "//": " && cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
-    "build-and-export": "npm-run-all build:lib export:components"
+    "export:css": " cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
+    "build-and-export": "npm-run-all build:lib export:components export:css"
   },
   "dependencies": {
     "axios": "^0.18.1",
+    "date-fns": "^2.29.3",
     "hooper": "^0.3.4",
     "lodash": "^4.17.19",
     "marked": "^1.1.1",

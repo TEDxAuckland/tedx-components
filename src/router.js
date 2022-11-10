@@ -5,6 +5,8 @@ import VideosPlaylistScaffold from './views/VideosPlaylistScaffold'
 import VideosExpandingPreviewScaffold from './views/VideosExpandingPreviewScaffold'
 import AnimatedImageScaffold from './views/AnimatedImageScaffold'
 import CarouselScaffold from './views/CarouselScaffold'
+import EventsSnakeGridScaffold from './views/EventsSnakeGridScaffold'
+import EventsCardsScaffold from './views/EventsCardsScaffold'
 
 Vue.use(Router)
 
@@ -36,6 +38,16 @@ export default new Router({
       path: '/carousel',
       name: 'carouselScaffold',
       component: CarouselScaffold
+    },
+    {
+      path: '/events-snake-grid',
+      name: 'eventsSnakeGridScaffold',
+      component: EventsSnakeGridScaffold
+    },
+    {
+      path: '/events-cards',
+      name: 'eventsCards',
+      component: EventsCardsScaffold
     },
   ]
 })
