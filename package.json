@@ -20,7 +20,7 @@
     "build-and-export": "npm-run-all build:lib export:components export:css"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.2",
     "date-fns": "^2.29.3",
     "hooper": "^0.3.4",
     "lodash": "^4.17.19",
