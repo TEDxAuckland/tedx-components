@@ -17,7 +17,7 @@
     "export:components": "cp dist/ted-x-components.umd.min.js ../tedx-auckland-site/src/assets/js/",
     "export:hoopercss": "cp node_modules/hooper/dist/hooper.css ../tedx-auckland-site/src/assets/css/",
     "export:css": " cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
-    "build-and-export": "npm-run-all build:lib export:components export:css"
+    "build-and-export": "npm-run-all build:lib export:components export:css export:hoopercss"
   },
   "dependencies": {
     "axios": "^0.18.1",
