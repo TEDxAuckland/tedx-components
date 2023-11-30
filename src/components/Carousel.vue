@@ -1,7 +1,7 @@
 <template>
   <div class="carousel">
-    <hooper infiniteScroll autoPlay playSpeed="5000" transition="1000" :wheelControl="false">
-      <slide v-for="image in images" :key="image">
+    <hooper infiniteScroll autoPlay :playSpeed="5000" :transition="1000" :wheelControl="false">
+      <slide v-for="image in imagePaths" :key="image">
         <img class="carousel__img" :src="image">
       </slide>
       <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -34,12 +34,11 @@ export default {
     }
   },
 
-  data() {
-    return {
+  computed: {
+    imagePaths() {
+      return this.images.map(({image}) => image )
     }
-  },
-
-  methods: {},
+  }
 }
 </script>
 

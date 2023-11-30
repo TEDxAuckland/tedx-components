@@ -12,9 +12,9 @@
 import Carousel from '@/components/Carousel.vue'
 
 var imagePaths = [
-  "assets/1-THEME DESC - COVER150.png",
-  "assets/2-MIND MAP150.png",
-  "assets/3-INTRO150.png",
+  { image: "assets/1-THEME DESC - COVER150.png", alt: "test image 1"},
+  { image: "assets/2-MIND MAP150.png", alt: "test image 2"},
+  { image: "assets/3-INTRO150.png", alt: "test image 3"},
 ]
 
 export default {
