@@ -6,18 +6,25 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+
     "import:people-json": "cp ../tedx-auckland-site/src/_site/people.json src/assets/json/people.json",
     "import:people-public-json": "cp ../tedx-auckland-site/src/_site/people.json public/people.json",
     "import:videos-json": "cp ../tedx-auckland-site/src/_site/videos.json public/videos.json",
     "import:youtube-json": "cp ../tedx-auckland-site/src/_site/youtube_video_data.json public/youtube_video_data.json",
     "import:playlist-json": "cp ../tedx-auckland-site/src/_site/youtube_playlist_data.json public/youtube_playlist_data.json",
     "import:css": "cp ../tedx-auckland-site/src/_site/assets/css/main.css src/assets/css/jekyll.css",
-    "import:assets": "npm-run-all import:people-json import:people-public-json import:videos-json import:youtube-json import:playlist-json import:css",
+    "import:resized-images": "cp -r ../tedx-auckland-site/src/_site/assets/resized public/assets/",
+    "import:assets": "npm-run-all import:people-json import:people-public-json import:videos-json import:youtube-json import:playlist-json import:css import:resized-images",
+
     "build:lib": "vue-cli-service build --target lib ./src/sections/index.js",
+
     "export:components": "cp dist/ted-x-components.umd.min.js ../tedx-auckland-site/src/assets/js/",
-    "export:hoopercss": "cp node_modules/hooper/dist/hooper.css ../tedx-auckland-site/src/assets/css/",
     "export:css": " cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
-    "build-and-export": "npm-run-all build:lib export:components export:css export:hoopercss"
+    "export:all": "npm-run-all export:components export:css",
+
+    "build-and-export": "npm-run-all build:lib export:components export:css",
+
+    "do-it-all": "npm-run-all import:assets build:lib export:components export:css"
   },
   "dependencies": {
     "axios": "^0.18.1",
