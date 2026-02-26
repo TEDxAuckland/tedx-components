@@ -5,7 +5,12 @@
       <div class="container">
         <h3 class="section-heading section-heading--speakers">videos</h3>
 
-        <Videos :videoNames="videoNames" />
+        <Videos
+          :videoNames="videoNames"
+          :videosJson="videosJson"
+          :videosCollection="videosCollection"
+          :people="peopleJson"
+        />
 
       </div>
     </section>
@@ -16,8 +21,13 @@
 <script>
 import Videos from '@/sections/Videos'
 
+import videosJson from '@/../public/youtube_video_data.json'
+import videosCollection from '@/../public/videos.json'
+import peopleJson from '@/../public/people.json'
+
 var videoNames = [
   'from-suicidal-to-hopeful,-how-i-learnt-to-fight',
+  'finding-your-inner-weirdo',
   'ihumātao',
   'the-narrative-origins-of-spaceflight',
   'food-for-thought--tedxauckland-2018',
@@ -35,6 +45,9 @@ export default {
   data() {
     return {
       videoNames,
+      videosJson,
+      videosCollection,
+      peopleJson,
     }
   },
   components: {

@@ -10,7 +10,7 @@ export default {
 
   computed: {
     parsedMarkdown() {
-      return marked(this.markdown, { sanitize: true })
+      return marked(this.markdown)
     }
   }
 }

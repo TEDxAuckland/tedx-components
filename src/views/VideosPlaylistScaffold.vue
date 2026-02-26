@@ -22,10 +22,10 @@
 <script>
 import VideosPlaylist from '@/sections/VideosPlaylist'
 
-import videosCollection from '@/assets/json/videos.json'
-import videosJson from '@/assets/json/youtube_video_data.json'
-import playlistJson from '@/assets/json/youtube_playlist_data.json'
-import peopleJson from '@/assets/json/people.json'
+import videosCollection from '@/../public/videos.json'
+import videosJson from '@/../public/youtube_video_data.json'
+import playlistJson from '@/../public/youtube_playlist_data.json'
+import peopleJson from '@/../public/people.json'
 
 var playlistId = "PLcm2pIIAwlDutXJI4AWeUPpEmBZCIF2ry"
 

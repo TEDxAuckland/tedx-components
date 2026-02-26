@@ -21,7 +21,7 @@
 <script>
 import Speakers from '@/sections/Speakers.vue'
 
-import speakerJson from '@/assets/json/people.json'
+import speakerJson from '@/../public/people.json'
 var speakerNames = ["brenda-frisk", "andy-crowe--rui-peng","alexander-macdonald","angie-judge","anna-faber","cameron-sims","cather-simpson","chris-pemberton","david-razowsky","emeline-paat-dahlstrom","jahra-rager-wasasala","juliet-arnott","liam-malone","lisa-king","mai-chen","michael-corballis","nigel-parker","pete-bethune","sam-stubbs","shaveer-mirpuri","william-watson","yoseph-ayele"]
 
 export default {

@@ -6,7 +6,6 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-
     "import:people-json": "cp ../tedx-auckland-site/src/_site/people.json src/assets/json/people.json",
     "import:people-public-json": "cp ../tedx-auckland-site/src/_site/people.json public/people.json",
     "import:videos-json": "cp ../tedx-auckland-site/src/_site/videos.json public/videos.json",
@@ -15,19 +14,17 @@
     "import:css": "cp ../tedx-auckland-site/src/_site/assets/css/main.css src/assets/css/jekyll.css",
     "import:resized-images": "cp -r ../tedx-auckland-site/src/_site/assets/resized public/assets/",
     "import:assets": "npm-run-all import:people-json import:people-public-json import:videos-json import:youtube-json import:playlist-json import:css import:resized-images",
-
     "build:lib": "vue-cli-service build --target lib ./src/sections/index.js",
-
     "export:components": "cp dist/ted-x-components.umd.min.js ../tedx-auckland-site/src/assets/js/",
-    "export:css": " cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
+    "export:css": "cp dist/ted-x-components.css ../tedx-auckland-site/src/assets/css/",
     "export:all": "npm-run-all export:components export:css",
-
     "build-and-export": "npm-run-all build:lib export:components export:css",
-
-    "do-it-all": "npm-run-all import:assets build:lib export:components export:css"
+    "do-it-all": "npm-run-all import:assets build:lib export:components export:css",
+    "astro:import:json": "cp ../TEDxAucklandHub/dist/{people,videos,youtube_playlist_data,youtube_video_data}.json public/",
+    "astro:export:components": "cp dist/ted-x-components.umd.min.js ../TEDxAucklandHub/public/assets/js/ && cp dist/ted-x-components.umd.min.js.map ../TEDxAucklandHub/public/assets/js/",
+    "astro:export:css": "cp dist/ted-x-components.css ../TEDxAucklandHub/public/assets/css/"
   },
   "dependencies": {
-    "axios": "^0.18.1",
     "date-fns": "^2.29.3",
     "hooper": "^0.3.4",
     "lodash": "^4.17.19",
@@ -39,8 +36,8 @@
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-eslint": "^3.12.1",
     "@vue/cli-service": "^3.12.1",
-    "sass": "^1.54.7",
     "npm-run-all": "^4.1.5",
+    "sass": "^1.54.7",
     "sass-loader": "^7.3.1",
     "vue-template-compiler": "^2.6.11"
   }

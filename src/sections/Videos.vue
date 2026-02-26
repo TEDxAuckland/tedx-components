@@ -30,7 +30,6 @@
 import VideoCard from '@/components/VideoCard'
 import ExpandedPreviewVideo from '@/components/ExpandedPreviewVideo'
 import SrcsetImg from '@/components/SrcsetImg'
-import axios from 'axios'
 
 export default {
 
@@ -39,31 +38,6 @@ export default {
     videosJson: Object,
     videosCollection: Array,
     people: Array,
-  },
-
-  created() {
-    let self = this
-
-    if (!this.videosJson) {
-      axios.get('/youtube_video_data.json')
-      .then(function(res) {
-        self.videosJsonData = res.data
-      })
-    }
-
-    if (!this.videosCollection) {
-      axios.get('/videos.json')
-      .then(function(res) {
-        self.videosCollectionData = res.data
-      })
-    }
-
-    if (!this.people) {
-      axios.get('/people.json')
-      .then(function(res) {
-        self.peopleData = res.data
-      })
-    }
   },
 
   data() {
